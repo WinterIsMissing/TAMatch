@@ -1,7 +1,9 @@
 class SessionController < ApplicationController
   def auth
-    token = params[:token].to_s
-    user = User.find_by(token: token)
+    token =  params.keys[0]
+    puts "HIHIHI"
+    puts token
+    user = User.find_by(login_token: token)
 
     if !user
       redirect_to root_path, notice: 'It seems your link is invalid. Try requesting for a new login link'

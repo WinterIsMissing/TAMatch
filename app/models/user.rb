@@ -6,11 +6,13 @@ class User < ApplicationRecord
     where(["username = :value OR email = :value", {value: value}]).first
   end
 
-  def send_login_link
+  def send_login_link(user)
     generate_login_token
 
-    template = 'login_link'
-    EmailNotifier.send(template).deliver_now
+
+    template = login_link
+    # user is the actual email, it is not an object
+    ApplicationMailer.login_email(user,template).deliver_now
   end
 
   def generate_login_token
@@ -20,11 +22,11 @@ class User < ApplicationRecord
   end
 
   def login_link
-    "http://localhost:3000/auth?#{self.login_token}"
+    "http://localhost:8080/auth?#{self.login_token}"
   end
 
   def login_token_expired?
-    (self.token_generated_at + token_validity) > Time.now.utc
+    (self.token_generated_at + token_validity.to_s) > Time.now.utc.to_s
   end
 
   def expire_token!
@@ -35,10 +37,10 @@ class User < ApplicationRecord
   private
 
   def generate_token
-    SecureRandom.hex(10)
+    SecureRandom.urlsafe_base64(nil,true)
   end
 
   def token_validity
-    2.hours
+    1.minute
   end
 end
