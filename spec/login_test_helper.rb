@@ -1,15 +1,18 @@
-module SpecTestHelper   
+module LoginTestHelper   
   def login_admin
     login(:admin)
   end
 
-  def login(user)
-    user = User.where(:login => user.to_s).first if user.is_a?(Symbol)
-    request.session[:user] = user.id
+  def login(email)
+    if !email.nil? && email.to_s =~ /^(.+)@tamu.edu$/
+      user = $1
+      user = User.where(:login => user).first
+      request.session[:user] = user.id
+    end
   end
 
   def current_user
-    User.find(request.session[:user])
+    return User.find(request.session[:user])
   end
 end
 

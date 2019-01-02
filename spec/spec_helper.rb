@@ -1,3 +1,3 @@
 RSpec.configure do |config|
-  config.include SpecTestHelper, :type => :controller
+  config.include LoginTestHelper, :type => :controller
 end
