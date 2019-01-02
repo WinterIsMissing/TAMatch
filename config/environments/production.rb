@@ -61,8 +61,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmx.com",
   :port                 => 587,
-  :user_name            => Joe.Average,
-  :password             => PQ4GSvM86or1,
+  :user_name            => "Joe.Average",
+  :password             => "PQ4GSvM86or1",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
