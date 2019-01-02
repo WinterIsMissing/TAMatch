@@ -62,7 +62,7 @@ Rails.application.configure do
   :address              => "smtp.gmx.com",
   :port                 => 587,
   :user_name            => "Joe.Average",
-  :password             => "PQ4GSvM86or1",
+  :password             => PQ4GSvM86or1,
   :authentication       => "plain",
   :enable_starttls_auto => true, 
   :openssl_verify_mode  => 'none',
