@@ -62,11 +62,11 @@ Rails.application.configure do
   :address              => "smtp.gmx.com",
   :port                 => 587,
   :user_name            => "Joe.Average",
-  :password             => PQ4GSvM86or1,
+  :password             => 'PQ4GSvM86or1',
   :authentication       => "plain",
   :enable_starttls_auto => true, 
   :openssl_verify_mode  => 'none',
-  :domain => 'young-lowlands-69353.heroku.com',
+  :domain => 'https://young-lowlands-69353.heroku.com',
 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
