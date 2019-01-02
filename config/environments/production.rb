@@ -65,7 +65,8 @@ Rails.application.configure do
   :password             => "PQ4GSvM86or1",
   :authentication       => "plain",
   :enable_starttls_auto => true, 
-  :openssl_verify_mode  => 'none'
+  :openssl_verify_mode  => 'none',
+  :domain => 'young-lowlands-69353.heroku.com',
 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
