@@ -12,3 +12,10 @@ This platform needs to:
 -Maximize amount of successful matches between preferred professors/TA’s/classes.
 
 Link to the heroku:
+https://young-lowlands-69353.herokuapp.com/
+
+
+To see which tasks we are on, check out our pivotal tracker! :D
+Link to pivotal tracker:
+https://www.pivotaltracker.com/n/projects/2234694
+
