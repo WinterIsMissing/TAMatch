@@ -22,10 +22,11 @@ class User < ApplicationRecord
   end
 
   def login_link
-    "http://localhost:8080/auth?#{self.login_token}"
+    "https://350764f781ef4b3a8bb9e2746e9cf8b1.vfs.cloud9.ap-southeast-1.amazonaws.com/auth?#{self.login_token}"
   end
 
   def login_token_expired?
+    
     (self.token_generated_at + token_validity.to_s) > Time.now.utc.to_s
   end
 
@@ -37,10 +38,10 @@ class User < ApplicationRecord
   private
 
   def generate_token
-    SecureRandom.urlsafe_base64(nil,true)
+    SecureRandom.hex(20)
   end
 
   def token_validity
-    1.minute
+    1.hour
   end
 end
