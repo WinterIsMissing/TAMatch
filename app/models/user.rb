@@ -37,10 +37,11 @@ class User < ApplicationRecord
   private
 
   def generate_token
-    SecureRandom.urlsafe_base64(nil,true)
+    t = time.now
+    SecureRandom.urlsafe_base64(20 + (integer(t.sec)%10))
   end
 
   def token_validity
-    1.minute
+    24.hour
   end
 end
