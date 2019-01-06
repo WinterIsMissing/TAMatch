@@ -52,6 +52,37 @@ describe Matchmaker do
             end
         end
         
+        context "given asymmetric groups" do
+          matcher = Matchmaker.new(
+                          {
+            'abe'  => %w[abi eve cath jan dee fay bea hope gay],
+            'bob'  => %w[cath hope abi dee eve fay bea jan gay],
+            'col'  => %w[hope eve abi dee bea fay gay cath jan],
+            'dan'  => %w[fay dee gay hope eve jan bea cath abi],
+            'ed'   => %w[jan dee bea cath fay eve abi hope gay],
+            'fred' => %w[bea abi dee gay eve cath jan hope fay],
+            'gav'  => %w[gay eve bea cath abi dee hope jan fay],
+            'hal'  => %w[abi eve hope fay cath jan bea gay dee],
+            'ian'  => %w[hope cath dee gay bea abi fay jan eve],
+            'jon'  => %w[abi fay jan gay eve bea dee cath hope],
+                          },
+                          {
+            'abi'  => %w[bob fred jon gav ian abe dan ed col hal],
+            'bea'  => %w[bob abe col fred gav dan ian ed jon hal],
+            'cath' => %w[fred bob ed gav hal col ian abe dan jon],
+            'dee'  => %w[fred jon col abe ian hal gav dan bob ed],
+            'eve'  => %w[jon hal fred dan abe gav col ed ian bob],
+            'fay'  => %w[bob abe ed ian jon dan fred gav col hal],
+            'gay'  => %w[jon gav hal fred bob abe col ed dan ian],
+            'hope' => %w[gav jon bob abe ian dan hal ed col fred],
+            'jan'  => %w[ed hal gav abe bob jon col ian fred dan],
+          })
+          
+          it "returns a hash anyways" do
+            expect matcher.match_couples.respond_to?(:merge)
+          end
+        end
+        
     end
     
 end

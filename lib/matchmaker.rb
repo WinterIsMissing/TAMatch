@@ -69,15 +69,16 @@ class Matchmaker
       @women = nil
       return
     end
-      prefs = men_prefs.merge(women_prefs)
-      @men = Hash[
-          men_prefs.keys.collect { |name| [name, Person.new(name)]}
-          ]
-      @women = Hash[
-          women_prefs.keys.collect { |name| [name, Person.new(name)]}
-          ]
-      @men.each {|name, man| man.preferences = @women.values_at(*prefs[name])}
-      @women.each {|name, woman| woman.preferences = @men.values_at(*prefs[name])}
+    prefs = men_prefs.merge(women_prefs)
+    @men = Hash[
+        men_prefs.keys.collect { |name| [name, Person.new(name)]}
+        ]
+    @women = Hash[
+        women_prefs.keys.collect { |name| [name, Person.new(name)]}
+        ]
+    @men.each {|name, man| man.preferences = @women.values_at(*prefs[name])}
+    @women.each {|name, woman| woman.preferences = @men.values_at(*prefs[name])}
+    @men, @women = @women, @men if @men.keys.length > @women.keys.length
   end
   
   def match_couples
