@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>																																		
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.7.1.js"></script>
+<script type="text/javascript" src="rank.js"></script> <!-- Here is the link to the js for Rank -->
+
+<title>TAnder</title>
+<!-- <link REL="SHORTCUT ICON" href="favicon.ico"> -->
+</head>
+
+<body>
+
+<h1>TA Application</h1>
+<br>
+
+
+<form action="/action_page.php">
+  First name: <input type="text" name="fname"><br>
+  <p>
+
+</p>
+  Last name: <input type="text" name="lname"><br>
+  <!--<input type="submit" value="Submit">-->
+</form>
+
+  <p>
+  	
+  </p>
+  Degree Program:
+  <select>
+  <option value="msThesis">MS Thesis</option>
+  <option value="msNon-Thesis">MS Non-Thesis</option>
+  <option value="phd">PhD</option>
+</select>
+  <!--<input type="submit" value="Submit">-->
+
+
+<p>
+
+</p>
+Applying as:
+<select>
+  <option value="ta">TA</option>
+  <option value="sGrader">Senior Grader</option>
+  <option value="grader">Grader</option>
+</select>
+
+<p>
+
+</p>
+<p>
+Please rank the classes you would like to teach,
+in order of 1 (favorite class) to 10 (please don't put me in this class).  
+</p>
+
+<br>
+<div class = "rankContainer">
+	<div class = "rankElement" id = "el0" >
+		<input type="hidden" name="0">
+		<font class = "rankDisp" id = "el0">1</font>
+		&nbsp;&nbsp;&nbsp;
+		<span>CSCE 121 </span>
+		
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el1">
+		<input type="hidden" name="1">
+		<font class = "rankDisp" id = "el1">2</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 222
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el2">
+		<input type="hidden" name="2">
+		<font class = "rankDisp" id = "el2">3</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 315
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el3">
+		<input type="hidden" name="3">
+		<font class = "rankDisp" id = "el3">4</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 312
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el4">
+		<input type="hidden" name="4">
+		<font class = "rankDisp" id = "el4">5</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 314
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el5">
+		<input type="hidden" name="5">
+		<font class = "rankDisp" id = "el5">6</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 462
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el6">
+		<input type="hidden" name="6">
+		<font class = "rankDisp" id = "el6">7</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 465
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el7">
+		<input type="hidden" name="7">
+		<font class = "rankDisp" id = "el7">8</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 482
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el8">
+		<input type="hidden" name="8">
+		<font class = "rankDisp" id = "el8">9</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 111
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+	<div class = "rankElement" id = "el9">
+		<input type="hidden" name="9">
+		<font class = "rankDisp" id = "el9">10</font>
+		&nbsp;&nbsp;&nbsp;
+		CSCE 655
+		<b class = "down">&nbsp;∨</b>
+		<b class = "up">∧&nbsp;</b>
+	</div>
+
+
+</div>
+<br><br>
+
+<br><br>
+
+<button onclick = "convertToJSON()"> SUBMIT</button>
+</body>
+
+<script>
+	//function convertToJSON(){
+	//	console.log(document.getElementById("el0").getElementsByTagName("span")[0].innerHTML);
+	//}
+	function convertToJSON(){
+		console.log(document.getElementsByName("1").innerHTML);
+	}
+</script>
+
+
+
+</html>
+

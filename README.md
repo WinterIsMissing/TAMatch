@@ -1,21 +1,13 @@
-# TAMatch
-TA Application and Assignment System as a CSCE 431-Singapore 2019 Project
+# Rank Form
 
+Live Demo:	[www.justinmccandless.com/demos/Rank-Form/index.html](www.justinmccandless.com/demos/Rank-Form/index.html)
+<br>
+Blog Post:	[www.justinmccandless.com/blog/Rank+Options+in+an+HTML+Form](www.justinmccandless.com/blog/Rank+Options+in+an+HTML+Form)
 
-This project aims to serve as a platform for Texas A&M Graduate Students and faculty to
-minimize human intervention in  the application process for TA's.
+## Overview
 
-This platform needs to:
--Allow professors to preference TA’s
--Allow TA’s to preference professors or classes
--Allow TA’s to specify which kinds of classes they want / don’t want to teach
--Maximize amount of successful matches between preferred professors/TA’s/classes.
+This project is for HTML forms where the user needs to rank a series of selections.  It provides a nicely animated set of movable divs that represent each selection.  It uses jquery.
 
-Link to the heroku:
-https://young-lowlands-69353.herokuapp.com/
+## Usage
 
-
-To see which tasks we are on, check out our pivotal tracker! :D
-Link to pivotal tracker:
-https://www.pivotaltracker.com/n/projects/2234694
-
+Include rank.js in your project, and setup your html as seen in the example in index.html.
