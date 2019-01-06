@@ -31,7 +31,11 @@ class Person
   end
  
   def better_choice?(person)
-    @preferences.index(person) < @preferences.index(@fiance)
+    unless @fiance.nil?
+      @preferences.index(person) < @preferences.index(@fiance)
+    else
+      true
+    end
   end
  
   def propose_to(person)
@@ -124,3 +128,5 @@ class Matchmaker
     end
   end
 end
+
+

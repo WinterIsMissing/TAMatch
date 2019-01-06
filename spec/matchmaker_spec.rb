@@ -77,9 +77,13 @@ describe Matchmaker do
             'hope' => %w[gav jon bob abe ian dan hal ed col fred],
             'jan'  => %w[ed hal gav abe bob jon col ian fred dan],
           })
+          matches = matcher.match_couples
           
           it "returns a hash anyways" do
-            expect matcher.match_couples.respond_to?(:merge)
+            expect matches.respond_to?(:merge)
+          end
+          it "is still stable" do
+            expect matcher.stability > 0.9
           end
         end
         
