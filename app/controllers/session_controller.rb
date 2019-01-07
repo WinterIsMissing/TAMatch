@@ -22,7 +22,7 @@ class SessionController < ApplicationController
     flash[:success] = "Welcome, #{@user.name}!"
    rescue
     flash[:warning] = "There was an error while trying to authenticate you..."
-    end
-    redirect_to root_path
+  end
+    redirect_to root_path, notice: 'Welcome, #{@user.name}!'
   end
 end
