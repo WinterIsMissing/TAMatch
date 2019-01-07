@@ -1,8 +1,7 @@
 class SessionController < ApplicationController
   def auth
     token =  params.keys[0]
-    puts "HIHIHI"
-    puts token
+
     user = User.find_by(login_token: token)
 
     if !user
