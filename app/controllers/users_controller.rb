@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    @user.role = "student"
     if @user.save
       
       @user.send_login_link(params["user"]["email"])

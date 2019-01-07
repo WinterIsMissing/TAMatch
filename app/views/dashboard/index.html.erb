@@ -1,0 +1,12 @@
+<h1>Dashboard</h1>
+<p>
+
+<% if defined? @admin%>
+    <p>Admin <%= @user.username%></p>
+<% end %>
+<% if defined? @instructor%>
+    <p>Instructor <%= @user.username%></p>
+<% end %>
+<% if defined? @student%>
+    <p>Student <%= @user.username%></p>
+<% end %>

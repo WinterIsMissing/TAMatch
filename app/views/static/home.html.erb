@@ -1,2 +1,7 @@
 <h1>Welcome</h1>
-<p>Login here <%= link_to 'Login', register_path %></p>
+<p>Login</p>
+<%= form_for :login, url: login_path do |form| %>
+  <%= form.text_field :email %>
+  <%= form.submit "Email login link" %>
+<% end %>
+<p>New User? <%= link_to 'Register!', register_path %></p>

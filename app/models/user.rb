@@ -32,6 +32,7 @@ class User < ApplicationRecord
 
   def expire_token!
     self.login_token = nil
+    #self.token_generated_at = Time.now.utc - token_validity.to_s
     save!
   end
 
