@@ -13,6 +13,8 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'spec/support/form_helper.rb'
+
 RSpec.configure do |config|
 
   config.include FormHelpers, :type => :feature
