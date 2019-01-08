@@ -10,10 +10,14 @@ RSpec.describe "TAnder homepage", :type => :feature do
   end
   it 'contains Google Oauth login' do
     visit('https://young-lowlands-69353.herokuapp.com/')
-    page.should have_content("Sign in via Google")
+    expect(page).to have_content("Sign in via Google")
   end
   it 'contains register link for new users' do
     visit('https://young-lowlands-69353.herokuapp.com/')
-    page.should have_content("Register!")
+    expect(page).to have_content("Register!")
+  end
+  it 'contains email login link field' do
+    visit('https://young-lowlands-69353.herokuapp.com/')
+    expect(page).to have_field("login_email")
   end
 end
