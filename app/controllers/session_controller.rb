@@ -45,12 +45,12 @@ class SessionController < ApplicationController
   #    puts "HELLO"
       @user = User.from_omniauth(request.env['omniauth.auth'])
      
-      @user.generate_login_token
-      @user.expire_token!
+    #  @user.generate_login_token
+     # @user.expire_token!
       
-      session[:user_token] = @user.login_token
-      puts @user.login_token
-      flash.now[:success] = "Welcome, #{@user.fullname}!"
+      session[:user_token] = @user.email
+      puts @user.email
+      flash.now[:success] = "Welcome, #{@user.email}!"
     rescue
     puts "login error"
       redirect_to root_path and return
