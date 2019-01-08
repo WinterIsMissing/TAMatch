@@ -1,6 +1,8 @@
+require 'time'
+
 class User < ApplicationRecord
-  validates_presence_of :username, :email, :role
-  validates_uniqueness_of :username, :email, :role
+  validates_presence_of :username, :email, :auth_level
+  validates_uniqueness_of :username, :email, :auth_level
 
   def self.find_user_by(value)
     where(["username = :value OR email = :value", {value: value}]).first
@@ -17,7 +19,7 @@ class User < ApplicationRecord
 
   def generate_login_token
     self.login_token = generate_token
-    self.token_generated_at = Time.now.utc
+    self.token_generated_at = Time.now
     save!
     return self.login_token
   end
@@ -27,8 +29,7 @@ class User < ApplicationRecord
   end
 
   def login_token_expired?
-    
-    (self.token_generated_at + token_validity.to_s) > Time.now.utc.to_s
+    (Time.parse(self.token_generated_at) + token_validity) < Time.now
   end
 
   def expire_token!

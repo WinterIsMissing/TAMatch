@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
     def index
         @id = session[:user_id]
         @user = User.find(@id)
-        case @user.role
+        case @user.auth_level
         when "admin"
             @admin = true
         when "instructor"
