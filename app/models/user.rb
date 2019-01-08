@@ -25,7 +25,9 @@ class User < ApplicationRecord
   end
 
   def login_link
-    "https://350764f781ef4b3a8bb9e2746e9cf8b1.vfs.cloud9.ap-southeast-1.amazonaws.com/auth?#{self.login_token}"
+
+    "https://young-lowlands-69353.herokuapp.com/auth?#{self.login_token}"
+
   end
 
   def login_token_expired?
@@ -41,10 +43,23 @@ class User < ApplicationRecord
   private
 
   def generate_token
-    SecureRandom.hex(20)
+    SecureRandom.urlsafe_base64(20)
   end
 
   def token_validity
-    1.hour
+    24.hour
+  end
+  
+end
+class << self
+  def from_omniauth(auth_hash)
+    user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
+    user.name = auth_hash['info']['name']
+    user.location = auth_hash['info']['location']
+    user.image_url = auth_hash['info']['image']
+    user.url = auth_hash['info']['urls'][user.provider.capitalize]
+    user.save!
+  
+
   end
 end

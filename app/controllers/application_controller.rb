@@ -10,10 +10,12 @@ class ApplicationController < ActionController::Base
     session[:email] = user.email
     session[:user_id] = user.id
   end
+  private
 
     
   private
   def current_user
+      @current_user ||= User.find_by(id: session[:user_id])
       @current_user ||= authenticate_by_cookie(User)
   end
   
