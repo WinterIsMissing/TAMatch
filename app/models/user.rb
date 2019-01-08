@@ -51,7 +51,7 @@ class User < ApplicationRecord
   end
   
   #STATIC
-=begin  
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
@@ -62,8 +62,8 @@ class User < ApplicationRecord
     end 
   end
 end
-=end
 
+=begin
   def self.from_omniauth(auth_hash)
     user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
     user.fullname = auth_hash['info']['name']
@@ -77,3 +77,4 @@ end
     return user
   end
 end 
+=end
