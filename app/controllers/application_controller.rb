@@ -7,11 +7,10 @@ class ApplicationController < ActionController::Base
   # before_action :require_user!
   def sign_in_user(user)
     user.expire_token!
-    session[:email] = user.email
-    session[:user_id] = user.id
+    user.generate_login_token
+    user.expire_token!
+    session[:user_token] = user.login_token
   end
-  private
-
     
   private
   def current_user

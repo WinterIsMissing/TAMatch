@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'ta_application/index'
+
   get '/auth', to: 'session#auth'
 
   resources :session, only: [:new, :create]
