@@ -87,6 +87,50 @@ describe Matchmaker do
           end
         end
         
+        context "given incomplete lists" do
+          matcher = Matchmaker.new(
+                          {
+            'abe'  => %w[abi eve cath ivy jan],
+            'bob'  => %w[cath hope abi dee eve fay bea jan ivy],
+            'col'  => %w[hope eve abi dee bea fay ivy],
+            'dan'  => %w[ivy fay dee gay hope eve],
+            'ed'   => %w[jan dee bea cath],
+            'fred' => %w[bea abi dee gay eve ivy cath jan hope fay],
+            'gav'  => %w[gay eve ivy],
+            'hal'  => %w[abi eve hope fay ivy cath jan bea gay dee],
+            'ian'  => %w[hope cath dee gay bea abi fay],
+            'jon'  => %w[abi fay jan gay eve bea dee cath ivy hope],
+                          },
+                          {
+            'abi'  => %w[bob fred jon gav ian abe],
+            'bea'  => %w[bob abe col fred gav dan ian ed],
+            'cath' => %w[fred bob ed gav hal],
+            'dee'  => %w[fred jon col abe ian hal],
+            'eve'  => %w[jon hal fred dan abe gav col ed],
+            'fay'  => %w[bob abe ed ian jon dan fred gav col],
+            'gay'  => %w[jon gav hal fred bob abe col ed dan ian],
+            'hope' => %w[gav jon bob abe ian dan hal ed col fred],
+            'ivy'  => %w[ian col hal gav fred bob],
+            'jan'  => %w[ed hal gav abe bob jon col ian fred dan],
+          })
+            matches = matcher.match_couples
+            
+            it "returns a mapping" do
+              expect matches.respond_to?(:merge)
+            end
+            it "returns a complete mapping" do
+              expect matches.keys.uniq.length == matches.values.uniq.length
+            end
+            it "is still stable" do
+              expect matcher.stability > 0.9
+            end
+            
+            it "does not nil-out" do 
+              expect !(matches.values).include?(nil)
+              expect !(matches.values).include?("")
+            end
+          end
+        
     end
     
 end

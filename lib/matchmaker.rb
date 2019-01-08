@@ -1,7 +1,29 @@
 #lib/matchmaker.rb
+=begin
+Matchmaker, class; Person, helper class
+
+Usage: given item_group_1 and item_group_2, returns a unique stable matching 
+of item1 <-> item2 where item1 is from group 1 and item 2 is from group 2
+
+for matching only:
+Matchmaker.new(item_group_1, item_group_2).match_couples
+
+to measure stability:
+matchmaker = Matchmaker.new
+matchmaker.match_couples
+matchmaker.stability
+
+Tests contained in: ./spec/matchmaker_spec.rb
+9/9 pass
+
+untested: 
+- $DEBUG configurable from command line or from Matchmaker.new
+  reason:unsure how. unsure if necessary
+=end
+
 require 'set'
 
-$DEBUG = false
+$DEBUG = false | ARGV[0]
 
 class Person
   def initialize(name)
@@ -29,10 +51,19 @@ class Person
     self.fiance = person
     person.fiance = self
   end
+  
+  def final_choice?(person)
+    @preferences.last == person
+  end
  
   def better_choice?(person)
     unless @fiance.nil?
-      @preferences.index(person) < @preferences.index(@fiance)
+      fi_idx = @preferences.index(@fiance)
+      new_idx = @preferences.index(person)
+      return true if fi_idx.nil?
+      return false if new_idx.nil?
+      return false if @fiance.final_choice?(self)
+      new_idx < fi_idx
     else
       true
     end
@@ -67,7 +98,8 @@ class Matchmaker
     return !thing.nil? && thing.respond_to?(:merge)
   end
   
-  def initialize(men_prefs, women_prefs)
+  def initialize(men_prefs, women_prefs, debug = false)
+    $DEBUG = debug
     unless valid_arg(men_prefs) && valid_arg(women_prefs)
       @men = nil
       @women = nil
