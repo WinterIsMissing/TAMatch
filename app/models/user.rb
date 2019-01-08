@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  validates_presence_of :username, :email
-  validates_uniqueness_of :username, :email
+  validates_presence_of :username, :email, :role
+  validates_uniqueness_of :username, :email, :role
 
   def self.find_user_by(value)
     where(["username = :value OR email = :value", {value: value}]).first
@@ -19,6 +19,7 @@ class User < ApplicationRecord
     self.login_token = generate_token
     self.token_generated_at = Time.now.utc
     save!
+    return self.login_token
   end
 
   def login_link

@@ -1,12 +1,62 @@
+<div>
+    <table>
+        <tr>
+            <td>
+                <%= link_to "Messages" %>
+            </td>
+            <td>
+                <%= link_to "Account" %>
+            </td>
+            <td>
+                <%= link_to "Logout", root_path %>
+            </td>
+        </tr>
+    </table>
+</div>
+
 <h1>Dashboard</h1>
-<p>
+<h4>Welcome, <%= @user.username%></h4>
 
 <% if defined? @admin%>
-    <p>Admin <%= @user.username%></p>
+    <p>Admin</p>
+    <h4></h4>
+    <%= form_for :search, url: login_path do |form| %>
+        <%= form.text_field :query, placeholder: "CLAS ###" %>
+        <%= form.submit "Search" %>
+    <% end %>
 <% end %>
+
 <% if defined? @instructor%>
-    <p>Instructor <%= @user.username%></p>
+    <p>Instructor</p>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <%= link_to "Add Posting" %>
+                </td>
+                <td>
+                    <%= link_to "View Postings" %>
+                </td>
+            </tr>
+        </table>
+    </div>
 <% end %>
+
 <% if defined? @student%>
-    <p>Student <%= @user.username%></p>
+    <p>Student</p>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <%= link_to "Create Application" %>
+                </td>
+                <td>
+                    <%= link_to "Accepted Applications" %>
+                </td>
+                <td>
+                    <%= link_to "Pending Applications" %>
+                </td>
+            </tr>
+        </table>
+    </div>
 <% end %>
