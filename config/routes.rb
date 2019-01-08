@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get '/register', to: 'users#register'
   post '/login', to: 'session#send_link'
   #Dashboard
-  get '/dashboard', to: 'dashboard#index'
-  dashboard 'dashboard#index'
+  get 'root/dashboard', to: 'dashboard#index'
+  
 end
