@@ -15,7 +15,7 @@ class SessionController < ApplicationController
   end
 
 
-  def create_oauth
+  def create
   begin
     @user = User.from_omniauth(request.env['omniauth.auth'])
     session[:user_id] = @user.id
@@ -24,17 +24,5 @@ class SessionController < ApplicationController
     flash.now[:warning] = "There was an error while trying to authenticate you..."
   end
     redirect_to root_path, notice: 'Login via Google successful'
-  end
-  def create
-    puts params
-    value = params[:value].to_s
-    user = User.find_user_by(value)
-
-    if !user
-      redirect_to new_session_path, notice: "Uh oh! We couldn't find the username / email. Please try again."
-    else
-      user.send_login_link
-      redirect_to root_path, notice: 'We have sent you the link to login to our app'
-    end
   end
 end
