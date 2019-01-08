@@ -29,9 +29,9 @@ RSpec.describe "Register page", :type => :feature do
     fill_in 'user_email', with: 'HiProfRitchey@gmail.com'
     fill_in 'user_username', with: 'SGARSF SFGSRGWGGSDg'
     fill_in 'user_fullname', with: 'BGFJFD FGSDGSVBSDGB'
-    expect(page).to have_field("login_email", with: 'HiProfRitchey@gmail.com')
-    expect(page).to have_field("login_username", with: 'SGARSF SFGSRGWGGSDg')
-    expect(page).to have_field("login_fullname", with: 'BGFJFD FGSDGSVBSDGB')
+    expect(page).to have_field("user_email", with: 'HiProfRitchey@gmail.com')
+    expect(page).to have_field("user_username", with: 'SGARSF SFGSRGWGGSDg')
+    expect(page).to have_field("user_fullname", with: 'BGFJFD FGSDGSVBSDGB')
   end
 
 end
