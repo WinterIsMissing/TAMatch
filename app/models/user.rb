@@ -53,7 +53,7 @@ class User < ApplicationRecord
   #STATIC
 
   def self.from_omniauth(auth)
-    user = @user.new(uid: auth['uid'], provider: auth['provider'])
+    user = User.new(uid: auth['uid'], provider: auth['provider'])
     user.email = auth.info.email
     user.name = auth.info.name
     user.auth_level = 'student'
