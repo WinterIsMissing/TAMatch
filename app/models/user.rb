@@ -53,13 +53,18 @@ class User < ApplicationRecord
   #STATIC
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-    user.email = auth.info.email
-    user.username = auth.info.name
+    data = access_token.info
+    user = User.where(email: data['email']).first
+    unless user
+         user = User.create(name: data['name'],
+            email: data['email'],
+            password: SecureRandom.urlsafe_base64(20)
+         )
+    end
     user.auth_level = 'student'
     user.save!
     return user
-    end 
+    
   end
 end
 
