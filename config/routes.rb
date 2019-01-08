@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#register'
   post '/login', to: 'session#send_link'
   #Dashboard
-  get 'root/dashboard', to: 'dashboard#index'
+  resources :contacts, only: [:new, :create]
+  get '/dashboard', to: 'dashboard#index'
   
 end
