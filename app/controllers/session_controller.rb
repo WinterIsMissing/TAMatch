@@ -55,6 +55,6 @@ class SessionController < ApplicationController
       flash.now[:warning] = "There was an error while trying to authenticate you..."
       redirect_to root_path
     end
-    redirect_to dashboard_path, notice: 'Login via Google successful'
+    redirect_to dashboard_path , notice: 'Login via Google successful' and return
   end
 end
