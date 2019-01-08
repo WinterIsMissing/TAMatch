@@ -17,3 +17,8 @@ Scenario: I am an instructor wanting to view my dashboard.
   Given that I am an instructor
   When I login as "test_i@x.x"
   Then I should see "Instructor"
+  
+Scenario: I am a student wanting to view my dashboard via Google Login.
+  Given that I am a student
+  When I login through google
+  Then I should see "Student"

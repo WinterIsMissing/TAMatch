@@ -42,10 +42,11 @@ class SessionController < ApplicationController
   def create_oauth
     begin
       puts request.env['omniauth.auth']
+      puts "HELLO"
       @user = User.from_omniauth(request.env['omniauth.auth'])
-      # session[:user_id] = @user.id
       @user.generate_login_token
       @user.expire_token!
+      
       session[:user_token] = @user.login_token
       puts @user.login_token
       flash.now[:success] = "Welcome, #{@user.fullname}!"

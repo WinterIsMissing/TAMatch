@@ -15,11 +15,16 @@ When(/^I login as "(.*?)"$/) do |email|
         raise "##Make sure to seed the test db: 'rails db:seed RAILS_ENV=test'##"
     end
 end
- 
+
 Then(/^I should see "(.*?)"$/) do |text|
+    visit dashboard_path
     begin
         expect(page.has_content?(text)).to eq true
     rescue
         raise "Did you seed the test db? 'rails db:migrate RAILS_ENV=test'"
     end
+end
+
+When(/^I login through google$/) do
+    visit '/auth/google'
 end

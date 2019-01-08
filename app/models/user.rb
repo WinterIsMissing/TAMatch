@@ -2,7 +2,7 @@ require 'time'
 
 class User < ApplicationRecord
   validates_presence_of :username, :email, :auth_level
-  validates_uniqueness_of :username, :email, :auth_level
+  validates_uniqueness_of :username, :email
 
   def self.find_user_by(value)
     where(["username = :value OR email = :value", {value: value}]).first
@@ -59,7 +59,7 @@ class User < ApplicationRecord
     user.email = auth_hash['info']['email']
     #user.location = auth_hash['info']['location']
     user.image_url = auth_hash['info']['image']
-    user.url = auth_hash['info']['urls'][user.provider.capitalize]
+    user.url = auth_hash['info']['urls']
     user.auth_level = 'student'
     user.save!
     return user
