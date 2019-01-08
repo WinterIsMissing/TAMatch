@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   post '/login', to: 'session#send_link'
   #Dashboard
   get '/dashboard', to: 'dashboard#index'
+  dashboard 'dashboard#index'
 end
