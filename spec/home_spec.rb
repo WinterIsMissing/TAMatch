@@ -27,14 +27,14 @@ RSpec.describe "TAnder homepage", :type => :feature do
   end
   it "'s email login field submit button works (nothing filled)" do
     visit('https://young-lowlands-69353.herokuapp.com/')
-    submit_form
+    find('input[name="commit"]').click
     expect(page).to have_content("Uh oh! We couldn't find the username / email. Please try again.")
   end
   it "'s email login field submit button works (something wrong filled)" do
     visit('https://young-lowlands-69353.herokuapp.com/')
     fill_in 'login_email', with: 'HiProfRitchey@GGmail.com'
     expect(page).to have_field("login_email", with: 'HiProfRitchey@GGmail.com')
-    submit_form
+    find('input[name="commit"]').click
     expect(page).to have_content("Uh oh! We couldn't find the username / email. Please try again.")
   end
 end
