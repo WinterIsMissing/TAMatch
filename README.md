@@ -1,24 +1,21 @@
-# README
+# TAMatch
+TA Application and Assignment System as a CSCE 431-Singapore 2019 Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This project aims to serve as a platform for Texas A&M Graduate Students and faculty to
+minimize human intervention in  the application process for TA's.
 
-* Ruby version
+This platform needs to:
+-Allow professors to preference TA’s
+-Allow TA’s to preference professors or classes
+-Allow TA’s to specify which kinds of classes they want / don’t want to teach
+-Maximize amount of successful matches between preferred professors/TA’s/classes.
 
-* System dependencies
+Link to the heroku:
+https://young-lowlands-69353.herokuapp.com/
 
-* Configuration
 
-* Database creation
+To see which tasks we are on, check out our pivotal tracker! :D
+Link to pivotal tracker:
+https://www.pivotaltracker.com/n/projects/2234694
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

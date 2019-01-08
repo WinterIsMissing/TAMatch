@@ -22,10 +22,13 @@ class User < ApplicationRecord
   end
 
   def login_link
+
     "https://young-lowlands-69353.herokuapp.com/auth?#{self.login_token}"
+
   end
 
   def login_token_expired?
+    
     (self.token_generated_at + token_validity.to_s) > Time.now.utc.to_s
   end
 
@@ -53,6 +56,7 @@ class << self
     user.image_url = auth_hash['info']['image']
     user.url = auth_hash['info']['urls'][user.provider.capitalize]
     user.save!
-    user
+  
+
   end
 end

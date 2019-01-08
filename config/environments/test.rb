@@ -36,6 +36,7 @@ Rails.application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  #config.web_console.whitelisted_ips = ['202.94.70.52','103.24.77.52']
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

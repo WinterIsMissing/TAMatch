@@ -41,6 +41,7 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  #config.web_console.whitelisted_ips = ['202.94.70.52','103.24.77.52']
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
@@ -53,5 +54,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
 class Application < Rails::Application
-  config.web_console.whitelisted_ips = '10.0.2.2'
+  config.web_console.whitelisted_ips = ['10.0.2.2', '202.94.70.52','103.24.77.52']
+
 end
