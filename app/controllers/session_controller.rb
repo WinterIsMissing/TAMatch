@@ -1,8 +1,7 @@
 class SessionController < ApplicationController
   def auth
     token =  params.keys[0]
-    puts "HIHIHI"
-    puts token
+
     user = User.find_by(login_token: token)
 
     if !user
@@ -14,10 +13,6 @@ class SessionController < ApplicationController
       redirect_to root_path, notice: 'You have been signed in!'
     end
   end
-
-  def new
-  end
-
   def create
     puts params
     value = params[:value].to_s
@@ -29,5 +24,16 @@ class SessionController < ApplicationController
       user.send_login_link
       redirect_to root_path, notice: 'We have sent you the link to login to our app'
     end
+  end
+
+  def create_oauth
+  begin
+    @user = User.from_omniauth(request.env['omniauth.auth'])
+    session[:user_id] = @user.id
+    flash.now[:success] = "Welcome, #{@user.name}!"
+   rescue
+    flash.now[:warning] = "There was an error while trying to authenticate you..."
+  end
+    redirect_to root_path, notice: 'Login via Google successful'
   end
 end
