@@ -10,7 +10,6 @@ class SessionController < ApplicationController
     else
       sign_in_user(user)
       redirect_to dashboard_path, notice: 'You have been signed in!'
-      #redirect_to root_path, notice: 'You have been signed in!'
     end
   end
   
@@ -41,13 +40,19 @@ class SessionController < ApplicationController
   end
   
   def create_oauth
-  begin
-    @user = User.from_omniauth(request.env['omniauth.auth'])
-    session[:user_id] = @user.id
-    flash.now[:success] = "Welcome, #{@user.name}!"
-   rescue
-    flash.now[:warning] = "There was an error while trying to authenticate you..."
-  end
-    redirect_to root_path, notice: 'Login via Google successful'
+    begin
+      puts request.env['omniauth.auth']
+      @user = User.from_omniauth(request.env['omniauth.auth'])
+      # session[:user_id] = @user.id
+      @user.generate_login_token
+      @user.expire_token!
+      session[:user_token] = @user.login_token
+      puts @user.login_token
+      flash.now[:success] = "Welcome, #{@user.fullname}!"
+    rescue
+      flash.now[:warning] = "There was an error while trying to authenticate you..."
+      redirect_to root_path
+    end
+    redirect_to dashboard_path, notice: 'Login via Google successful'
   end
 end

@@ -7,7 +7,10 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :login_token
       t.string :token_generated_at
       t.string :auth_level
-      
+      t.string :uid
+      t.string :provider
+      t.string :image_url
+      t.string :url
       t.timestamps
     end
     add_index :users, :username, unique: true

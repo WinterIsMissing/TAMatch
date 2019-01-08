@@ -4,4 +4,7 @@
   <%= form.text_field :email %>
   <%= form.submit "Email login link" %>
 <% end %>
-<p>New User? <%= link_to 'Register!', register_path %></p>
+<ul>
+  <li><%= link_to 'Sign in via Google', '/auth/google' %></li>
+  <li>New User? <%= link_to 'Register!', register_path %></li>
+</ul>

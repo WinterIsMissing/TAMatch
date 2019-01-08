@@ -1,8 +1,8 @@
 class DashboardController < ApplicationController
     
     def index
-        @id = session[:user_id]
-        @user = User.find(@id)
+        @id = session[:user_token]
+        @user = User.find_by(login_token: @id)
         case @user.auth_level
         when "admin"
             @admin = true

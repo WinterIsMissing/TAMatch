@@ -35,8 +35,8 @@ class User < ApplicationRecord
   end
 
   def expire_token!
-    self.login_token = nil
-    #self.token_generated_at = Time.now.utc - token_validity.to_s
+    #self.login_token = nil
+    self.token_generated_at = Time.now - token_validity
     save!
   end
 
@@ -50,16 +50,18 @@ class User < ApplicationRecord
     24.hour
   end
   
-end
-class << self
-  def from_omniauth(auth_hash)
+  #STATIC
+  
+  def self.from_omniauth(auth_hash)
     user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
-    user.name = auth_hash['info']['name']
-    user.location = auth_hash['info']['location']
+    user.fullname = auth_hash['info']['name']
+    user.username = auth_hash['info']['email']
+    user.email = auth_hash['info']['email']
+    #user.location = auth_hash['info']['location']
     user.image_url = auth_hash['info']['image']
     user.url = auth_hash['info']['urls'][user.provider.capitalize]
+    user.auth_level = 'student'
     user.save!
-  
-
+    return user
   end
 end
