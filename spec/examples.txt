@@ -1,18 +1,19 @@
 example_id                                                  | status  | run_time        |
 ----------------------------------------------------------- | ------- | --------------- |
-./spec/controllers/ta_application_controller_spec.rb[1:1:1] | passed  | 0.00431 seconds |
+./spec/controllers/ta_application_controller_spec.rb[1:1:1] | passed  | 0.00946 seconds |
 ./spec/helpers/ta_application_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
-./spec/home_spec.rb[1:1]                                    | passed  | 0.00531 seconds |
-./spec/home_spec.rb[1:2]                                    | passed  | 0.00645 seconds |
-./spec/home_spec.rb[1:3]                                    | passed  | 0.20238 seconds |
-./spec/home_spec.rb[1:4]                                    | passed  | 0.00573 seconds |
-./spec/matchmaker_spec.rb[1:1:1:1]                          | passed  | 0.00059 seconds |
-./spec/matchmaker_spec.rb[1:1:2:1]                          | passed  | 0.00062 seconds |
-./spec/matchmaker_spec.rb[1:1:2:2]                          | passed  | 0.00091 seconds |
-./spec/matchmaker_spec.rb[1:1:3:1]                          | passed  | 0.0006 seconds  |
-./spec/matchmaker_spec.rb[1:1:3:2]                          | passed  | 0.0008 seconds  |
-./spec/matchmaker_spec.rb[1:1:4:1]                          | passed  | 0.00059 seconds |
-./spec/matchmaker_spec.rb[1:1:4:2]                          | passed  | 0.00059 seconds |
-./spec/matchmaker_spec.rb[1:1:4:3]                          | passed  | 0.00086 seconds |
+./spec/home_spec.rb[1:1]                                    | passed  | 0.00579 seconds |
+./spec/home_spec.rb[1:2]                                    | passed  | 0.00623 seconds |
+./spec/home_spec.rb[1:3]                                    | passed  | 0.20339 seconds |
+./spec/home_spec.rb[1:4]                                    | passed  | 0.00667 seconds |
+./spec/home_spec.rb[1:5]                                    | passed  | 0.00808 seconds |
+./spec/matchmaker_spec.rb[1:1:1:1]                          | passed  | 0.00068 seconds |
+./spec/matchmaker_spec.rb[1:1:2:1]                          | passed  | 0.00059 seconds |
+./spec/matchmaker_spec.rb[1:1:2:2]                          | passed  | 0.00093 seconds |
+./spec/matchmaker_spec.rb[1:1:3:1]                          | passed  | 0.00063 seconds |
+./spec/matchmaker_spec.rb[1:1:3:2]                          | passed  | 0.00106 seconds |
+./spec/matchmaker_spec.rb[1:1:4:1]                          | passed  | 0.00061 seconds |
+./spec/matchmaker_spec.rb[1:1:4:2]                          | passed  | 0.00057 seconds |
+./spec/matchmaker_spec.rb[1:1:4:3]                          | passed  | 0.0008 seconds  |
 ./spec/matchmaker_spec.rb[1:1:4:4]                          | passed  | 0.00055 seconds |
 ./spec/views/ta_application/index.html.erb_spec.rb[1:1]     | pending | 0.00001 seconds |
