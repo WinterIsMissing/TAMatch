@@ -52,7 +52,7 @@ class SessionController < ApplicationController
       session[:user_token] = request.env['omniauth.auth'].info.email
       puts 'checkpoint 2'
       puts request.env['omniauth.auth'].info.email
-      flash.now[:success] = "Welcome, #{@user.email}!"
+      #flash.now[:success] = "Welcome, #{@user.email}!"
     rescue
     puts "login error"
       redirect_to root_path and return
