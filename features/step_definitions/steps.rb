@@ -6,7 +6,11 @@ Given(/^that I am an? (.*?)$/) do |role|
 end
 
 When(/^I login as "(.*?)"$/) do |email|
-    @user = User.find_by(email: email)
+    begin
+        @user = User.find_by(email: email)
+    rescue
+        puts "Did you seed the test db? 'rails db:migrate RAILS_ENV=test'"
+    end
     token = @user.generate_login_token
     visit '/auth?' + token
 end
