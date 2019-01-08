@@ -53,11 +53,11 @@ class User < ApplicationRecord
   #STATIC
 
   def self.from_omniauth(auth)
-    user.email = auth.info.email
-    user.name = auth.info.name
-    user.auth_level = 'student'
-    user.save!
-    return user
+    @user.email = auth.info.email
+    @user.name = auth.info.name
+    @user.auth_level = 'student'
+    @user.save!
+    return @user
     
   end
 end
