@@ -41,8 +41,8 @@ class SessionController < ApplicationController
   
   def create_oauth
     begin
-      puts request.env['omniauth.auth']
-      puts "HELLO"
+   #   puts request.env['omniauth.auth']
+  #    puts "HELLO"
       @user = User.from_omniauth(request.env['omniauth.auth'])
      
       @user.generate_login_token
@@ -52,7 +52,8 @@ class SessionController < ApplicationController
       puts @user.login_token
       flash.now[:success] = "Welcome, #{@user.fullname}!"
     rescue
-      redirect_to root_path, notice: 'There was an error while trying to authenticate you...' 
+    puts "login error"
+      redirect_to root_path and return
     end
   #  notice: 'Login via Google successful' 
     redirect_to dashboard_path and return 
