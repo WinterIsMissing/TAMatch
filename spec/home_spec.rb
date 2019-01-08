@@ -40,13 +40,13 @@ RSpec.describe "TAnder homepage", :type => :feature do
   it "'s register link redirect works" do
     visit('https://young-lowlands-69353.herokuapp.com/')
     expect(page).to have_content("Register!")
-    find('a href="/register"').click
+    find('a[href=$="/register"]').click
     expect(current_path).to eq('/register')
   end  
   it "'s oauth redirect works" do
     visit('https://young-lowlands-69353.herokuapp.com/')
     expect(page).to have_content("Register!")
-    find('a href="/auth/google"').click
+    find('a[href=$="/auth/google"]').click
     expect(current_path).to eq('/o/oauth2/auth')
   end 
 end
