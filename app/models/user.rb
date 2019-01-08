@@ -22,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def login_link
-    "http://localhost:8080/auth?#{self.login_token}"
+    "https://young-lowlands-69353.herokuapp.com/auth?#{self.login_token}"
   end
 
   def login_token_expired?
