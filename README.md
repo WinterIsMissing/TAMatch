@@ -7,10 +7,10 @@ This project aims to serve as a platform for Texas A&M Graduate Students and fac
 minimize human intervention in the application process for TA's.
 
 ### Proposed functionalities
--Allow professors to preference TA’s
--Allow TA’s to preference professors or classes
--Allow TA’s to specify which kinds of classes they want / don’t want to teach
--Maximize amount of successful matches between preferred professors/TA’s/classes.
+- Allow professors to preference TA’s
+- Allow TA’s to preference professors or classes
+- Allow TA’s to specify which kinds of classes they want / don’t want to teach
+- Maximize amount of successful matches between preferred professors/TA’s/classes.
 
 ### Check it out!
 - Demo - [Heroku](https://young-lowlands-69353.herokuapp.com/)
