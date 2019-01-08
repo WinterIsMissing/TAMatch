@@ -20,24 +20,24 @@ RSpec.describe "TAnder homepage", :type => :feature do
     visit('https://young-lowlands-69353.herokuapp.com/')
     expect(page).to have_field("login_email")
   end
-  it "'s email login field works" do
+  it "'s email login field is fillable" do
     visit('https://young-lowlands-69353.herokuapp.com/')
     fill_in 'login_email', with: 'HiProfRitchey@gmail.com'
     expect(page).to have_field("login_email", with: 'HiProfRitchey@gmail.com')
   end
-  it "'s email login field submit button works (nothing filled)" do
+  it "'s email login field submit button test (nothing filled)" do
     visit('https://young-lowlands-69353.herokuapp.com/')
     find('input[name="commit"]').click
     expect(page).to have_content("Uh oh! We couldn't find the username / email. Please try again.")
   end
-  it "'s email login field submit button works (something wrong filled)" do
+  it "'s email login field submit button test (something wrong filled)" do
     visit('https://young-lowlands-69353.herokuapp.com/')
     fill_in 'login_email', with: 'HiProfRitchey@GGmail.commm666'
     expect(page).to have_field("login_email", with: 'HiProfRitchey@GGmail.commm666')
     find('input[name="commit"]').click
     expect(page).to have_content("Uh oh! We couldn't find the username / email. Please try again.")
   end
-  it "'s register link redirect works" do
+  it "'s register link redirect test" do
     visit('https://young-lowlands-69353.herokuapp.com/')
     expect(page).to have_content("Register!")
     find('a[href$="/register"]').click

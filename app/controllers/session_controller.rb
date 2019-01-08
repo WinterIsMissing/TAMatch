@@ -44,6 +44,7 @@ class SessionController < ApplicationController
       puts request.env['omniauth.auth']
       puts "HELLO"
       @user = User.from_omniauth(request.env['omniauth.auth'])
+     
       @user.generate_login_token
       @user.expire_token!
       

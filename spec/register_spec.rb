@@ -33,5 +33,13 @@ RSpec.describe "Register page", :type => :feature do
     expect(page).to have_field("user_username", with: 'SGARSF SFGSRGWGGSDg')
     expect(page).to have_field("user_fullname", with: 'BGFJFD FGSDGSVBSDGB')
   end
+    it "register button test" do
+    visit('https://young-lowlands-69353.herokuapp.com/register')
+    fill_in 'user_email', with: 'HiProfRitchey@gmail.com'
+    fill_in 'user_username', with: 'SGARSF SFGSRGWGGSDg'
+    fill_in 'user_fullname', with: 'BGFJFD FGSDGSVBSDGB'
+    find('input[name="commit"]').click
+    expect(page).to have_content("We have sent you the link")
+  end
 
 end
