@@ -20,4 +20,9 @@ RSpec.describe "TAnder homepage", :type => :feature do
     visit('https://young-lowlands-69353.herokuapp.com/')
     expect(page).to have_field("login_email")
   end
+  it "'s email login field works" do
+    visit('https://young-lowlands-69353.herokuapp.com/')
+    fill_in 'login_email', with: 'HiProfRitchey@gmail.com'
+    expect(page).to have_field("login_email", with: 'HiProfRitchey@gmail.com')
+  end
 end
