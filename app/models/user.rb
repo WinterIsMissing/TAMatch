@@ -53,6 +53,7 @@ class User < ApplicationRecord
   #STATIC
 
   def self.from_omniauth(auth)
+    user = find_or_create_by(uid: auth['uid'], provider: auth['provider'])
     user.email = auth.info.email
     user.name = auth.info.name
     user.auth_level = 'student'
