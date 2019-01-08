@@ -2,7 +2,7 @@ require "spec_helper"
 require "matchmaker"
 
 # spec/matchmaker.rb
-describe Matchmaker do
+RSpec.describe Matchmaker do
     
     describe ".match" do
         
