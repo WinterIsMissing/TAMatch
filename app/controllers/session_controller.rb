@@ -47,8 +47,9 @@ class SessionController < ApplicationController
      
     #  @user.generate_login_token
      # @user.expire_token!
-      
+      puts 'checkpoint 1'
       session[:user_token] = @user.email
+      puts 'checkpoint 2'
       puts @user.email
       flash.now[:success] = "Welcome, #{@user.email}!"
     rescue
