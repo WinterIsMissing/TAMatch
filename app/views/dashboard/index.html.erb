@@ -1,65 +1,66 @@
-<div>
-    <table>
-        <tr>
-            <td>
-                <%= link_to "Messages" %>
-            </td>
-            <td>
-                <%= link_to "Account" %>
-            </td>
-            <td>
-                <%= link_to "Logout", root_path %>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<h1>Dashboard</h1>
-<h4>Welcome, <%= @user.username%></h4>
-
-<% if defined? @admin%>
-    <h4>Admin</h4>
-    <p>Course Overview</p>
-    <%= form_for :search, url: course_overview_index_path do |form| %>
-        <%= form.text_field :query, placeholder: "CLAS ###" %>
-        <%= form.submit "Search" %>
+<div class="main-content">
+    <div class="nav">
+        <nav>
+            <%= link_to "Messages" %> |
+            <%= link_to "Account" %> |
+            <%= link_to "Logout", root_path %>
+        </nav>
+    </div>
+    
+    <h1>Dashboard</h1>
+    <h3>Welcome, <%= @user.username%></h3>
+    
+    <% if defined? @admin%>
+        <h5>Admin</h5>
+        <div class="container flex-row">
+            <div class="col-12">
+                <%= link_to "Instructors", instructors_index_path %>
+            </div>
+            <div class="col-12">
+                <p>Course Overview</p>
+                <%= form_for :search, url: course_overview_index_path do |form| %>
+                    <%= form.text_field :query, placeholder: "CLAS ###" %>
+                    <%= form.submit "Search" %>
+                <% end %>
+            </div>
+        </div>
     <% end %>
-<% end %>
-
-<% if defined? @instructor%>
-    <p>Instructor</p>
-    <div>
-        <table>
-            <tr>
-                <td>
-                    <%= link_to "Rank Applications", prof_ranking_index_path %>
-                </td>
-                <td>
-                    <%= link_to "Add Posting" %>
-                </td>
-                <td>
-                    <%= link_to "View Postings" %>
-                </td>
-            </tr>
-        </table>
-    </div>
-<% end %>
-
-<% if defined? @student%>
-    <p>Student</p>
-    <div>
-        <table>
-            <tr>
-                <td>
-                    <%= link_to "Create Application", ta_application_index_path %>
-                </td>
-                <td>
-                    <%= link_to "Accepted Applications" %>
-                </td>
-                <td>
-                    <%= link_to "Pending Applications" %>
-                </td>
-            </tr>
-        </table>
-    </div>
-<% end %>
+    
+    <% if defined? @instructor%>
+        <h5>Instructor</h5>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <%= link_to "Rank Applications", prof_ranking_index_path %>
+                    </td>
+                    <td>
+                        <%= link_to "Add Posting" %>
+                    </td>
+                    <td>
+                        <%= link_to "View Postings" %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <% end %>
+    
+    <% if defined? @student%>
+        <h5>Student</h5>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <%= link_to "Create Application", ta_application_index_path %>
+                    </td>
+                    <td>
+                        <%= link_to "Accepted Applications" %>
+                    </td>
+                    <td>
+                        <%= link_to "Pending Applications" %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,29 @@
+<div class="main-content">
+    <div class="nav">
+        <nav>
+            <%= link_to "Messages" %> |
+            <%= link_to "Account" %> |
+            <%= link_to "Logout", root_path %>
+        </nav>
+    </div>
+    <div class="content">
+        <h2>Instructors</h2>
+        <table class="borderless">
+        <% @instructors.each do |instructor| %>
+            <tr>
+                <td>
+                    <%= instructor.username %>
+                </td>
+                <td>
+                    <%= instructor.email %>
+                </td>
+            </tr>
+        <% end %>
+        </table>
+        <h4 class="pad-top">Add Instructors</h4>
+        <%= form_for :search, url: instructors_add_path do |form| %>
+            <%= form.text_field :query, placeholder: "Email" %>
+            <%= form.submit "Add" %>
+        <% end %>
+    </div>
+</div>
