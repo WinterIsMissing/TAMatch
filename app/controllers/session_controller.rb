@@ -54,7 +54,7 @@ class SessionController < ApplicationController
    # rescue
     #puts "login error"
      # redirect_to root_path and return
-    #end
+    end
   #  notice: 'Login via Google successful' 
     redirect_to dashboard_path and return 
   end
