@@ -13,7 +13,7 @@ RSpec.describe "Email token auth layer", :type => :feature do
     (1...100).each do
       fuzz_list << SecureRandom.urlsafe_base64(20)
     end
-    fuzz_list.each do
+    fuzz_list.each do |fuzz|
       visit("https://young-lowlands-69353.herokuapp.com/auth?#{fuzz}")
       expect(page).to have_content("It seems your link is invalid. Try requesting for a new login link")
     end  
