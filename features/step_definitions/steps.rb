@@ -16,9 +16,9 @@ When(/^I login as "(.*?)"$/) do |email|
     end
 end
 
-Then(/^I should see "(.*?)"$/) do |text|
+Then(/^I should( not)? see "(.*?)"$/) do |not_visible, text|
     begin
-        expect(page.has_content?(text)).to eq true
+        expect(page.has_content?(text)).to eq !not_visible
     rescue
         raise "Did you seed the test db? 'rails db:migrate RAILS_ENV=test'"
     end
@@ -30,10 +30,14 @@ end
 
 When(/^I am on the "(.*?)" page$/) do |targ_page|
     case targ_page
+    when 'Dashboard'
+        visit dashboard_path
     when 'Register'
         visit register_path
     when 'TA Application'
         visit ta_application_index_path
+    when 'Instructor Preferences'
+        visit prof_ranking_index_path
     end
 end
 
@@ -53,12 +57,20 @@ And(/^I click "(.*?)"$/) do |button|
     click_button button
 end
 
-Then(/^I want to submit my information$/) do
+And(/^I click the link "(.*?)"$/) do |link_text|
+    click_link link_text
+end
+
+Then(/^I can submit my information$/) do
     click_button "submit"
 end
 
-And(/^I want to register with "(.*?)"$/) do |email|
+And(/^I want to register with "(.*?)" and "(.*?)"$/) do |email, username|
     user = User.find_by(email: email)
+    if user
+        user.destroy
+    end
+    user = User.find_by(username: username)
     if user
         user.destroy
     end

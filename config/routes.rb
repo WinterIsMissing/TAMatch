@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'prof_ranking/index'
+
   get 'ta_application/index'
 
   get '/auth', to: 'session#auth'

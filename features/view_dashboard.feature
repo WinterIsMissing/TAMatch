@@ -21,4 +21,5 @@ Scenario: I am an instructor wanting to view my dashboard.
 Scenario: I am a student wanting to view my dashboard via Google Login.
   Given that I am a student
   When I login through google
+  And I am on the "Dashboard" page
   Then I should see "Student"
