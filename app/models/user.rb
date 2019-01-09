@@ -11,9 +11,10 @@ class User < ApplicationRecord
   def send_login_link(user)
     generate_login_token
 
-
     template = login_link
     # user is the actual email, it is not an object
+    ApplicationMailer.login_email(user.email,template).deliver_now
+    rescue
     ApplicationMailer.login_email(user,template).deliver_now
   end
 
