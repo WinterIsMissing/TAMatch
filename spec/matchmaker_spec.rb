@@ -3,7 +3,7 @@ require "matchmaker"
 
 # spec/matchmaker.rb
 RSpec.describe Matchmaker do
-  
+ 
     describe ".stability" do 
       context "given unstable couples" do
         it "returns an appropriate percentage" do

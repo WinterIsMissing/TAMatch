@@ -10,7 +10,7 @@ When(/^I login as "(.*?)"$/) do |email|
         @user = User.find_by(email: email)
         token = @user.generate_login_token
         visit '/auth?' + token
-    rescue
+      rescue
         puts "##Did you seed the test db? THANKS AND GIG'EM!##"
         raise "##Make sure to seed the test db: 'rails db:seed RAILS_ENV=test'##"
     end
