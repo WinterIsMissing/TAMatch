@@ -15,20 +15,7 @@ class SessionController < ApplicationController
   end
   
   #For email authentication
-=begin  
-  def create
-    puts params
-    value = params[:value].to_s
-    user = User.find_user_by(value)
 
-    if !user
-      redirect_to root_path, notice: "Uh oh! We couldn't find the username / email. Please try again."
-    else
-      user.send_login_link
-      redirect_to root_path, notice: 'We have sent you the link to login to our app'
-    end
-  end
-=end  
   def send_link
     value = params["login"]["email"]
     user = User.find_by(email: value)
@@ -44,17 +31,12 @@ class SessionController < ApplicationController
   def create_oauth
     begin
       @user = User.from_omniauth(request.env['omniauth.auth'])
-     
       @user.generate_login_token
       @user.expire_token!
-      
       session[:user_token] = @user.login_token
-      
-      #flash.now[:success] = "Welcome, #{@user.email}!"
     rescue
-      redirect_to root_path and return
+      redirect_to root_path, notice: "Login via google failed, please try again" and return
     end
-  #  notice: 'Login via Google successful' 
     redirect_to dashboard_path and return 
   end
 end

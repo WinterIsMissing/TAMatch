@@ -39,4 +39,35 @@ RSpec.describe "Authentication layer", :type => :feature do
     visit '/auth?' + token
     expect(page).to have_content('Your login link has been expired. Try requesting for a new login link.')
   end
+  it 'Oauth login (fail)' do
+    OmniAuth.config.test_mode = true
+      OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
+      :provider => 'google',
+      :uid => '123545',
+      :info => {
+          :name => 'Sir Test'
+      }
+    })
+    visit '/auth/google'
+    expect(page).to have_content("Login via google failed, please try again")
+    expect(page).to have_content("Please login to use TAnder:")
+    OmniAuth.config.test_mode = false
+  end  
+  it 'Oauth login (pass)' do
+    OmniAuth.config.test_mode = true
+      OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
+      :provider => 'google',
+      :uid => '123545',
+      :info => {
+          :name => 'Sir Test',
+          :email => 'sir_test@x.x'
+      }
+    })
+    visit '/auth/google'
+    expect(page).to have_content("Student")
+    expect(page).to have_content("Accepted Applications")
+    expect(page).to have_content("Pending Applications")
+    expect(page).to have_content("Create Application")
+    OmniAuth.config.test_mode = false
+  end  
 end
