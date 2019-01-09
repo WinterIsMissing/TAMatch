@@ -19,13 +19,15 @@ RSpec.describe "Email token auth layer", :type => :feature do
     end  
   end
   it 'contains a decent token validity period' do
-    expect(User.class_variable_get(token_validity)).to be <= 24.hour
-    expect(User.class_variable_get(token_validity)).to be >= 15.minute
+    test = User.new
+    expect(test.token_validity).to be <= 24.hour
+    expect(test.token_validity).to be >= 15.minute
   end
   it "generates a secure enough token" do
-    test = SecureRandom.urlsafe_base64(20)
-    expect(test.length).to be > 20
-    checker = StrongPassword::StrengthChecker.new(test)
+    test = User.new
+    token = test.generate_token
+    expect(token.length).to be > 20
+    checker = StrongPassword::StrengthChecker.new(token)
     expect(checker.is_strong?).to be true 
     expect(checker.calculate_entropy(use_dictionary: true)).to be > 33
   end
