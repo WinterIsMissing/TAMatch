@@ -4,9 +4,6 @@ class User < ApplicationRecord
   validates_presence_of :username, :email, :auth_level
   validates_uniqueness_of :username, :email
 
-  def self.find_user_by(value)
-    where(["username = :value OR email = :value", {value: value}]).first
-  end
 
   def send_login_link(user)
     generate_login_token
@@ -40,31 +37,18 @@ class User < ApplicationRecord
     self.token_generated_at = Time.now - token_validity
     save!
   end
-
+  def token_validity(t = 24.hour)
+     token_validity = t
+     
+  end
   private
 
   def generate_token
     SecureRandom.urlsafe_base64(20)
   end
 
-  def token_validity
-    24.hour
-  end
   
   #STATIC
-=begin
-  def self.from_omniauth(auth)
-    user = User.new(uid: auth['uid'], provider: auth['provider'])
-    user.email = auth.info.email
-    user.name = auth.info.name
-    user.auth_level = 'student'
-    user.save!
-    return @user
-    
-  end
-end
-=end
-
 
   def self.from_omniauth(auth_hash)
     user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])

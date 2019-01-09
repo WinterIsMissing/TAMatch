@@ -35,10 +35,6 @@ class Person
   attr_reader :name, :proposals
   attr_accessor :fiance, :preferences
  
-  def to_s
-    @name
-  end
- 
   def free
     @fiance = nil
   end
