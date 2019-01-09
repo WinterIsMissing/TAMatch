@@ -8,13 +8,15 @@ class Course
     @ta_count = 0
     if course_info =~ /capstone/i 
       @ta_count = 1
-      return
+    elsif  course_info =~ /((\bseminar\b)|(\bresearch\b)|(\bdirected studies\b))/i
+      #return without doing anything else
+      #this is a seminar, research, or directed study
+    else
+      @ta_count = student_num.to_i / 60 
+      r = student_num.to_i.modulo(60)
+      @grader_count += 1 if r.between?(30,40)
+      @ta_count += 1 if r > 40  
     end
-    return if course_info =~ /((\bseminar\b)|(\bresearch\b)|(\bdirected studies\b))/i
-    @ta_count = student_num.to_i / 60 
-    r = student_num.to_i.modulo(60)
-    @grader_count += 1 if r.between?(30,40)
-    @ta_count += 1 if r > 40  
   end
   
   def initialize(name, student_num, course_info)
