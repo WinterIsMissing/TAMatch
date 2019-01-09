@@ -154,7 +154,9 @@ class Matchmaker
       return 1.0
     else
       unstable.each do |a,b|
-        puts "#{a} is engaged to #{a.fiance} but would prefer #{b}, and #{b} is engaged to #{b.fiance} but would prefer #{a}"
+        if $DEBUG
+          puts "#{a} is engaged to #{a.fiance} but would prefer #{b}, and #{b} is engaged to #{b.fiance} but would prefer #{a}"
+        end
       end
       return (1.0 - unstable.length.to_f / @men.keys.length.to_f)
     end

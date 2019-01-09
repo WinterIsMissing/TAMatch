@@ -8,7 +8,12 @@
 /.bundle
 
 #Ignore RSpec txt log
-/spec/examples.txt
+spec/examples.txt
+**/examples.txt
+
+# Ignore coverage report
+coverage/*
+**/coverage
 
 # Ignore all logfiles and tempfiles.
 /log/*

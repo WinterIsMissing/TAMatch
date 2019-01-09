@@ -3,12 +3,14 @@
 module Passwordless
   # Helpers to work with Passwordless sessions from controllers
   module ControllerHelpers
+=begin    
     # Build a new Passwordless::Session from an _authenticatable_ record.
     # Set's `user_agent` and `remote_addr` from Rails' `request`.
     # @param authenticatable [ActiveRecord::Base] Instance of an
     #   authenticatable Rails model
     # @return [Session] the new Session object
     # @see ModelHelpers#passwordless_with
+    
     def build_passwordless_session(authenticatable)
       Session.new.tap do |us|
         us.remote_addr = request.remote_addr
@@ -78,5 +80,6 @@ module Passwordless
     def cookie_name(authenticatable_class)
       :"#{authenticatable_class.base_class.to_s.underscore}_id"
     end
+=end    
   end
 end
