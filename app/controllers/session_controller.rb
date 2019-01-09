@@ -1,3 +1,4 @@
+require 'certified'
 class SessionController < ApplicationController
   def auth
     token =  params.keys[0]
