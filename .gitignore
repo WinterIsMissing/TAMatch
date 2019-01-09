@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+#Ignore RSpec txt log
+/spec/examples.txt
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
