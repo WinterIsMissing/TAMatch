@@ -1,5 +1,5 @@
 require 'time'
-require 'certified'
+
 class User < ApplicationRecord
   validates_presence_of :username, :email, :auth_level
   validates_uniqueness_of :username, :email
