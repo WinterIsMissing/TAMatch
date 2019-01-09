@@ -4,7 +4,7 @@ require 'capybara/rspec'
 require 'uri'
 require 'cgi'
 
-RSpec.describe "dashboard", :type => :feature do
+RSpec.describe "Dashboard", :type => :feature do
 
   it 'directs to dashbaord page' do 
     email = "test_s@x.x"

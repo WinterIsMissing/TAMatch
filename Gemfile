@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec'
   gem 'strong_password'
+  gem 'simplecov', require: false
 end
 
 group :development do
