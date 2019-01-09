@@ -18,9 +18,9 @@
 <h4>Welcome, <%= @user.username%></h4>
 
 <% if defined? @admin%>
-    <p>Admin</p>
-    <h4></h4>
-    <%= form_for :search, url: login_path do |form| %>
+    <h4>Admin</h4>
+    <p>Course Overview</p>
+    <%= form_for :search, url: course_overview_index_path do |form| %>
         <%= form.text_field :query, placeholder: "CLAS ###" %>
         <%= form.submit "Search" %>
     <% end %>

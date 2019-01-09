@@ -1,0 +1,36 @@
+<div class="main-content">
+    <div class="nav">
+        <nav>
+            <%= link_to "Messages" %> |
+            <%= link_to "Account" %> |
+            <%= link_to "Logout", root_path %>
+        </nav>
+    </div>
+    <div class="container flex-row">
+        <div class="flex-col left">
+            <h1><%= @course %></h1>
+            <div class="flex-row pad-top">
+                <div class="left-left">
+                    <h3>Instructors</h3>
+                    <% @instructors.each do |instructor| %>
+                        <p>
+                            <%= instructor.username %>
+                        </p>
+                    <%end %>
+                </div>
+                <div class="left-middle">
+                    <h3>Status</h3>
+                </div>
+                <div class="left-right">
+                    <h3>Matching</h3>
+                </div>
+            </div>
+        </div>
+        <h3 class="middle">
+            <span>Instructor 1</span>
+        </h3>
+        <h3 class="right">
+            <span>Instructor 2</span>
+        </h3>
+    </div>
+</div>

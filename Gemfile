@@ -60,3 +60,7 @@ group :development, :test do
   gem 'cucumber-rails-training-wheels'
   gem 'selenium-webdriver'
 end
+
+group :test do
+  gem 'simplecov', require: false
+end
