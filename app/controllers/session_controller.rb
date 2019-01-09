@@ -3,9 +3,10 @@ class SessionController < ApplicationController
     token =  params.keys[0]
 
     user = User.find_by(login_token: token)
+    
     if !user
       redirect_to root_path, notice: 'It seems your link is invalid. Try requesting for a new login link'
-    elsif user.login_token_expired?
+    elsif user.login_token_expired? 
       redirect_to root_path, notice: 'Your login link has been expired. Try requesting for a new login link.'
     else
       sign_in_user(user)
@@ -14,6 +15,7 @@ class SessionController < ApplicationController
   end
   
   #For email authentication
+=begin  
   def create
     puts params
     value = params[:value].to_s
@@ -26,7 +28,7 @@ class SessionController < ApplicationController
       redirect_to root_path, notice: 'We have sent you the link to login to our app'
     end
   end
-  
+=end  
   def send_link
     value = params["login"]["email"]
     user = User.find_by(email: value)

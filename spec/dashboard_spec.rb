@@ -69,9 +69,12 @@ RSpec.describe "Dashboard", :type => :feature do
     visit '/auth?' + token
     fill_in 'search_query', with: 'CSCE110'
     expect(page).to have_field("search_query", with: 'CSCE110')
-    
   end  
-  
-  
+  it 'block access without token' do
+    visit '/dashboard'
+    expect(page).to have_content("Please login")
+  end  
+
+
 
 end
