@@ -18,16 +18,18 @@ RSpec.describe "Email token auth layer", :type => :feature do
       expect(page).to have_content("It seems your link is invalid. Try requesting for a new login link")
     end  
   end
-  it 'contains a decent token validity period' do
-    expect(User.instance_method(:token_validity)).to be <= 24.hour
-    expect(User.instance_method(:token_validity)).to be >= 15.minute
-  end
-  it "generates a secure enough token" do
-    token = SecureRandom.urlsafe_base64(20)
-    expect(token.length).to be > 20
-    checker = StrongPassword::StrengthChecker.new(token)
-    expect(checker.is_strong?).to be true 
-    expect(checker.calculate_entropy(use_dictionary: true)).to be > 33
+  it "generate secure tokens (100 attempts)" do
+    fuzz_list =[]
+    (1...100).each do
+      fuzz_list << SecureRandom.urlsafe_base64(20)
+    end
+    fuzz_list.each do |token|
+      token = SecureRandom.urlsafe_base64(20)
+      expect(token.length).to be > 20
+      checker = StrongPassword::StrengthChecker.new(token)
+      expect(checker.is_strong?).to be true 
+      expect(checker.calculate_entropy(use_dictionary: true)).to be > 33
+    end
   end
 
 end
