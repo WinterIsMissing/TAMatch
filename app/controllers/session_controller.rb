@@ -49,6 +49,7 @@ class SessionController < ApplicationController
       @user.expire_token!
       
       session[:user_token] = @user.login_token
+      puts session[:user_token]
    #   session[:user_token] = request.env['omniauth.auth'].info.email
       #flash.now[:success] = "Welcome, #{@user.email}!"
    # rescue
