@@ -1,7 +1,8 @@
 require 'rails_helper'
 require 'spec_helper'
 require 'capybara/rspec'
-require 'user'
+require 'User'
+require ''
 
 RSpec.describe "Email token auth layer", :type => :feature do
   it 'authenticates at the right root path' do
@@ -19,9 +20,8 @@ RSpec.describe "Email token auth layer", :type => :feature do
     end  
   end
   it 'contains a decent token validity period' do
-    
-    expect(user.token_validity).to be <= 24.hour
-    expect(user.token_validity).to be >= 15.minute
+    expect(User.token_validity).to be <= 24.hour
+    expect(User.token_validity).to be >= 15.minute
   end
   it "generates a secure enough token" do
     test = SecureRandom.urlsafe_base64(20)

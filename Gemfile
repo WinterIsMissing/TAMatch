@@ -37,6 +37,7 @@ group :development, :test do
   gem 'capybara'
   gem 'byebug', platform: :mri
   gem 'rspec'
+  gem 'strong_password'
 end
 
 group :development do
