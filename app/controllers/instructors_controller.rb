@@ -12,7 +12,7 @@ class InstructorsController < ApplicationController
     else
       @user.auth_level = "instructor"
       @user.save!
-      redirect_to instructors_index_path, notice: "Added #{@email} as in instructor! :)"
+      redirect_to instructors_index_path, notice: "Added #{@email} as an instructor! :)"
     end
   end
 end
