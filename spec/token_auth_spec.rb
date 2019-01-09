@@ -18,7 +18,7 @@ RSpec.describe "Email token auth layer", :type => :feature do
       expect(page).to have_content("It seems your link is invalid. Try requesting for a new login link")
     end  
   end
-  it "generate secure tokens (50 attempts)" do
+  it "generates secure tokens (50 attempts)" do
     fuzz_list =[]
     (1...50).each do
       fuzz_list << SecureRandom.urlsafe_base64(20)
