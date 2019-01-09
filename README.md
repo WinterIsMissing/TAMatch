@@ -47,8 +47,6 @@ Some setup must be done in order to get testing functionality up and running.
   ```
 - Set up the test database *(cd into the project directory)*
   ```
-    rails db:create RAILS_ENV=test
-    rails db:migrate RAILS_ENV=test
-    rails db:seed RAILS_ENV=test
+    rails db:reset RAILS_ENV=test
   ```
 - You're good to go!
