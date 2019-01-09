@@ -41,20 +41,16 @@ class SessionController < ApplicationController
   
   def create_oauth
     begin
-   #   puts request.env['omniauth.auth']
-  #    puts "HELLO"
       @user = User.from_omniauth(request.env['omniauth.auth'])
      
       @user.generate_login_token
       @user.expire_token!
       
       session[:user_token] = @user.login_token
-      puts session[:user_token]
-   #   session[:user_token] = request.env['omniauth.auth'].info.email
+      
       #flash.now[:success] = "Welcome, #{@user.email}!"
-   # rescue
-    #puts "login error"
-     # redirect_to root_path and return
+    rescue
+      redirect_to root_path and return
     end
   #  notice: 'Login via Google successful' 
     redirect_to dashboard_path and return 
