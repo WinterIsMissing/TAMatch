@@ -10,6 +10,9 @@
 #Ignore RSpec txt log
 /spec/examples.txt
 
+# Ignore coverage report
+coverage/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
