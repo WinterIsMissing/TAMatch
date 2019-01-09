@@ -1,8 +1,7 @@
 require 'rails_helper'
 require 'spec_helper'
 require 'capybara/rspec'
-require 'User'
-require ''
+
 
 RSpec.describe "Email token auth layer", :type => :feature do
   it 'authenticates at the right root path' do
