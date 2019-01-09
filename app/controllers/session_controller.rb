@@ -48,13 +48,13 @@ class SessionController < ApplicationController
       @user.generate_login_token
       @user.expire_token!
       
-      session[:user_token] = @user.email
+      session[:user_token] = @user.login_token
    #   session[:user_token] = request.env['omniauth.auth'].info.email
       #flash.now[:success] = "Welcome, #{@user.email}!"
-    rescue
-    puts "login error"
-      redirect_to root_path and return
-    end
+   # rescue
+    #puts "login error"
+     # redirect_to root_path and return
+    #end
   #  notice: 'Login via Google successful' 
     redirect_to dashboard_path and return 
   end
