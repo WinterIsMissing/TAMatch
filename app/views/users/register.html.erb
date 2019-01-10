@@ -1,34 +1,36 @@
-<h1>Register</h1>
-
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="main-content pad-top" style="margin: auto; width: 150px;">
+  <h1>Register</h1>
+  
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+  
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= f.label :fullname %>
+      <%= f.text_field :fullname %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+  
+    <div class="field" >
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit 'Register' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :fullname %>
-    <%= f.text_field :fullname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="field" >
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Register' %>
-  </div>
-<% end %>
+</div>

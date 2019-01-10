@@ -1,10 +1,12 @@
-<h1>Welcome!</h1>
-<p>Please login to use TAnder:</p>
-<%= form_for :login, url: login_path do |form| %>
-  <%= form.text_field :email %>
-  <%= form.submit "Email login link" %>
-<% end %>
-<ul>
-  <li><%= link_to 'Sign in via Google', '/auth/google' %></li>
-  <li>New User? <%= link_to 'Register!', register_path %></li>
-</ul>
+<div class="main-content pad-top" style="margin:auto; width: 300px">
+    <h1>Welcome!</h1>
+    <p>Please login to use TAnder:</p>
+    <%= form_for :login, url: login_path do |form| %>
+      <%= form.text_field :email %>
+      <%= form.submit "Email login link", :class=>"right-border fade-btn" %>
+    <% end %>
+    <ul>
+      <li><%= link_to 'Sign in via Google', '/auth/google' %></li>
+      <li>New User? <%= link_to 'Register!', register_path %></li>
+    </ul>
+</div>

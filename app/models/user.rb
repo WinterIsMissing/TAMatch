@@ -37,14 +37,14 @@ class User < ApplicationRecord
     self.token_generated_at = Time.now - token_validity
     save!
   end
-  def token_validity(t = 24.hour)
-     token_validity = t
-     
-  end
+  
   private
 
   def generate_token
     SecureRandom.urlsafe_base64(20)
+  end
+  def token_validity
+     24.hour
   end
 
   
