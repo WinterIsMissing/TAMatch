@@ -36,6 +36,7 @@ class SessionController < ApplicationController
       @user.expire_token!
       session[:user_token] = @user.login_token
     rescue => error
+       puts "Rescued #{error.message}"
       redirect_to root_path, notice: "Login via google failed, please try again" and return
     end
     redirect_to dashboard_path and return 
