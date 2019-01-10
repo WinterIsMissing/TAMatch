@@ -1,10 +1,6 @@
 class Course < ApplicationRecord
   validates_presence_of :name
   
-   def self.primary_key
-     @name
-   end
-  
   def estimate_assistants(student_num, course_info)
     # "a good measure is 60=1 TA, 90-100=1 TA + 1 grader. Seminars get nothing. Capstones get 1 TA"
     self.grader_count = 0

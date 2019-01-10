@@ -10,19 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190110020945) do
+ActiveRecord::Schema.define(version: 20190110050543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "applicants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "degree_program"
+    t.boolean  "is_ta"
+    t.boolean  "is_grader"
+    t.boolean  "is_sg"
+    t.text     "preference_list"
+    t.text     "preferences"
+    t.text     "antipref"
+    t.text     "indifferent"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "courses", force: :cascade do |t|
-    t.string   "name"#,          default: "Error"
-    t.integer  "ta_count"#,      default: 0
-    t.integer  "grader_count"#,  default: 0
-    t.integer  "student_count"#, default: 0
-    t.text     "course_info"#,   default: "No information"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.string   "name"
+    t.integer  "ta_count"
+    t.integer  "grader_count"
+    t.integer  "student_count"
+    t.text     "course_info"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
