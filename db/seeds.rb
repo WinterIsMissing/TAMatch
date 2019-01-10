@@ -16,6 +16,9 @@ csv.each do |line|
   student_num = line["students"].to_i
   name = line["course"]
   info = "#{line["title"]} #{line["info"]}"
+  puts "name #{name}"
+  puts "student_num #{student_num}"
+  puts "course_info #{info}"
   courses.push(
       Course.create({
       :name=> name, 
