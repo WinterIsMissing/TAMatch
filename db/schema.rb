@@ -10,21 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190110024853) do
+ActiveRecord::Schema.define(version: 20190110050543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "taapps", force: :cascade do |t|
-    t.string   "degreeProgram"
-    t.boolean  "isTA"
-    t.boolean  "isGrader"
-    t.boolean  "isSG"
-    t.text     "pref",          default: [],              array: true
-    t.text     "indifferent",   default: [],              array: true
-    t.text     "antipref",      default: [],              array: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+create_table "applicants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "degree_program"
+    t.boolean  "is_ta"
+    t.boolean  "is_grader"
+    t.boolean  "is_sg"
+    t.text     "preference_list"
+    t.text     "preferences"
+    t.text     "antipref"
+    t.text     "indifferent"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "ta_count"
+    t.integer  "grader_count"
+    t.integer  "student_count"
+    t.text     "course_info"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
