@@ -23,6 +23,46 @@
         $( "#sortable" ).disableSelection();
       } );
       </script>
+      
+      <script>
+    
+    	var s = document.getElementById("degreeProgram");
+    	s.addEventListener("change", changeSelectedDP);
+    
+    	function changeSelectedDP(){
+    		var value = s.options[s.selectedIndex].value;
+    	}
+    	changeSelectedDP();
+    
+    	function convertToJSON(){
+    		var degreeProg = document.getElementById("degreeProgram").options[document.getElementById("degreeProgram").selectedIndex].value;
+    		var lis = document.getElementById("sortablediv").getElementsByTagName("li");
+    
+    		var isTA = document.getElementById('taCheck').checked;
+    		var isGrader = document.getElementById('gCheck').checked;
+    		var isSG = document.getElementById('sgCheck').checked;
+    
+    		var i;
+    		var preferences = [];
+    		var antipreferences = [];
+    		i = 0;
+    		while(lis[i].id != "divider"){
+    			preferences.push(lis[i].id);
+    			i++;
+    		}
+    		i++;
+    		while(i < lis.length){
+    			antipreferences.push(lis[i].id);
+    			i++;
+    		}
+        
+        let payload ={"degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "antipref":antipreferences};
+        document.getElementById("application_payload").value = JSON.stringify(payload);
+        $("#payload-form").trigger('submit.rails');
+    		console.log(JSON.stringify(payload));
+    		
+    	}
+    </script>
     </head>
     
     <body>
@@ -93,43 +133,11 @@
     <br><br>
     
     <button id="submit" onclick = "convertToJSON()"> SUBMIT</button>
+    <%= form_for :application, url: taapps_path, :html => {:id => "payload-form"} do |form| %>
+      <%= form.text_field :payload %>
+      <%= form.submit "submit-payload", :id=>"payload-button" %>
+    <% end %>
     </body>
     
-    <script>
     
-    	var s = document.getElementById("degreeProgram");
-    	s.addEventListener("change", changeSelectedDP);
-    
-    	function changeSelectedDP(){
-    		var value = s.options[s.selectedIndex].value;
-    	}
-    	changeSelectedDP();
-    
-    	function convertToJSON(){
-    		var degreeProg = document.getElementById("degreeProgram").options[document.getElementById("degreeProgram").selectedIndex].value;
-    		var lis = document.getElementById("sortablediv").getElementsByTagName("li");
-    
-    		var isTA = document.getElementById('taCheck').checked;
-    		var isGrader = document.getElementById('gCheck').checked;
-    		var isSG = document.getElementById('sgCheck').checked;
-    
-    		var i;
-    		var preferences = [];
-    		var antipreferences = [];
-    		i = 0;
-    		while(lis[i].id != "divider"){
-    			preferences.push(lis[i].id);
-    			i++;
-    		}
-    		i++;
-    		while(i < lis.length){
-    			antipreferences.push(lis[i].id);
-    			i++;
-    		}
-    
-    		console.log(JSON.stringify({degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "antipref":antipreferences}));
-    
-    
-    	}
-    </script>
 </html>
