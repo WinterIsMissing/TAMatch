@@ -120,7 +120,9 @@ class Matchmaker
       m.propose_to(w)
     end
     @men.each_value.collect {|man| puts "#{man} + #{man.fiance}"} if $DEBUG
-    return Hash.new(@men.each{|k,v| [k,v.fiance]})
+    ret_hash = Hash.new
+    @men.each{|k,v| ret_hash[k] = v.fiance.name}
+    return ret_hash
   end
   
   def self.course_match(courses, applicants, opts={:ta=>true, :grader=>false})
@@ -131,7 +133,7 @@ class Matchmaker
     app_hash = Hash.new([])
     
     courses.each do |x|
-      my_prefs = course_prefs.shuffle
+      my_prefs = course_prefs #.shuffle
       my_string = ""
       openings = 0
       openings += opts[:ta] ? x.ta_count : 0
@@ -140,25 +142,24 @@ class Matchmaker
       next if openings < 1
       (1..openings).each do |i|
         inner_string = "#{x.name}-#{i}"
-        my_string << inner_string << "  "
+        my_string << inner_string << ", "
         course_hash[inner_string] = my_prefs
       end
       
-      my_string.strip
-      my_string.gsub!(/  /,", ")
+      my_string.chomp(", ")
       
       applicants.each {|y| y.preference_list.gsub!(x.name, my_string) }
     end
     
     applicants.each do |x|
-      app_hash[x.email] = x.preference_list.split(/, /)
+      arry = x.preference_list.split(/, /)
+      arry.delete_if {|y| y.length < 3}
+      app_hash[x.email] = arry
     end
-      
     
     matchmaker = Matchmaker.new(course_hash, app_hash)
     matches = matchmaker.match_couples
-    stability = matchmaker.stability
-    return matches, stability
+    return matches
   end
   
   def stability

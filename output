@@ -1,0 +1,64 @@
+
+Randomized with seed 59136
+...........................*..........................*......
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Applicant add some examples to (or delete) /home/ec2-user/environment/TAMatch/spec/models/applicant_spec.rb
+     # Not yet implemented
+     # ./spec/models/applicant_spec.rb:4
+
+  2) ApplicantsHelper add some examples to (or delete) /home/ec2-user/environment/TAMatch/spec/helpers/applicants_helper_spec.rb
+     # Not yet implemented
+     # ./spec/helpers/applicants_helper_spec.rb:14
+
+Top 10 slowest examples (3.81 seconds, 81.6% of total time):
+  Authentication layer generates secure tokens (50 attempts)
+    1.79 seconds ./spec/auth_spec.rb:21
+  Authentication layer survives brute force attack for login token (100 attempts)
+    1.03 seconds ./spec/auth_spec.rb:11
+  TAnder homepage 's email login field submit button works (correctly filled)
+    0.39621 seconds ./spec/home_spec.rb:40
+  course_overview unable to direct to course overview page (student)
+    0.19215 seconds ./spec/course_overview_spec.rb:9
+  instructor_view remove an admin as an instructor unsuccessfully
+    0.07767 seconds ./spec/instructor_view_spec.rb:73
+  instructor_view add a nonexistent user as new instructor unsuccessfully
+    0.07706 seconds ./spec/instructor_view_spec.rb:52
+  instructor_view remove an instructor unsuccessfully
+    0.07419 seconds ./spec/instructor_view_spec.rb:83
+  instructor_view add an instructor as a new instructor unsuccessfully
+    0.06474 seconds ./spec/instructor_view_spec.rb:41
+  instructor_view add an instructor successfully
+    0.06244 seconds ./spec/instructor_view_spec.rb:30
+  instructor_view remove a nonexistent user as an instructor unsuccessfully
+    0.0545 seconds ./spec/instructor_view_spec.rb:63
+
+Top 10 slowest example groups:
+  Authentication layer
+    0.4833 seconds average (2.9 seconds / 6 examples) ./spec/auth_spec.rb:6
+  course_overview
+    0.08988 seconds average (0.26964 seconds / 3 examples) ./spec/course_overview_spec.rb:7
+  TAnder homepage
+    0.05637 seconds average (0.50731 seconds / 9 examples) ./spec/home_spec.rb:6
+  instructor_view
+    0.05626 seconds average (0.50633 seconds / 9 examples) ./spec/instructor_view_spec.rb:7
+  course_overview
+    0.03378 seconds average (0.10135 seconds / 3 examples) ./spec/matchmaker_view_spec.rb:7
+  Dashboard
+    0.03105 seconds average (0.24843 seconds / 8 examples) ./spec/dashboard_spec.rb:7
+  Register page
+    0.01632 seconds average (0.09795 seconds / 6 examples) ./spec/register_spec.rb:6
+  Matchmaker
+    0.00242 seconds average (0.02662 seconds / 11 examples) ./spec/matchmaker_spec.rb:5
+  Course
+    0.00217 seconds average (0.00869 seconds / 4 examples) ./spec/models/course_spec.rb:3
+  ApplicantsHelper
+    0.00031 seconds average (0.00031 seconds / 1 example) ./spec/helpers/applicants_helper_spec.rb:13
+
+Finished in 4.67 seconds (files took 2.26 seconds to load)
+61 examples, 0 failures, 2 pending
+
+Randomized with seed 59136
+
+Coverage report generated for RSpec to /home/ec2-user/environment/TAMatch/coverage. 297 / 313 LOC (94.89%) covered.

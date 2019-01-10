@@ -5,17 +5,19 @@ class Applicant < ApplicationRecord
   
   after_initialize do |applicant|
 
-    antis = applicant.antipref.gsub!(/[^0-9, ]/,"")
-    prefs = applicant.preferences.gsub!(/[^0-9, ]/,"")
-    indif = applicant.indifferent.gsub!(/[^0-9, ]/,"")
+    applicant.antipref.gsub!(/[^0-9, ]/,"")
+    applicant.preferences.gsub!(/[^0-9, ]/,"")
+    applicant.indifferent.gsub!(/[^0-9, ]/,"")
     
-    antis = antis.nil? ? [] : antis.split(/, /)
-    prefs = prefs.nil? ? [] : prefs.split(/, /)
-    indif = indif.nil? ? [] : indif.split(/, /)
+    antis = applicant.antipref.split(/, /)
+    prefs = applicant.preferences.split(/, /)
+    indif = applicant.indifferent.split(/, /)
     
     antis = antis - prefs
     indif = indif - prefs - antis
     applicant.preference_list =  prefs.append(indif).to_s.gsub(/[^0-9, ]/,"")
+    
+    #applicant.preference_list = applicant.preferences
   end
   
 end
