@@ -38,6 +38,8 @@ When(/^I am on the "(.*?)" page$/) do |targ_page|
         visit ta_application_index_path
     when 'Instructor Preferences'
         visit prof_ranking_index_path
+    when 'Instructor Listing'
+        visit instructors_index_path
     end
 end
 
@@ -61,6 +63,10 @@ And(/^I click the link "(.*?)"$/) do |link_text|
     click_link link_text
 end
 
+And(/^I click the link "(.*?)" in "(.*?)" with "(.*?)" as an id$/) do |link_text, outer_tag, id|
+    find(outer_tag, id: id).click_link(link_text)
+end
+
 Then(/^I can submit my information$/) do
     click_button "submit"
 end
@@ -73,5 +79,13 @@ And(/^I want to register with "(.*?)" and "(.*?)"$/) do |email, username|
     user = User.find_by(username: username)
     if user
         user.destroy
+    end
+end
+
+And(/^I make sure "(.*?)" is a "(.*?)"$/) do |email, auth_level|
+    user = User.find_by(email: email)
+    if user
+        user.auth_level = auth_level
+        user.save!
     end
 end

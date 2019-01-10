@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'instructors/index'
   post 'instructors/add'
+  get 'instructors/remove'
   
   post 'course_overview/index'
 

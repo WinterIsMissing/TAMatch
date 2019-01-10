@@ -60,4 +60,34 @@ RSpec.describe "instructor_view", :type => :feature do
     find('input[name="commit"]').click
     expect(page).to have_content("Could not find")
   end
+  it 'remove a nonexistent user as an instructor unsuccessfully' do
+    email = "test_a@x.x"
+    @user = User.find_by(email: email)
+    token = @user.generate_login_token
+    visit '/auth?' + token
+    expect(page).to have_content("Instructor Listing")
+    visit '/instructors/index'
+    visit instructors_remove_path(:email => "nil@x.x")
+    expect(page).to have_content("Could not find")
+  end
+  it 'remove an admin as an instructor unsuccessfully' do
+    email = "test_a@x.x"
+    @user = User.find_by(email: email)
+    token = @user.generate_login_token
+    visit '/auth?' + token
+    expect(page).to have_content("Instructor Listing")
+    visit '/instructors/index'
+    visit instructors_remove_path(:email => "test_a@x.x")
+    expect(page).to have_content("role is admin")
+  end
+  it 'remove an instructor unsuccessfully' do
+    email = "test_a@x.x"
+    @user = User.find_by(email: email)
+    token = @user.generate_login_token
+    visit '/auth?' + token
+    expect(page).to have_content("Instructor Listing")
+    visit '/instructors/index'
+    visit instructors_remove_path(:email => "test_i@x.x")
+    expect(page).to have_content("Removed test_i@x.x")
+  end
 end
