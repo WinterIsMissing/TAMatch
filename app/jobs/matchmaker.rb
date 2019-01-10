@@ -53,16 +53,13 @@ class Person
   end
  
   def better_choice?(person)
-    unless @fiance.nil?
-      fi_idx = @preferences.index(@fiance)
-      new_idx = @preferences.index(person)
-      return true if fi_idx.nil?
-      return false if new_idx.nil?
-      return false if @fiance.final_choice?(self)
-      new_idx < fi_idx
-    else
-      true
-    end
+    return true if @fiance.nil?
+    fi_idx = @preferences.index(@fiance)
+    new_idx = @preferences.index(person)
+    return true if fi_idx.nil?
+    return false if new_idx.nil?
+    return false if @fiance.final_choice?(self)
+    new_idx < fi_idx
   end
  
   def propose_to(person)
@@ -150,9 +147,7 @@ class Matchmaker
       return 1.0
     else
       unstable.each do |a,b|
-        if $DEBUG
-          puts "#{a} is engaged to #{a.fiance} but would prefer #{b}, and #{b} is engaged to #{b.fiance} but would prefer #{a}"
-        end
+        puts "#{a} engaged #{a.fiance}, prefers #{b} && #{b} engaged #{b.fiance}, prefers #{a}" if $DEBUG
       end
       return (1.0 - unstable.length.to_f / @men.keys.length.to_f)
     end
