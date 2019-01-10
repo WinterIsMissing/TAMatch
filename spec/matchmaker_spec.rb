@@ -174,8 +174,20 @@ RSpec.describe Matchmaker do
               expect !(matches.values).include?(nil)
               expect !(matches.values).include?("")
             end
-          end
+        end
         
+    end
+    
+    describe "self.course_match" do
+      courses = Course.all
+      applicants = Applicant.all
+      matches, stability = Matchmaker.course_match(courses, applicants)
+      
+      it "returns a good match" do
+        expect stability > 0.9
+        expect !(matches.values).include?(nil)
+        expect !(matches.values).include?("")
+      end
     end
     
 end

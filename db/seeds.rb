@@ -147,7 +147,7 @@ csv.each do |line|
   apps.push(
     Applicant.create({
       :name=> "Sample Student #{line["name"]}", 
-      :email=> line["email"],
+      :email=> "sample.student.#{line["name"]}@tamu.edu",
       :degree_program=> line["degreeProgram"],
       :is_ta=> line["isTA?"],
       :is_grader=> line["isGrader?"],

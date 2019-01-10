@@ -123,6 +123,44 @@ class Matchmaker
     return Hash.new(@men.each{|k,v| [k,v.fiance]})
   end
   
+  def self.course_match(courses, applicants, opts={:ta=>true, :grader=>false})
+    # matches, score = Matchmaker.course_match(Course.all, Applicant.all)
+    course_prefs = []
+    applicants.each { |x| course_prefs.push(x.email) }
+    course_hash = Hash.new([])
+    app_hash = Hash.new([])
+    
+    courses.each do |x|
+      my_prefs = course_prefs.shuffle
+      my_string = ""
+      openings = 0
+      openings += opts[:ta] ? x.ta_count : 0
+      openings += opts[:grader] ? x.grader_count : 0
+      
+      next if openings < 1
+      (1..openings).each do |i|
+        inner_string = "#{x.name}-#{i}"
+        my_string << inner_string << "  "
+        course_hash[inner_string] = my_prefs
+      end
+      
+      my_string.strip
+      my_string.gsub!(/  /,", ")
+      
+      applicants.each {|y| y.preference_list.gsub!(x.name, my_string) }
+    end
+    
+    applicants.each do |x|
+      app_hash[x.email] = x.preference_list.split(/, /)
+    end
+      
+    
+    matchmaker = Matchmaker.new(course_hash, app_hash)
+    matches = matchmaker.match_couples
+    stability = matchmaker.stability
+    return matches, stability
+  end
+  
   def stability
     unstable = Set.new
     @men.each_value do |man|
