@@ -5,10 +5,12 @@
     <% end %>
     <% if @entries %>
         <table class="borderless">
-            <th>Course</th>
-            <th>Status</th>
-            <th>Instructor</th>
-            <th>Applicant</th>
+            <tr>
+                <th>Course</th>
+                <th>Status</th>
+                <th>Instructor</th>
+                <th>Applicant</th>
+            </tr>
             <% @entries.each do |entry| %>
                 <% @cur_status = entry.username.length%6 %>
                 <% if @cur_status < 2 %>
