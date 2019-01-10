@@ -12,7 +12,12 @@ class DashboardController < ApplicationController
         else "student"
             @student = true
         end
-
+        test = true
+        if test
+            @admin = true
+            @instructor = true
+            @student = true
+        end
     end
     
 end
