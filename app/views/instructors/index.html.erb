@@ -17,6 +17,9 @@
                 <td>
                     <%= instructor.email %>
                 </td>
+                <td id="<%= instructor.email %>">
+                    <%= link_to "x", instructors_remove_path(:email => instructor.email), :id=>"instructor_#{instructor.email}" %>
+                </td>
             </tr>
         <% end %>
         </table>
