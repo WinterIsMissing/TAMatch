@@ -1,0 +1,39 @@
+<div class="main-content">
+    <h1>Matchmaker</h1>
+    <%= form_for :run, url: course_overview_index_path do |form| %>
+        <%= form.submit "Run Matchmaker", :class=>"pop-button" %>
+    <% end %>
+    <% if @entries %>
+        <table class="borderless">
+            <th>Course</th>
+            <th>Status</th>
+            <th>Instructor</th>
+            <th>Applicant</th>
+            <% @entries.each do |entry| %>
+                <% @cur_status = entry.username.length%6 %>
+                <% if @cur_status < 2 %>
+                    <% @status = 'red' %>
+                <% elsif @cur_status < 4 %>
+                    <% @status = 'yellow' %>
+                <% else %>
+                    <% @status = 'green' %>
+                <% end %>
+                <tr>
+                    <td><%= entry %></td>
+                    <td style="text-align:center" class="<%= @status %>"><%= entry.username.length%6 %> / 5</td>
+                    <td><%= entry.username %></td>
+                    <td><%= entry.username %></td>
+                    <% (1..3).each do |applicant| %>
+                        <tr>
+                            <td></td><td></td><td></td>
+                            <!--<td><%= applicant %></td>-->
+                            <td><%= entry.username %></td>
+                        </tr>
+                    <% end %>
+                </tr>
+            <% end %>
+        </table>
+    <% else %>
+        <p class="faint">No entries</p>
+    <% end %>
+</div>
