@@ -132,9 +132,70 @@ nav{
   display: flex;
   justify-content: flex-end;
 }
-.borderless td{
+.borderless td, .borderless th{
   border: 0;
 }
-.borderless table:nth-child(odd){
+.borderless th{
+  background-color: #606060;
+  color: #FFF;
+}
+.borderless tr:nth-child(odd){
+  background-color: #FFF;
+  color: #222;
+}
+.borderless tr:nth-child(even){
   background-color: #DDD;
+  color: #222;
+}
+.fs{
+  justify-content: flex-start;
+}
+.faint{
+  opacity: 0.5
+}
+.filler{
+  width: 100%;
+}
+td{
+  border-radius: 5px;
+}
+.green{
+  background-color: #b7ffc8;
+}
+.yellow{
+  background-color: #fff78c;
+}
+.red{
+  background-color: #d83d2f;
+}
+.top-border{
+  border: none;
+  border-radius: 5px 5px 0 0;
+}
+.right-border{
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+.fade-btn{
+  background-color: #000;
+  color: #DDD;
+  padding: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  border: 2px solid rgba(0,0,0,0);
+}
+.fade-btn:hover{
+  background-color: #FFF;
+  color: #333;
+  border: 2px solid rgba(0,0,0,255);
+}
+
+input[type="text"]{
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  transition: all 0.2s ease-in-out;
+}
+input[type="text"]:focus{
+  outline: none;
+  border-bottom: 1px solid rgba(80,0,0,0.2);
 }

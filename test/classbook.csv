@@ -1,0 +1,629 @@
+﻿CSCE - Computer Sci & Engr,,,,,,,,,,,,,,,,
+Select,CRN,Subj,Crse,Sec,Cmp,Cred,Title,Days,Time,Cap,Act,Rem,Instructor ,Date (MM/DD),Location,Attribute
+,,,,,,,,,,,,,Click name to see CV,,,
+C,12354,CSCE,110,501,CS,4,PROGRAMMING I (Syllabus),MWF,08:00 am-08:50 am,45,45,0,David K. Houngninou(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,01:50 pm-02:40 pm,,,,David K. Houngninou,01/14-05/07,ZACH 244,
+,12356,CSCE,110,502,CS,4,PROGRAMMING I (Syllabus),MWF,08:00 am-08:50 am,45,44,1,David K. Houngninou(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:40 pm-01:30 pm,,,,David K. Houngninou,01/14-05/07,ZACH 310,
+C,12358,CSCE,110,503,CS,4,PROGRAMMING I (Syllabus),MWF,09:10 am-10:00 am,45,45,0,David K. Houngninou(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,05:45 pm-06:35 pm,,,,David K. Houngninou,01/14-05/07,ZACH 244,
+C,20906,CSCE,110,504,CS,4,PROGRAMMING I (Syllabus),MWF,09:10 am-10:00 am,45,45,0,David K. Houngninou(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:40 pm-01:30 pm,,,,David K. Houngninou,01/14-05/07,ZACH 350,
+C,34538,CSCE,110,505,CS,4,PROGRAMMING I (Syllabus),MWF,10:20 am-11:10 am,45,45,0,David K. Houngninou(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,04:10 pm-05:00 pm,,,,David K. Houngninou,01/14-05/07,ZACH 244,
+C,34546,CSCE,110,506,CS,4,PROGRAMMING I (Syllabus),MWF,10:20 am-11:10 am,45,45,0,David K. Houngninou(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,03:00 pm-03:50 pm,,,,David K. Houngninou,01/14-05/07,ZACH 244,
+C,12320,CSCE,111,501,CS,4,CPSC CONCEPTS & PROGRAM (Syllabus) ,MWF,09:10 am-10:00 am,45,47,-2,Robert H. Lightfoot(P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,04:10 pm-05:00 pm,,,,Robert H. Lightfoot,01/14-05/07,ZACH 350,
+C,34539,CSCE,111,502,CS,4,CPSC CONCEPTS & PROGRAM (Syllabus) ,MWF,09:10 am-10:00 am,45,46,-1,Robert H. Lightfoot(P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,05:45 pm-06:35 pm,,,,Robert H. Lightfoot,01/14-05/07,ZACH 350,
+C,12323,CSCE,121,501,CS,4,INTRO PGM DESIGN CONCEPT ,TR,08:00 am-09:15 am,23,24,-1,Dylan A. Shell (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,09:35 am-10:25 am,,,,Dylan A. Shell,01/14-05/07,ZACH 584,
+C,12326,CSCE,121,502,CS,4,INTRO PGM DESIGN CONCEPT ,TR,08:00 am-09:15 am,23,23,0,Dylan A. Shell (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:10 am-12:00 pm,,,,Dylan A. Shell,01/14-05/07,ZACH 584,
+C,12328,CSCE,121,503,CS,4,INTRO PGM DESIGN CONCEPT ,TR,08:00 am-09:15 am,23,23,0,Dylan A. Shell (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-01:35 pm,,,,Dylan A. Shell,01/14-05/07,ZACH 584,
+C,12330,CSCE,121,504,CS,4,INTRO PGM DESIGN CONCEPT ,TR,08:00 am-09:15 am,23,23,0,Dylan A. Shell (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:10 pm,,,,Dylan A. Shell,01/14-05/07,ZACH 584,
+C,13808,CSCE,121,505,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,01:50 pm-02:40 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,08:00 am-08:50 am,,,,Philip C. Ritchey,01/14-05/07,ZACH 598,
+C,13988,CSCE,121,506,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,01:50 pm-02:40 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,09:10 am-10:00 am,,,,Philip C. Ritchey,01/14-05/07,ZACH 592,
+C,15040,CSCE,121,507,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,01:50 pm-02:40 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,10:20 am-11:10 am,,,,Philip C. Ritchey,01/14-05/07,ZACH 592,
+C,15041,CSCE,121,508,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,01:50 pm-02:40 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,11:30 am-12:20 pm,,,,Philip C. Ritchey,01/14-05/07,ZACH 592,
+C,15779,CSCE,121,509,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,03:00 pm-03:50 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,01:50 pm-02:40 pm,,,,Philip C. Ritchey,01/14-05/07,ZACH 598,
+C,17532,CSCE,121,510,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,03:00 pm-03:50 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,04:10 pm-05:00 pm,,,,Philip C. Ritchey,01/14-05/07,ZACH 598,
+C,20909,CSCE,121,511,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,03:00 pm-03:50 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:10 am-12:00 pm,,,,Philip C. Ritchey,01/14-05/07,ZACH 598,
+C,20910,CSCE,121,512,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,03:00 pm-03:50 pm,23,23,0,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-01:35 pm,,,,Philip C. Ritchey,01/14-05/07,ZACH 598,
+C,23971,CSCE,121,513,CS,4,INTRO PGM DESIGN CONCEPT ,TR,12:45 pm-02:00 pm,23,23,0,John M. Moore (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-04:45 pm,,,,John M. Moore,01/14-05/07,ZACH 592,
+C,23972,CSCE,121,514,CS,4,INTRO PGM DESIGN CONCEPT ,TR,12:45 pm-02:00 pm,23,23,0,John M. Moore (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,05:30 pm-06:20 pm,,,,John M. Moore,01/14-05/07,ZACH 592,
+C,23973,CSCE,121,515,CS,4,INTRO PGM DESIGN CONCEPT ,MW,12:40 pm-01:30 pm,23,23,0,John M. Moore,01/14-05/07,ZACH 592,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-02:00 pm,,,,John M. Moore (P),01/14-05/07,ZACH 350,
+C,27350,CSCE,121,516,CS,4,INTRO PGM DESIGN CONCEPT ,MW,03:00 pm-03:50 pm,23,23,0,John M. Moore,01/14-05/07,ZACH 592,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-02:00 pm,,,,John M. Moore (P),01/14-05/07,ZACH 350,
+C,27351,CSCE,121,517,CS,4,INTRO PGM DESIGN CONCEPT ,TR,12:45 pm-01:35 pm,23,24,-1,John M. Moore,01/14-05/07,ZACH 596,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:35 pm,,,,John M. Moore (P),01/14-05/07,ZACH 350,
+C,27352,CSCE,121,518,CS,4,INTRO PGM DESIGN CONCEPT ,TR,02:20 pm-03:35 pm,23,23,0,John M. Moore (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-04:45 pm,,,,John M. Moore,01/14-05/07,ZACH 584,
+C,27353,CSCE,121,519,CS,4,INTRO PGM DESIGN CONCEPT ,TR,02:20 pm-03:35 pm,23,24,-1,John M. Moore (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,05:30 pm-06:20 pm,,,,John M. Moore,01/14-05/07,ZACH 584,
+C,27354,CSCE,121,520,CS,4,INTRO PGM DESIGN CONCEPT ,TR,02:20 pm-03:35 pm,23,23,0,John M. Moore (P),01/14-05/07,ZACH 350,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,07:05 pm-07:55 pm,,,,John M. Moore,01/14-05/07,ZACH 584,
+C,35896,CSCE,121,521,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,08:00 am-08:50 am,23,23,0,Michael R. Nowak (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,11:30 am-12:20 pm,,,,Michael R. Nowak,01/14-05/07,ZACH 582,
+C,35897,CSCE,121,522,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,08:00 am-08:50 am,23,24,-1,Michael R. Nowak (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:40 pm-01:30 pm,,,,Michael R. Nowak,01/14-05/07,ZACH 582,
+C,35898,CSCE,121,523,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,08:00 am-08:50 am,23,23,0,Michael R. Nowak (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:10 pm,,,,Michael R. Nowak,01/14-05/07,ZACH 596,
+C,35899,CSCE,121,524,CS,4,INTRO PGM DESIGN CONCEPT ,MWF,08:00 am-08:50 am,23,24,-1,Michael R. Nowak (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-04:45 pm,,,,Michael R. Nowak,01/14-05/07,ZACH 596,
+C,19178,CSCE,181,500,CS,1,INTRO TO COMPUTING ,TR,03:55 pm-05:10 pm,194,194,0,Scott Schaefer (P),01/14-05/07,ARCC 105,College Station and NonTraditional Format Exclude and First Year Seminars
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,12333,CSCE,206,501,CS,4,STRUCTURED PROG IN C,MWF,12:40 pm-01:30 pm,45,45,0,Ki Hwan K. Yum (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,04:10 pm-05:00 pm,,,,Ki Hwan K. Yum,01/14-05/07,ZACH 310,
+C,12334,CSCE,206,502,CS,4,STRUCTURED PROG IN C,MWF,12:40 pm-01:30 pm,45,45,0,Ki Hwan K. Yum (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,05:45 pm-06:35 pm,,,,Ki Hwan K. Yum,01/14-05/07,ZACH 310,
+C,12343,CSCE,221,501,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,08:00 am-08:50 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,09:10 am-10:00 am,,,,Teresa Leyk,01/14-05/07,ZACH 596,
+C,12344,CSCE,221,502,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,08:00 am-08:50 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,10:20 am-11:10 am,,,,Teresa Leyk,01/14-05/07,ZACH 596,
+C,12347,CSCE,221,503,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,08:00 am-08:50 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,03:00 pm-03:50 pm,,,,Teresa Leyk,01/14-05/07,ZACH 582,
+C,12349,CSCE,221,504,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,09:10 am-10:00 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,08:00 am-08:50 am,,,,Teresa Leyk,01/14-05/07,ZACH 596,
+C,12350,CSCE,221,505,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,09:10 am-10:00 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,11:30 am-12:20 pm,,,,Teresa Leyk,01/14-05/07,ZACH 596,
+C,12352,CSCE,221,506,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,09:10 am-10:00 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,10:20 am-11:10 am,,,,Teresa Leyk,01/14-05/07,ZACH 598,
+C,16242,CSCE,221,507,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,10:20 am-11:10 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,08:00 am-08:50 am,,,,Teresa Leyk,01/14-05/07,ZACH 584,
+C,22284,CSCE,221,508,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,10:20 am-11:10 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,09:10 am-10:00 am,,,,Teresa Leyk,01/14-05/07,ZACH 584,
+C,17004,CSCE,221,509,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,10:20 am-11:10 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:40 pm-01:30 pm,,,,Teresa Leyk,01/14-05/07,ZACH 598,
+C,14872,CSCE,221,510,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,03:00 pm-03:50 pm,23,23,0,Shawn V. Lupoli (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:10 pm,,,,Shawn V. Lupoli,01/14-05/07,ZACH 598,
+,17001,CSCE,221,511,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,03:00 pm-03:50 pm,23,20,3,Shawn V. Lupoli (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-04:45 pm,,,,Shawn V. Lupoli,01/14-05/07,ZACH 598,
+,22285,CSCE,221,512,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,03:00 pm-03:50 pm,23,21,2,Shawn V. Lupoli (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,08:25 am-09:15 am,,,,Shawn V. Lupoli (P),01/14-05/07,ZACH 598,
+,23974,CSCE,221,513,CS,4,DATA STRUC & ALGORITHM ,TR,11:10 am-12:00 pm,23,21,2,Timothy J. McGuire,01/14-05/07,ZACH 592,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-05:10 pm,,,,Timothy J. McGuire (P),01/14-05/07,ZACH 310,
+,23975,CSCE,221,514,CS,4,DATA STRUC & ALGORITHM ,TR,12:45 pm-01:35 pm,23,20,3,Timothy J. McGuire,01/14-05/07,ZACH 592,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-05:10 pm,,,,Timothy J. McGuire (P),01/14-05/07,ZACH 310,
+,23976,CSCE,221,515,CS,4,DATA STRUC & ALGORITHM ,TR,02:20 pm-03:10 pm,23,22,1,Timothy J. McGuire,01/14-05/07,ZACH 592,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-05:10 pm,,,,Timothy J. McGuire (P),01/14-05/07,ZACH 310,
+C,31593,CSCE,221,516,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,08:00 am-08:50 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,04:10 pm-05:00 pm,,,,Teresa Leyk,01/14-05/07,ZACH 582,
+C,34908,CSCE,221,517,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,09:10 am-10:00 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:40 pm-01:30 pm,,,,Teresa Leyk,01/14-05/07,ZACH 596,
+C,34909,CSCE,221,518,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,10:20 am-11:10 am,23,23,0,Teresa Leyk (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,11:30 am-12:20 pm,,,,Teresa Leyk,01/14-05/07,ZACH 598,
+,34910,CSCE,221,519,CS,4,DATA STRUC & ALGORITHM (Syllabus) ,MWF,03:00 pm-03:50 pm,23,20,3,Shawn V. Lupoli (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,09:35 am-10:25 am,,,,Shawn V. Lupoli,01/14-05/07,ZACH 598,
+C,34911,CSCE,221,520,CS,4,DATA STRUC & ALGORITHM ,TR,03:55 pm-05:10 pm,23,23,0,Timothy J. McGuire (P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,05:30 pm-06:20 pm,,,,Timothy J. McGuire,01/14-05/07,ZACH 596,
+C,34522,CSCE,222,201,CS,3,HNR-DISCRETE STRUC COMPUTING (Syllabus) ,MWF,08:00 am-08:50 am,25,29,-4,Sing Sze (P),01/14-05/07,HRBB 126,College Station and Honors and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,15322,CSCE,222,501,CS,3,DISCRETE STRUC COMPUTING ,TR,11:10 am-12:25 pm,89,89,0,Hyunyoung Lee (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,15328,CSCE,222,502,CS,3,DISCRETE STRUC COMPUTING ,TR,05:30 pm-06:45 pm,89,89,0,Timothy J. McGuire (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,20913,CSCE,222,503,CS,3,DISCRETE STRUC COMPUTING ,MWF,11:30 am-12:20 pm,60,59,1,Philip C. Ritchey (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36754,CSCE,291,545,CS,0-4,RESEARCH ,,TBA,1,1,0,TBA,01/14-05/07,TBA,College Station and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23160,CSCE,291,555,CS,0-4,RESEARCH ,,TBA,0,0,0,TBA,01/14-05/07,TBA,College Station and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,27357,CSCE,310,500,CS,3,DATABASE SYSTEMS(Syllabus) ,TR,11:10 am-12:25 pm,55,55,0,Ronald Ward (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36305,CSCE,312,201,CS,4,HNR-COMPUTER ORGANIZATION ,TR,08:25 am-09:15 am,23,23,0,Aakash Tyagi,01/14-05/07,ZACH 590,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-02:00 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+C,36177,CSCE,312,207,CS,4,HNR-COMPUTER ORGANIZATION ,MWF,09:10 am-10:00 am,8,8,0,Eun Kim (P),01/14-05/07,ZACH 244,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:40 pm-01:30 pm,,,,Eun Kim,01/14-05/07,ZACH 590,
+C,12355,CSCE,312,501,CS,4,COMPUTER ORGANIZATION ,TR,08:25 am-09:15 am,7,8,-1,Aakash Tyagi,01/14-05/07,ZACH 590,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-02:00 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+C,12357,CSCE,312,502,CS,4,COMPUTER ORGANIZATION ,TR,09:35 am-10:25 am,30,31,-1,Aakash Tyagi,01/14-05/07,ZACH 590,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-02:00 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+C,16243,CSCE,312,503,CS,4,COMPUTER ORGANIZATION ,MW,11:30 am-12:20 pm,30,32,-2,Aakash Tyagi,01/14-05/07,ZACH 590,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-02:00 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+C,27358,CSCE,312,504,CS,4,COMPUTER ORGANIZATION ,MW,10:20 am-11:10 am,22,22,0,Aakash Tyagi,01/14-05/07,ZACH 584,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:35 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+,27359,CSCE,312,505,CS,4,COMPUTER ORGANIZATION ,MW,08:00 am-08:50 am,22,18,4,Aakash Tyagi,01/14-05/07,ZACH 590,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:35 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+C,27360,CSCE,312,506,CS,4,COMPUTER ORGANIZATION ,MW,11:30 am-12:20 pm,22,22,0,Aakash Tyagi,01/14-05/07,ZACH 584,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:35 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+C,32819,CSCE,312,507,CS,4,COMPUTER ORGANIZATION ,MWF,09:10 am-10:00 am,25,25,0,Eun Kim (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:40 pm-01:30 pm,,,,Eun Kim,01/14-05/07,ZACH 590,
+,34542,CSCE,312,508,CS,4,COMPUTER ORGANIZATION ,MWF,09:10 am-10:00 am,19,6,13,Eun Kim (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,05:45 pm-06:35 pm,,,,Eun Kim,01/14-05/07,ZACH 582,
+,34543,CSCE,312,509,CS,4,COMPUTER ORGANIZATION ,MWF,09:10 am-10:00 am,19,12,7,Eun Kim (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,03:00 pm-03:50 pm,,,,Eun Kim,01/14-05/07,ZACH 584,
+C,34913,CSCE,312,511,CS,4,COMPUTER ORGANIZATION ,MW,01:50 pm-02:40 pm,22,22,0,Aakash Tyagi,01/14-05/07,ZACH 584,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:35 pm,,,,Aakash Tyagi (P),01/14-05/07,ZACH 310,
+,34914,CSCE,312,512,CS,4,COMPUTER ORGANIZATION ,MWF,09:10 am-10:00 am,19,9,10,Eun Kim (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,04:10 pm-05:00 pm,,,,Eun Kim,01/14-05/07,ZACH 596,
+,17007,CSCE,313,200,CS,4,HNR-INTRO TO COMPUTER SYSTEM ,MW,01:50 pm-02:40 pm,24,20,4,Dmitri Loguinov,01/14-05/07,ZACH 590,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:10 am-12:25 pm,,,,Dmitri Loguinov (P),01/14-05/07,HRBB 126,
+C,12359,CSCE,313,501,CS,4,INTRO TO COMPUTER SYSTEM ,MW,01:50 pm-02:40 pm,22,24,-2,Sarker T. Ahmed,01/14-05/07,ZACH 582,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,09:35 am-10:50 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,12360,CSCE,313,502,CS,4,INTRO TO COMPUTER SYSTEM ,MW,12:40 pm-01:30 pm,22,24,-2,Sarker T. Ahmed,01/14-05/07,ZACH 584,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,09:35 am-10:50 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,12361,CSCE,313,503,CS,4,INTRO TO COMPUTER SYSTEM ,MW,03:00 pm-03:50 pm,22,23,-1,Sarker T. Ahmed,01/14-05/07,ZACH 598,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,09:35 am-10:50 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,12620,CSCE,313,504,CS,4,INTRO TO COMPUTER SYSTEM ,TR,08:25 am-09:15 am,22,24,-2,Sarker T. Ahmed,01/14-05/07,ZACH 596,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:10 am-12:25 pm,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,34524,CSCE,313,505,CS,4,INTRO TO COMPUTER SYSTEM ,TR,09:35 am-10:25 am,22,24,-2,Sarker T. Ahmed,01/14-05/07,ZACH 596,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:10 am-12:25 pm,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,34525,CSCE,313,506,CS,4,INTRO TO COMPUTER SYSTEM ,TR,11:10 am-12:25 pm,22,24,-2,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,03:55 pm-04:45 pm,,,,Sarker T. Ahmed,01/14-05/07,ZACH 582,
+C,23977,CSCE,313,511,CS,4,INTRO TO COMPUTER SYSTEM ,MW,04:10 pm-05:00 pm,22,24,-2,Sarker T. Ahmed,01/14-05/07,ZACH 592,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,09:35 am-10:50 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,23978,CSCE,313,512,CS,4,INTRO TO COMPUTER SYSTEM ,TR,11:10 am-12:25 pm,22,24,-2,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,05:30 pm-06:20 pm,,,,Sarker T. Ahmed,01/14-05/07,ZACH 582,
+C,12362,CSCE,314,500,CS,3,PROGRAMMING LANGUAGES ,TR,09:35 am-10:50 am,90,90,0,Hyunyoung Lee (P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23979,CSCE,314,501,CS,3,PROGRAMMING LANGUAGES (Syllabus) ,MWF,11:30 am-12:20 pm,90,90,0,Shawn V. Lupoli (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,27361,CSCE,314,502,CS,3,PROGRAMMING LANGUAGES (Syllabus) ,MWF,01:50 pm-02:40 pm,90,77,13,Shawn V. Lupoli (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,12363,CSCE,315,501,CS,3,PROGRAMMING STUDIO ,MW,10:20 am-11:10 am,22,19,3,Sarker T. Ahmed,01/14-05/07,ZACH 590,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,08:00 am-09:15 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,12504,CSCE,315,502,CS,3,PROGRAMMING STUDIO ,MW,04:10 pm-05:00 pm,22,22,0,Sarker T. Ahmed,01/14-05/07,ZACH 584,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,08:00 am-09:15 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,34526,CSCE,315,503,CS,3,PROGRAMMING STUDIO ,MW,01:50 pm-02:40 pm,22,22,0,Sarker T. Ahmed,01/14-05/07,ZACH 596,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,08:00 am-09:15 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,17533,CSCE,315,504,CS,3,PROGRAMMING STUDIO ,MWF,10:20 am-11:10 am,22,22,0,Robert H. Lightfoot(P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,09:10 am-10:00 am,,,,Robert H. Lightfoot,01/14-05/07,ZACH 590,
+,34902,CSCE,315,505,CS,3,PROGRAMMING STUDIO ,MWF,10:20 am-11:10 am,22,13,9,Robert H. Lightfoot(P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,08:25 am-09:15 am,,,,Robert H. Lightfoot,01/14-05/07,ZACH 592,
+,34523,CSCE,315,506,CS,3,PROGRAMMING STUDIO ,MWF,10:20 am-11:10 am,22,21,1,Robert H. Lightfoot(P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,09:35 am-10:25 am,,,,Robert H. Lightfoot,01/14-05/07,ZACH 592,
+,23980,CSCE,315,507,CS,3,PROGRAMMING STUDIO ,MW,03:00 pm-03:50 pm,22,21,1,Sarker T. Ahmed,01/14-05/07,ZACH 596,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,08:00 am-09:15 am,,,,Sarker T. Ahmed (P),01/14-05/07,ZACH 244,
+C,23981,CSCE,315,508,CS,3,PROGRAMMING STUDIO ,MWF,10:20 am-11:10 am,22,22,0,Robert H. Lightfoot(P),01/14-05/07,ZACH 310,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:10 am-12:00 pm,,,,Robert H. Lightfoot,01/14-05/07,ZACH 596,
+C,27362,CSCE,410,500,CS,3,OPERATING SYSTEMS(Syllabus) ,TR,08:00 am-09:15 am,55,55,0,Riccardo Bettati (P),01/14-05/07,HRBB 113,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,12370,CSCE,411,500,CS,3,DESIGN ANALY ALGORITHMS (Syllabus) ,TR,02:20 pm-03:35 pm,90,51,39,Shawna L. Thomas(P),01/14-05/07,ZACH 244,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23995,CSCE,411,501,CS,3,DESIGN ANALY ALGORITHMS (Syllabus) ,TR,09:35 am-10:50 am,55,55,0,Anxiao Jiang (P),01/14-05/07,HRBB 113,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,34527,CSCE,411,502,CS,3,DESIGN ANALY ALGORITHMS ,TR,12:45 pm-02:00 pm,55,55,0,Andreas Klappenecker (P),01/14-05/07,HRBB 113,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,12371,CSCE,420,500,CS,3,ARTIFICIAL INTELLIGENCE ,MWF,11:30 am-12:20 pm,90,90,0,Walter Daugherity(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,12372,CSCE,431,501,CS,3,SOFTWARE ENGINEERING ,TR,08:00 am-09:15 am,30,30,0,Shaoming Huang (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:10 am-12:00 pm,,,,Shaoming Huang (P),01/14-05/07,ZACH 590,
+C,12373,CSCE,431,502,CS,3,SOFTWARE ENGINEERING ,TR,08:00 am-09:15 am,30,30,0,Shaoming Huang (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:20 pm-03:10 pm,,,,Shaoming Huang,01/14-05/07,ZACH 590,
+C,20932,CSCE,431,503,CS,3,SOFTWARE ENGINEERING ,TR,08:00 am-09:15 am,30,30,0,Shaoming Huang (P),01/14-05/07,ZACH 310,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:45 pm-01:35 pm,,,,Shaoming Huang,01/14-05/07,ZACH 590,
+,35576,CSCE,431,550,CS,3,SOFTWARE ENGINEERING-SINGAPORE (Syllabus) ,,TBA,30,20,10,Philip C. Ritchey,12/26-05/07,TBA,NonTraditional Format Approved and Study Abroad
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,,TBA,,,,Philip C. Ritchey (P),12/26-05/07,TBA,
+,15330,CSCE,433,500,CS,3,FORMAL LANGUAGES AUTOM ,MWF,08:00 am-08:50 am,30,19,11,Jennifer Welch (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,27366,CSCE,436,500,CS,3,COMP HUMAN INTERACTION ,TR,03:55 pm-05:10 pm,82,86,-4,John M. Moore (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,32024,CSCE,438,201,CS,3,HNR-DIST OBJECTS PROGRAMMING ,TR,02:20 pm-03:35 pm,0,0,0,Radu Stoleru (P),01/14-05/07,HRBB 113,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,17008,CSCE,438,500,CS,3,DIST OBJECTS PROGRAMMING ,TR,02:20 pm-03:35 pm,55,55,0,Radu Stoleru (P),01/14-05/07,HRBB 113,College Station and Open Education Resources
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36148,CSCE,440,500,CS,3,QUANTUM ALGORITHMS ,MW,05:45 pm-07:00 pm,15,13,2,Fang Song (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,31985,CSCE,441,200,CS,3,HNR-COMPUTER GRAPHICS ,MWF,11:30 am-12:20 pm,0,0,0,Shinjiro Sueda (P),01/14-05/07,ZACH 244,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,12374,CSCE,441,500,CS,3,COMPUTER GRAPHICS ,MWF,11:30 am-12:20 pm,55,55,0,Shinjiro Sueda (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36315,CSCE,443,501,CS,3,GAME DEVELOPMENT ,TR,11:10 am-12:00 pm,10,10,0,Andre Thomas (P),01/14-05/07,ARCC 109A,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,12:01 pm-12:50 pm,,,,Andre Thomas,01/14-05/07,ARCC 109A,
+C,36764,CSCE,445,200,CS,3,HNR-COMPUTERS AND NEW MEDIA ,MWF,01:50 pm-02:40 pm,0,0,0,TBA,01/14-05/07,HRBB 113,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,19179,CSCE,445,500,CS,3,COMPUTERS AND NEW MEDIA ,MWF,01:50 pm-02:40 pm,55,55,0,Richard K. Furuta (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29854,CSCE,451,200,CS,3,HNR-SOFTWRE REVERSE ENGINEERNG ,MWF,11:30 am-12:20 pm,0,0,0,Jyh Liu (P),01/14-05/07,HRBB 113,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,F,09:10 am-11:10 am,,,,Jyh Liu,01/14-05/07,EABA 118,
+C,27369,CSCE,451,500,CS,3,SOFTWARE REVERSE ENGINEERING ,MWF,11:30 am-12:20 pm,40,40,0,Jyh Liu (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,F,09:10 am-11:10 am,,,,Jyh Liu,01/14-05/07,EABA 118,
+C,12375,CSCE,462,501,CS,3,MICROCOMPUTER SYSTEMS ,MWF,10:20 am-11:10 am,26,26,0,Jyh Liu (P),01/14-05/07,ZACH 244,College Station and Lab Safety Acknowledgment
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,F,12:40 pm-01:30 pm,,,,Jyh Liu,01/14-05/07,EABA 118,
+,,,,,,,,F,01:50 pm-02:40 pm,,,,Jyh Liu,01/14-05/07,EABA 118,
+,32062,CSCE,462,502,CS,3,MICROCOMPUTER SYSTEMS ,MWF,10:20 am-11:10 am,26,16,10,Jyh Liu (P),01/14-05/07,ZACH 244,College Station and Lab Safety Acknowledgment
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,F,12:40 pm-01:30 pm,,,,Jyh Liu,01/14-05/07,EABA 118,
+,,,,,,,,F,01:50 pm-02:40 pm,,,,Jyh Liu,01/14-05/07,EABA 118,
+C,36118,CSCE,463,200,CS,3,HNR-NETWORKS & DIST PROC ,TR,03:55 pm-05:10 pm,0,0,0,Dmitri Loguinov (P),01/14-05/07,HRBB 113,Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20934,CSCE,463,500,CS,3,NETWORKS & DIST PROC ,TR,03:55 pm-05:10 pm,35,35,0,Dmitri Loguinov (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,31986,CSCE,465,200,CS,3,HNR-COMP & NET SECURITY ,TR,03:55 pm-05:10 pm,0,0,0,Daniel J. Ragsdale(P),01/14-05/07,ZACH 244,College Station and Honors
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29436,CSCE,465,500,CS,3,COMP & NET SECURITY ,TR,03:55 pm-05:10 pm,90,93,-3,Daniel J. Ragsdale(P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36737,CSCE,465,501,CS,3,COMP & NET SECURITY ,TR,05:30 pm-06:45 pm,0,69,-69,Daniel J. Ragsdale(P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,23996,CSCE,470,500,CS,3,INFO STORAGE & RETRIEVAL ,MWF,10:20 am-11:10 am,60,33,27,Ruihong Huang (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,34530,CSCE,470,501,CS,3,INFO STORAGE & RETRIEVAL ,TR,11:10 am-12:25 pm,90,90,0,Xia Hu (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,31968,CSCE,481,500,CS,1,SEMINAR ,T,02:20 pm-03:35 pm,135,131,4,Paula S. Dewitte (P),01/14-05/07,HRBB 124,College Station and LMTD and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,32826,CSCE,481,501,CS,1,SEMINAR ,R,02:20 pm-03:35 pm,135,128,7,Paula S. Dewitte (P),01/14-05/07,HRBB 124,College Station and LMTD and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,15327,CSCE,482,501,CS,3,SR CAPSTONE DESIGN ,TR,11:00 am-11:25 am,30,36,-6,Tracy Hammond (P),01/14-05/07,EABA 118,College Station and LMTD and Capstone
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,11:30 am-02:00 pm,,,,Tracy Hammond,01/14-05/07,EABA 118,
+C,15329,CSCE,482,502,CS,3,SR CAPSTONE DESIGN(Syllabus) ,TR,08:00 am-08:25 am,30,30,0,Paul P. Taele (P),01/14-05/07,EABA 118,College Station and LMTD and Capstone
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,08:30 am-11:00 am,,,,Paul P. Taele,01/14-05/07,EABA 118,
+C,17534,CSCE,482,503,CS,3,SR CAPSTONE DESIGN ,TR,02:00 pm-02:25 pm,30,32,-2,Bobak Mortazavi (P),01/14-05/07,EABA 118,College Station and LMTD and Capstone
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,TR,02:30 pm-05:00 pm,,,,Bobak Mortazavi,01/14-05/07,EABA 118,
+C,17535,CSCE,482,504,CS,3,SR CAPSTONE DESIGN(Syllabus) ,MW,09:00 am-09:25 am,30,35,-5,Dezhen Song (P),01/14-05/07,EABA 118,College Station and LMTD and Capstone
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,09:30 am-12:00 pm,,,,Dezhen Song,01/14-05/07,EABA 118,
+C,12377,CSCE,483,501,CS,3,COMPUTER SYS DESIGN ,MW,12:00 pm-12:25 pm,30,30,0,Rabinarayan Mahapatra (P),01/14-05/07,EABC 107,College Station and Capstone
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,12:30 pm-03:00 pm,,,,Rabinarayan Mahapatra,01/14-05/07,EABC 107,
+,12378,CSCE,483,502,CS,3,COMPUTER SYS DESIGN ,MW,03:00 pm-03:25 pm,30,24,6,Rabinarayan Mahapatra (P),01/14-05/07,EABC 107,College Station and Capstone
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,03:30 pm-06:00 pm,,,,Rabinarayan Mahapatra,01/14-05/07,EABC 107,
+C,36496,CSCE,485,511,CS,0-6,DIRECTED STUDIES ,,TBA,0,2,-2,TBA,01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16517,CSCE,485,517,CS,0-6,DIRECTED STUDIES ,,TBA,0,0,0,Anxiao Jiang (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16244,CSCE,485,522,CS,0-6,DIRECTED STUDIES ,,TBA,0,0,0,John Keyser (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,18612,CSCE,485,527,CS,0-6,DIRECTED STUDIES ,,TBA,0,0,0,Jyh Liu (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,13104,CSCE,485,536,CS,0-6,DIRECTED STUDIES ,,TBA,0,0,0,Tracy Hammond (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,13105,CSCE,485,545,CS,0-6,DIRECTED STUDIES ,,TBA,0,0,0,James Caverlee (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,14964,CSCE,485,561,CS,0-6,DIRECTED STUDIES ,,TBA,0,0,0,Radu Stoleru (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,26147,CSCE,485,568,CS,0-6,DIRECTED STUDIES ,,TBA,0,0,0,Dylan A. Shell (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36146,CSCE,489,200,CS,3,HNR: SPTP: PROBLM SOLVNG PROGM (Syllabus) ,MW,03:00 pm-03:50 pm,0,0,0,John Keyser (P),01/14-05/07,HRBB 113,College Station and Honors and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,F,03:00 pm-05:30 pm,,,,John Keyser,01/14-05/07,ZACH 244,
+C,36147,CSCE,489,201,CS,3,HNR: SPTP: MACHINE LEARNING ,MWF,09:10 am-10:00 am,0,0,0,Shuiwang Ji (P),01/14-05/07,HRBB 113,College Station and Honors and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,35790,CSCE,489,500,CS,3,SPTP: MACHINE LEARNING ,MWF,09:10 am-10:00 am,55,55,0,Shuiwang Ji (P),01/14-05/07,HRBB 113,College Station and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,35791,CSCE,489,501,CS,3,SPTP: PROBLEM SOLVING PROGRAM(Syllabus) ,MW,03:00 pm-03:50 pm,55,48,7,John Keyser (P),01/14-05/07,HRBB 113,College Station and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,F,03:00 pm-05:30 pm,,,,John Keyser,01/14-05/07,ZACH 244,
+,36301,CSCE,489,502,CS,3,SPTP: LAW AND POLICY IN CYBER (Syllabus) ,TR,05:30 pm-06:45 pm,13,12,1,Paula S. Dewitte (P),01/14-05/07,HRBB 126,College Station and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36348,CSCE,489,599,CS,3,SPTP: LAW AND POLICY IN CYBER (Syllabus) ,WEB,WEB,25,25,0,Paula S. Dewitte (P),01/14-05/07,WEB,Distance Education and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,14080,CSCE,491,200,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Nancy Amato (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23062,CSCE,491,203,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Andrew Kerne (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16374,CSCE,491,205,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Dmitri Loguinov (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,25383,CSCE,491,207,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Dilma Da Silva (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,30074,CSCE,491,209,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Tiffani Williams (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,30050,CSCE,491,210,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Scott Schaefer (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,33418,CSCE,491,212,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,Daniel J. Ragsdale(P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,30064,CSCE,491,213,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,James Caverlee (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,33253,CSCE,491,216,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,Ricardo Gutierrez-Osuna (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,29855,CSCE,491,222,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,John Keyser (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,33362,CSCE,491,223,CS,0-4,HNR-RESEARCH ,,TBA,1,1,0,Tracy Hammond (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,25551,CSCE,491,224,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Andreas Klappenecker (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23252,CSCE,491,227,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Jyh Liu (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29922,CSCE,491,230,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Yoonsuck Choe (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,33363,CSCE,491,231,CS,0-4,HNR-RESEARCH ,,TBA,1,2,-1,Anxiao Jiang (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20329,CSCE,491,235,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Jennifer Welch (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16375,CSCE,491,236,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Tracy Hammond (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23250,CSCE,491,238,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Riccardo Bettati (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,29882,CSCE,491,240,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,Frank Shipman (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23174,CSCE,491,241,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Thomas Ioerger (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29924,CSCE,491,242,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Lawrence Rauchwerger (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,33238,CSCE,491,244,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,Guofei Gu (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,29997,CSCE,491,245,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,Ruihong Huang (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,33395,CSCE,491,249,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,Xia Hu (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,25936,CSCE,491,255,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Bruce S. Gooch (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29923,CSCE,491,260,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Robin Murphy (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,25937,CSCE,491,265,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,TBA,01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,22705,CSCE,491,268,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Dylan A. Shell (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,25550,CSCE,491,269,CS,0-4,HNR-RESEARCH ,,TBA,0,0,0,Eric D. Ragan (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,29341,CSCE,491,296,CS,0-4,HNR-RESEARCH ,,TBA,30,0,30,Joseph Rojas (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,32910,CSCE,491,297,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,Hye-Chung Kum (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29950,CSCE,491,500,CS,0-4,RESEARCH ,,TBA,0,0,0,Nancy Amato (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20125,CSCE,491,503,CS,0-4,RESEARCH ,,TBA,0,0,0,Andrew Kerne (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20299,CSCE,491,504,CS,0-4,RESEARCH ,,TBA,0,0,0,Richard K. Furuta (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16245,CSCE,491,505,CS,0-4,RESEARCH ,,TBA,0,0,0,Dmitri Loguinov (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,32821,CSCE,491,507,CS,0-4,RESEARCH ,,TBA,4,0,4,"Mahima Agumbe Suresh (P), Dilma Da Silva",01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36497,CSCE,491,509,CS,0-4,RESEARCH ,,TBA,0,0,0,TBA,01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23239,CSCE,491,511,CS,0-4,RESEARCH ,,TBA,0,0,0,Dezhen Song (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29467,CSCE,491,512,CS,0-4,RESEARCH ,,TBA,0,0,0,Daniel J. Ragsdale(P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,30063,CSCE,491,513,CS,0-4,RESEARCH ,,TBA,0,0,0,James Caverlee (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20381,CSCE,491,520,CS,0-4,RESEARCH ,,TBA,0,0,0,Vivek Sarin (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,30065,CSCE,491,527,CS,0-4,RESEARCH ,,TBA,0,0,0,Jyh Liu (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23251,CSCE,491,529,CS,0-4,RESEARCH ,,TBA,0,0,0,Rabinarayan Mahapatra (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20413,CSCE,491,530,CS,0-4,RESEARCH ,,TBA,0,0,0,Yoonsuck Choe (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16505,CSCE,491,533,CS,0-4,RESEARCH ,,TBA,0,0,0,Nancy Amato (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16563,CSCE,491,536,CS,0-4,RESEARCH ,,TBA,0,0,0,Tracy Hammond (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,23278,CSCE,491,538,CS,0-4,RESEARCH ,,TBA,0,0,0,Riccardo Bettati (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29468,CSCE,491,539,CS,0-4,RESEARCH ,,TBA,0,0,0,Shinjiro Sueda (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,26067,CSCE,491,540,CS,0-4,RESEARCH ,,TBA,0,0,0,Frank Shipman (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,13886,CSCE,491,543,CS,0-4,RESEARCH ,,TBA,0,0,0,Gabriel Dos Reis (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,18544,CSCE,491,544,CS,0-4,RESEARCH ,,TBA,0,0,0,Guofei Gu (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,18606,CSCE,491,545,CS,0-4,RESEARCH ,,TBA,0,0,0,Ruihong Huang (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,25552,CSCE,491,549,CS,0-4,RESEARCH ,,TBA,0,0,0,Xia Hu (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,26116,CSCE,491,555,CS,0-4,RESEARCH ,,TBA,0,0,0,Bruce S. Gooch (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,14089,CSCE,491,560,CS,0-4,RESEARCH ,,TBA,0,0,0,Robin Murphy (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and Research and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16491,CSCE,491,561,CS,0-4,RESEARCH ,,TBA,0,0,0,Radu Stoleru (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,16487,CSCE,491,568,CS,0-4,RESEARCH ,,TBA,0,0,0,Dylan A. Shell (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,29837,CSCE,491,596,CS,0-4,RESEARCH ,,TBA,0,0,0,Eric D. Ragan (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20462,CSCE,491,597,CS,0-4,RESEARCH ,,TBA,0,0,0,Paul Gratz (P),01/14-05/07,TBA,College Station and LMTD and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36451,CSCE,491,970,CS,0-4,HNR-RESEARCH ,,TBA,1,1,0,Anxiao Jiang (P),01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Univ Req-Writing Intensive and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36809,CSCE,491,971,CS,0-4,HNR-RESEARCH ,,TBA,1,1,0,TBA,01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Univ Req-Writing Intensive and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36836,CSCE,491,972,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,TBA,01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Univ Req-Writing Intensive and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36837,CSCE,491,973,CS,0-4,HNR-RESEARCH ,,TBA,1,0,1,TBA,01/14-05/07,TBA,College Station and Honors and LMTD and NonTraditional Format Exclude and Univ Req-Writing Intensive and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20935,CSCE,606,600,CS,3,SOFTWARE ENGINEERING ,TR,05:30 pm-06:45 pm,80,81,-1,Duncan Walker (P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,32814,CSCE,611,600,CS,3,OPERATING SYSTEMS & APPL ,MWF,03:00 pm-03:50 pm,86,53,33,Ki Hwan K. Yum (P),01/14-05/07,HRBB 124,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36121,CSCE,611,700,CS,3,OPERATING SYSTEMS & APPL (Syllabus) ,WEB,WEB,30,17,13,Riccardo Bettati (P),01/14-05/07,WEB,Distance Education and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,20936,CSCE,612,600,CS,3,APPLIED NETWRK DIST PROC ,TR,03:55 pm-05:10 pm,15,15,0,Dmitri Loguinov (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,34504,CSCE,613,601,CS,3,OPERATING SYSTEMS ,TR,09:35 am-10:50 am,70,43,27,Riccardo Bettati (P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,34505,CSCE,614,601,CS,3,COMPUTER ARCHITECTURE ,TR,03:55 pm-05:10 pm,60,34,26,Abdullah Muzahid (P),01/14-05/07,RICH 114,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36373,CSCE,620,600,CS,3,COMPUTATIONAL GEOMETRY ,TR,02:20 pm-03:35 pm,20,17,3,Jianer Chen (P),01/14-05/07,THOM 009C,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,19180,CSCE,625,600,CS,3,ARTIFICIAL INTELLIGNCE ,TR,09:35 am-10:50 am,80,79,1,Dylan A. Shell (P),01/14-05/07,ZACH 350,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,15331,CSCE,627,600,CS,3,TH OF COMPUTABILITY ,MWF,08:00 am-08:50 am,25,14,11,Jennifer Welch (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,12365,CSCE,629,600,CS,3,ANALYSIS OF ALGORITHMS ,TR,12:45 pm-02:00 pm,90,90,0,Jianer Chen (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,19444,CSCE,629,601,CS,3,ANALYSIS OF ALGORITHMS ,MW,05:45 pm-07:00 pm,90,14,76,Juan Garay (P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,12367,CSCE,633,600,CS,3,MACHINE LEARNING(Syllabus) ,TR,08:00 am-09:15 am,85,86,-1,Theodora Chaspari(P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,34532,CSCE,633,601,CS,3,MACHINE LEARNING(Syllabus) ,TR,05:30 pm-06:45 pm,60,60,0,Zhangyang Wang (P),01/14-05/07,ZACH 244,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,34508,CSCE,636,601,CS,3,NEURAL NETWORKS ,TR,11:10 am-12:25 pm,100,100,0,Anxiao Jiang (P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,34510,CSCE,640,601,CS,3,QUANTUM ALGORITHMS ,MW,05:45 pm-07:00 pm,15,15,0,Fang Song (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,33670,CSCE,645,600,CS,3,GEOMETRIC MODELING ,TR,05:30 pm-06:45 pm,0,0,0,TBA,01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36156,CSCE,645,601,CS,3,GEOMETRIC MODELING ,MWF,12:40 pm-01:30 pm,0,0,0,TBA,01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,33674,CSCE,645,604,CS,3,GEOMETRIC MODELING ,MW,12:40 pm-01:30 pm,0,0,0,TBA,01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,34555,CSCE,645,608,CS,3,GEOMETRIC MODELING ,TR,08:00 am-09:15 am,0,0,0,TBA,01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,34556,CSCE,645,609,CS,3,GEOMETRIC MODELING ,MW,04:10 pm-05:25 pm,0,0,0,TBA,01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,13975,CSCE,647,600,CS,4,IMAGE SYNTHESIS ,MW,10:20 am-11:35 am,15,12,3,Ergun Akleman (P),01/14-05/07,ARCC 414,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,MW,11:36 am-12:25 pm,,,,Ergun Akleman,01/14-05/07,ARCC 414,
+,34516,CSCE,652,601,CS,3,SOFTWARE REVERSE ENGINEERING ,MWF,11:30 am-12:20 pm,15,10,5,Jyh Liu (P),01/14-05/07,HRBB 113,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,F,09:10 am-11:10 am,,,,Jyh Liu,01/14-05/07,EABA 118,
+,34511,CSCE,655,601,CS,3,HUMAN-CENTERED COMPUTING ,TR,09:35 am-10:50 am,30,27,3,Andrew Kerne (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,34533,CSCE,657,601,CS,3,HPC EARTH SCIENCE & PETE (Syllabus) ,M,12:40 pm-03:30 pm,10,8,2,Vivek Sarin (P),01/14-05/07,RICH 319,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,30872,CSCE,658,600,CS,3,RANDOMIZED ALGORITHMS ,TR,02:20 pm-03:35 pm,30,4,26,Andreas Klappenecker (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,34512,CSCE,664,601,CS,3,WIRELESS AND MOBILE SYST ,TR,12:45 pm-02:00 pm,30,15,15,Radu Stoleru (P),01/14-05/07,HRBB 126,College Station and Open Education Resources
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,30874,CSCE,665,600,CS,3,ADV NETWORK & SECURITY ,MWF,03:00 pm-03:50 pm,30,18,12,Guofei Gu (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,35516,CSCE,668,600,CS,3,DISTRIBUTED ALGS & SYS ,MWF,09:10 am-10:00 am,30,26,4,Jennifer Welch (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,12369,CSCE,670,600,CS,3,INFO STORAGE & RETRIEVAL ,MWF,01:50 pm-02:40 pm,95,96,-1,James Caverlee (P),01/14-05/07,HRBB 124,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,34514,CSCE,672,601,CS,3,COMP SUPPORT COLL WORK ,MWF,10:20 am-11:10 am,30,9,21,Frank Shipman (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36285,CSCE,678,600,CS,3,DISTRIBUTED SYS & CLOUD COMP ,MWF,11:30 am-12:20 pm,26,28,-2,Chia-Che Tsai (P),01/14-05/07,HRBB 126,College Station
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,12644,CSCE,681,600,CS,1,SEMINAR ,MW,04:10 pm-05:25 pm,135,43,92,Ricardo Gutierrez-Osuna (P),01/14-05/07,HRBB 124,College Station and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36654,CSCE,684,550,CS,1,PROFESSIONAL INTERNSHIP: IN-AB ,,TBA,10,7,3,Duncan Walker (P),01/14-05/07,TBA,In Absentia and NonTraditional Format Exclude and 3peat Exclusion and YIRS
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,36981,CSCE,684,563,CS,1,PROFESSIONAL INTERNSHIP: IN-AB ,,TBA,1,1,0,TBA,01/14-05/07,TBA,In Absentia and NonTraditional Format Exclude and 3peat Exclusion and YIRS
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36534,CSCE,684,581,CS,1,PROFESSIONAL INTERNSHIP: IN-AB ,,TBA,5,1,4,Anxiao Jiang (P),01/14-05/07,TBA,In Absentia and NonTraditional Format Exclude and 3peat Exclusion and YIRS
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36163,CSCE,684,584,CS,1,PROFESSIONAL INTERNSHIP: IN-AB ,,TBA,10,8,2,Zhangyang Wang (P),01/14-05/07,TBA,In Absentia and NonTraditional Format Exclude and 3peat Exclusion and YIRS
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36042,CSCE,685,600,CS,12-Jan,DIRECTED STUDIES ,,TBA,5,4,1,Duncan Walker (P),01/14-05/07,TBA,College Station and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36901,CSCE,685,611,CS,12-Jan,DIRECTED STUDIES ,,TBA,5,1,4,Dezhen Song (P),01/14-05/07,TBA,College Station and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36173,CSCE,685,623,CS,12-Jan,DIRECTED STUDIES ,,TBA,10,9,1,Theodora Chaspari(P),01/14-05/07,TBA,College Station and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36164,CSCE,685,631,CS,12-Jan,DIRECTED STUDIES ,,TBA,5,3,2,Anxiao Jiang (P),01/14-05/07,TBA,College Station and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36162,CSCE,685,634,CS,12-Jan,DIRECTED STUDIES ,,TBA,10,0,10,Zhangyang Wang (P),01/14-05/07,TBA,College Station and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36792,CSCE,685,665,CS,12-Jan,DIRECTED STUDIES ,,TBA,5,1,4,Nima Khademi Kalantari (P),01/14-05/07,TBA,College Station and NonTraditional Format Exclude
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,35877,CSCE,689,600,CS,3,SPTP: COMPUTATIONAL PHOTOG (Syllabus) ,MWF,01:50 pm-02:40 pm,30,26,4,Nima Khademi Kalantari (P),01/14-05/07,HRBB 126,College Station and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36641,CSCE,689,700,CS,3,SPTP: ADV DESIGN VERIFICATION (Syllabus) ,WEB,WEB,55,48,7,Michael D. Quinn (P),01/14-05/07,WEB,Distance Education and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36709,CSCE,689,701,CS,3,SPTP: INTRO COMPUTING SYSTEMS(Syllabus) ,WEB,WEB,30,2,28,Sarker T. Ahmed (P),01/14-05/07,WEB,Distance Education and NonTraditional Format Exclude and 3peat Exclusion
+,,,,,,,(Restrictions/Details),,,,,,,,,
+C,35517,CSCE,702,600,CS,3,LAW & POLICY IN CYBERSECURITY (Syllabus),TR,05:30 pm-06:45 pm,12,12,0,Paula S. Dewitte (P),01/14-05/07,HRBB 126,College Station and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,36059,CSCE,702,700,CS,3,LAW & POLICY IN CYBERSECURITY (Syllabus),WEB,WEB,18,14,4,Paula S. Dewitte (P),01/14-05/07,WEB,Distance Education and NonTraditional Format Approved
+,,,,,,,(Restrictions/Details),,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+4,,,,,,,,,,,,,,,,

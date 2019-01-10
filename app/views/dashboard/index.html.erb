@@ -1,26 +1,19 @@
 <div class="main-content">
-    <div class="nav">
-        <nav>
-            <%= link_to "Messages" %> |
-            <%= link_to "Account" %> |
-            <%= link_to "Logout", root_path %>
-        </nav>
-    </div>
-    
     <h1>Dashboard</h1>
     <h3>Welcome, <%= @user.username%></h3>
     
     <% if defined? @admin%>
         <h5>Admin</h5>
         <div class="container flex-row">
-            <div class="col-12">
+            <div class="col-12 flex-col fs">
                 <%= link_to "Instructor Listing", instructors_index_path %>
+                <%= link_to "Matchmaker", matchmaker_index_path %>
             </div>
             <div class="col-12">
                 <p>Course Overview</p>
                 <%= form_for :search, url: course_overview_index_path do |form| %>
                     <%= form.text_field :query, placeholder: "CLAS ###" %>
-                    <%= form.submit "Search" %>
+                    <%= form.submit "Search", :class=>"right-border fade-btn" %>
                 <% end %>
             </div>
         </div>

@@ -1,11 +1,4 @@
 <div class="main-content">
-    <div class="nav">
-        <nav>
-            <%= link_to "Messages" %> |
-            <%= link_to "Account" %> |
-            <%= link_to "Logout", root_path %>
-        </nav>
-    </div>
     <div class="content">
         <h2>Instructors</h2>
         <table class="borderless">
@@ -16,6 +9,9 @@
                 </td>
                 <td>
                     <%= instructor.email %>
+                </td>
+                <td id="<%= instructor.email %>">
+                    <%= link_to "x", instructors_remove_path(:email => instructor.email), :id=>"instructor_#{instructor.email}" %>
                 </td>
             </tr>
         <% end %>
