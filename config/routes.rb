@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'matchmaker/index'
+
   get 'instructors/index'
   post 'instructors/add'
   get 'instructors/remove'

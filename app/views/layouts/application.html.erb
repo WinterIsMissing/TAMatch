@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <% if (session[:user_token] && User.find_by(login_token: session[:user_token])) %>
+    <div class="nav">
+        <nav>
+            <% if params[:controller] != "dashboard" %>
+              <%= link_to "Dashboard", dashboard_path%>
+            <% end %>
+            <span class="filler"></span>
+            <%= link_to "Messages" %> |
+            <%= link_to "Account" %> |
+            <%= link_to "Logout", root_path %>
+        </nav>
+    </div>
+    <% end %>
     <p id="notice"><%= notice %></p>
     <%= yield %>
   </body>
