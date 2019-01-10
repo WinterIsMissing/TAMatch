@@ -176,17 +176,8 @@ function convertToJSON(){
     }
 
     console.log(JSON.stringify({"fname":fname, "lname":lname, "email":email, "degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences}));
+    var data = JSON.stringify({"fname":fname, "lname":lname, "email":email, "degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences});
 
-//new stuff
-    $("[data-behavior= 'sortable']").sortable({
-      update: function(e, ui){
-        Rails.ajax({
-          url: $(this).data("url"),
-          type: "PATCH",
-          data: $(this).sortable('serialize'),
-        });
-      }
-    });
 
   }
 </script>

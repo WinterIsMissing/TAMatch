@@ -1,2 +1,0 @@
-class Taapp < ApplicationRecord
-end
