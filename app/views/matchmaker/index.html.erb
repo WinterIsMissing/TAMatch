@@ -1,6 +1,6 @@
 <div class="main-content">
     <h1>Matchmaker</h1>
-    <%= form_for :run, url: course_overview_index_path do |form| %>
+    <%= form_for :run, url: matchmaker_index_path do |form| %>
         <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border" %>
     <% end %>
     <% if @entries %>
@@ -11,17 +11,18 @@
                 <th>Applicant</th>
             </tr>
             <% @entries.each do |course, emails| %>
-                <% @cur_status = emails.length%6 %>
-                <% if @cur_status < 2 %>
+                <% @cur_status = emails.length %>
+                <% @capacity = @courses[course].ta_count %>
+                <% if @cur_status < (@capacity/3) %>
                     <% @status = 'red' %>
-                <% elsif @cur_status < 4 %>
+                <% elsif @cur_status < (@capacity*2/3) %>
                     <% @status = 'yellow' %>
                 <% else %>
                     <% @status = 'green' %>
                 <% end %>
                 <tr>
-                    <td><%= course %></td>
-                    <td style="text-align:center" class="<%= @status %>"><%= emails.length%6 %> / 4</td>
+                    <td style="text-align:center;"><%= course %></td>
+                    <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
                     <td><%= emails[0] %></td>
                     <% (1..emails.length-1).each do |i| %>
                         <tr>

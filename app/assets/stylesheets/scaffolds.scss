@@ -4,7 +4,8 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  margin: 0;
+  // margin: 33px;
 }
 
 p, ol, ul, td {
@@ -90,7 +91,8 @@ label {
 
 //custom-generic
 .main-content{
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px 33px;
 }
 .container{
     width: 100%;
@@ -128,9 +130,13 @@ label {
   width: 50%;
 }
 nav{
-  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  width: 90%;
   display: flex;
   justify-content: flex-end;
+  padding: 20px 5%;
+  color: #FFF;
+  background: #500000;
 }
 .borderless td, .borderless th{
   border: 0;
@@ -154,7 +160,7 @@ nav{
   opacity: 0.5
 }
 .filler{
-  width: 100%;
+  flex-grow: 1;
 }
 td{
   border-radius: 5px;
@@ -199,7 +205,15 @@ input[type="text"]:focus{
   outline: none;
   border-bottom: 1px solid rgba(80,0,0,0.2);
 }
-
+a.logo{
+  background: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  font-family: 'Coiny', cursive;
+  font-size: 20pt;
+}
 //Google Sign In
 #customBtn {
   display: inline-block;

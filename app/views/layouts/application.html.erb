@@ -7,15 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
   </head>
 
   <body>
     <% if !(['static', 'session', 'users'].include? params[:controller]) && (session[:user_token] && User.find_by(login_token: session[:user_token])) %>
     <div class="nav">
         <nav>
-            <% if params[:controller] != "dashboard" %>
-              <%= link_to "Dashboard", dashboard_path%>
-            <% end %>
+            <%= link_to "TAnder", dashboard_path, :class=>"logo fade-btn"%>
             <span class="filler"></span>
             <%= link_to "Messages" %> |
             <%= link_to "Account" %> |
