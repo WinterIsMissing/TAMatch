@@ -20,18 +20,21 @@ minimize human intervention in the application process for TA's.
 Some setup must be done in order to get testing functionality up and running.
 
 - Clone the repository into an aws instance w/ ruby and rails all set.
-- `cd` into the project directory and do the usual.
-  ```
-    bundle install
-  ```
 - Make sure that Postgresql is primed.
   ```
     sudo yum install postgresql postgresql-server postgresql-devel postgresql-contrib postgresql-docs
   ```
   ```
+    sudo service postgresql initdb
+  ```
+  ```
     sudo service postgresql start
   ```
-- Create a super user account for ec2-user
+- `cd` into the project directory and do the usual ruby setup.
+  ```
+    bundle install
+  ```
+- Create a super user account for ec2-user (_ignore the directory errors_)
   ```
     sudo -u postgres createuser -s ec2-user
   ```
