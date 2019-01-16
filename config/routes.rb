@@ -14,8 +14,7 @@ Rails.application.routes.draw do
 
   get '/auth', to: 'session#auth'
 
-
-  resources :taapps
+  resources :applicants
   resources :session, only: [:new, :create]
   root 'static#home'
   get '/auth/:provider/callback', to: 'session#create_oauth'

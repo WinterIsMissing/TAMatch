@@ -19,15 +19,15 @@ ActiveRecord::Schema.define(version: 20190110050543) do
     t.string   "name"
     t.string   "email"
     t.string   "degree_program"
-    t.boolean  "is_ta"
-    t.boolean  "is_grader"
-    t.boolean  "is_sg"
-    t.text     "preference_list"
-    t.text     "preferences"
-    t.text     "antipref"
-    t.text     "indifferent"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "isTA"
+    t.boolean  "isGrader"
+    t.boolean  "isSG"
+    t.text     "preference_list", default: [],              array: true
+    t.text     "preferences",     default: [],              array: true
+    t.text     "antipref",        default: [],              array: true
+    t.text     "indifferent",     default: [],              array: true
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "courses", force: :cascade do |t|

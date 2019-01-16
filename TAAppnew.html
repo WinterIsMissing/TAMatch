@@ -121,6 +121,7 @@ Applying as:
 </div>
 
  <button onclick = "convertToJSON()"> SUBMIT</button>
+ 
  <p></p>
  <div>
 
@@ -175,13 +176,21 @@ function convertToJSON(){
       i++;
     }
 
-    console.log(JSON.stringify({"fname":fname, "lname":lname, "email":email, "degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences}));
+    
     var data = JSON.stringify({"fname":fname, "lname":lname, "email":email, "degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences});
 
-
+    let payload ={"degree_program":degreeProg, "is_ta":isTA, "is_grader":isGrader, "is_sg":isSG, "preferences":preferences, "antipref":antipreferences};
+    document.getElementById("application_payload").value = JSON.stringify(payload);
+    $("#payload-form").trigger('submit.rails');
+    console.log(JSON.stringify(payload));
   }
 </script>
 
+
+<%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
+  <%= form.text_field :payload %>
+  <%= form.submit "submit-payload", :id=>"payload-button" %>
+<% end %>
  
 </body>
 </html>

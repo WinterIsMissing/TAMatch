@@ -56,7 +56,7 @@
     			i++;
     		}
         
-        let payload ={"degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "antipref":antipreferences};
+        let payload ={"degree_program":degreeProg, "is_ta":isTA, "is_grader":isGrader, "is_sg":isSG, "preferences":preferences, "antipref":antipreferences};
         document.getElementById("application_payload").value = JSON.stringify(payload);
         $("#payload-form").trigger('submit.rails');
     		console.log(JSON.stringify(payload));
@@ -133,7 +133,7 @@
     <br><br>
     
     <button id="submit" onclick = "convertToJSON()"> SUBMIT</button>
-    <%= form_for :application, url: taapps_path, :html => {:id => "payload-form"} do |form| %>
+    <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :payload %>
       <%= form.submit "submit-payload", :id=>"payload-button" %>
     <% end %>
