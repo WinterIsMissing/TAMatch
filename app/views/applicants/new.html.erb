@@ -120,8 +120,12 @@ Applying as:
 </ul>
 </div>
 
- 
- 
+    <button id="submit" onclick = "convertToJSON()"> SUBMIT</button>
+    <%= form_for :application, url: taapps_path, :html => {:id => "payload-form"} do |form| %>
+      <%= form.text_field :payload %>
+      <%= form.submit "submit-payload", :id=>"payload-button" %>
+    <% end %>
+    
  <p></p>
  <div>
 
@@ -176,21 +180,16 @@ function convertToJSON(){
       i++;
     }
 
-    
-    var data = JSON.stringify({"fname":fname, "lname":lname, "email":email, "degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences});
+    console.log(JSON.stringify({"fname":fname, "lname":lname, "email":email, "degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences}));
 
-    let payload ={"degree_program":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences};
-    document.getElementById("application_payload").value = JSON.stringify(payload);
-    $("#payload-form").trigger('submit.rails');
-    console.log(JSON.stringify(payload));
+      let payload ={"degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences};
+        document.getElementById("application_payload").value = JSON.stringify(payload);
+        $("#payload-form").trigger('submit.rails');
+        console.log(JSON.stringify(payload));
+
   }
 </script>
 
-<button onclick = "convertToJSON()"> SUBMIT</button>
-<%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
-  <%= form.text_field :payload %>
-  <%= form.submit "submit-payload", :id=>"payload-button" %>
-<% end %>
  
 </body>
 </html>
