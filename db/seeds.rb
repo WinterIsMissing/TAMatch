@@ -59,6 +59,36 @@
             fullname: 'Danny Fenton', username: 'Danny Fenton', email: 'test_s3@x.x', auth_level: 'student',
             login_token: 'test_s3', token_generated_at: Time.now.utc.to_s
         })
+    User.create(
+        {
+            fullname: 'Alfreds Futterkiste', username: 'Alfreds Futterkiste', email: 'test_s4@x.x', auth_level: 'student',
+            login_token: 'test_s4', token_generated_at: Time.now.utc.to_s
+        })
+    User.create(
+        {
+            fullname: 'Ernst Handel', username: 'Ernst Handel', email: 'test_s5@x.x', auth_level: 'student',
+            login_token: 'test_s5', token_generated_at: Time.now.utc.to_s
+        })
+    User.create(
+        {
+            fullname: 'Edmund Kee', username: 'Edmund Kee', email: 'test_se@x.x', auth_level: 'student',
+            login_token: 'bige', token_generated_at: Time.now.utc.to_s
+        })
+    User.create(
+        {
+            fullname: 'Mackenzie Ford', username: 'Mackenzie Ford', email: 'test_sm@x.x', auth_level: 'student',
+            login_token: 'mackenzie', token_generated_at: Time.now.utc.to_s
+        })
+    User.create(
+        {
+            fullname: 'Ivan Delgado', username: 'Ivan Delgado', email: 'test_si@x.x', auth_level: 'student',
+            login_token: 'ivan', token_generated_at: Time.now.utc.to_s
+        })
+    User.create(
+        {
+            fullname: 'Benjamin Wong', username: 'Benjamin Wong', email: 'test_sb@x.x', auth_level: 'student',
+            login_token: 'ben', token_generated_at: Time.now.utc.to_s
+        })
 # end
 require 'csv'  
 

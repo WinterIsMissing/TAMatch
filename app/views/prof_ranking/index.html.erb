@@ -1,269 +1,153 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-<script>
-  $(':radio').change(function() {
-  console.log('New star rating: ' + this.value);
-});
-  </script>
-</head>
-<h1> Instructor Preferences </h1>
-
-Choose which class to display:
-  <select id = "degreeProgram">
-  <option value="msThesis">CSCE 121</option>
-  <option value="msNon-Thesis">CSCE 221</option>
-  <option value="phd">CSCE 313</option>
-</select>
-
-<p></p>
-<table>
-  <tr>
-    <th>TA/Grader's Name</th>
-    <th>Status</th>
-    <th>Your rank</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>PHD</td>
-    <td>
-      <form class="rating">
-  <label>
-    <input type="radio" name="stars" value="1" />
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="2" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="3" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>   
-  </label>
-  <label>
-    <input type="radio" name="stars" value="4" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="5" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-</form>
-
-
-
-    </td>
-  </tr>
-  <tr> 
-    <td>Mackenzie Ford</td>
-    <td>MS</td>
-    <td>
-<form class="rating">
-  <label>
-    <input type="radio" name="stars" value="1" />
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="2" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="3" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>   
-  </label>
-  <label>
-    <input type="radio" name="stars" value="4" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="5" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-</form>
-
-    </td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>PHD</td>
-    <td>
-      
-<form class="rating">
-  <label>
-    <input type="radio" name="stars" value="1" />
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="2" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="3" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>   
-  </label>
-  <label>
-    <input type="radio" name="stars" value="4" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="5" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-</form>
-
-    </td>
-  </tr>
-  <tr>
-    <td>Ivan Delgado</td>
-    <td>PHD</td>
-    <td>
-      
-<form class="rating">
-  <label>
-    <input type="radio" name="stars" value="1" />
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="2" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="3" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>   
-  </label>
-  <label>
-    <input type="radio" name="stars" value="4" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="5" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-</form>
-
-    </td>
-  </tr>
-  <tr>
-    <td>Ben Wong</td>
-    <td>PHD</td>
-    <td>
-      
-<form class="rating">
-  <label>
-    <input type="radio" name="stars" value="1" />
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="2" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="3" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>   
-  </label>
-  <label>
-    <input type="radio" name="stars" value="4" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="5" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-</form>
-
-    </td>
-  </tr>
-  <tr>
-    <td>Edmund Kee</td>
-    <td>PHD</td>
-    <td>
-      
-<form class="rating">
-  <label>
-    <input type="radio" name="stars" value="1" />
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="2" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="3" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>   
-  </label>
-  <label>
-    <input type="radio" name="stars" value="4" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-  <label>
-    <input type="radio" name="stars" value="5" />
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-    <span class="icon">★</span>
-  </label>
-</form>
-
-    </td>
-  </tr>
-</table>
-
+  <head>
+    <script>
+      $(':radio').change(function() {
+          console.log('New star rating: ' + this.value);
+          console.log(this);
+          let email = $(this).attr('email');
+          let payload = {
+              email: this.value
+          };
+          document.getElementById("preference_email").value = email;
+          document.getElementById("preference_rating").value = this.value;
+          
+          $("#payload-form").trigger('submit.rails');
+      });
+    </script>
+  </head>
+  <body>
+    <div class="main-content">
+      <h1> Instructor Preferences </h1>
+      Choose which class to display:
+      <select id="degreeProgram">
+        <option value="msThesis">CSCE 121</option>
+        <option value="msNon-Thesis">CSCE 221</option>
+        <option value="phd">CSCE 313</option>
+      </select>
+      <p></p>
+      <table>
+        <tr>
+          <th>TA/Grader's Name</th>
+          <th>Status</th>
+          <th>Your rank</th>
+        </tr>
+        <% @applicants.each do |applicant| %>
+          <% rating = @preferences[applicant.email].to_i %>
+          <% rating = 3 if rating == 0 %>
+          <tr>
+            <td><%= applicant.name %></td>
+            <td><%= applicant.degree_program %></td>
+            <td>
+              <form class="rating">
+                <label>
+                  <% if rating == 1 %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                </label>
+                <label>
+                  <% if rating == 2 %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+                <label>
+                  <% if rating == 3 %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+                <label>
+                  <% if rating == 4 %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+                <label>
+                  <% if rating == 5 %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="2"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>PHD</td>
+          <td>
+            <form class="rating">
+              <label>
+              <input type="radio" name="stars" value="1" />
+              <span class="icon">★</span>
+              </label>
+              <label>
+              <input type="radio" name="stars" value="2" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              </label>
+              <label>
+              <input type="radio" name="stars" value="3" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              </label>
+              <label>
+              <input type="radio" name="stars" value="4" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              </label>
+              <label>
+              <input type="radio" name="stars" value="5" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              </label>
+            </form>
+          </td>
+        </tr>
+        
+      </table>
+    </div>
+    <%= form_for :preference, url: prof_ranking_update_path, :html => {:id => "payload-form"} do |form| %>
+      <%= form.text_field :rating %>
+      <%= form.text_field :email %>
+    <% end %>
+  </body>
 </html>

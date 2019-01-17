@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'course_overview/index'
 
   get 'prof_ranking/index'
+  post 'prof_ranking/update'
 
   get 'ta_application/index'
 

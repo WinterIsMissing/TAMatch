@@ -1,0 +1,41 @@
+[1mdiff --git a/db/seeds.rb b/db/seeds.rb[m
+[1mindex 0fe15b3..aaa3503 100644[m
+[1m--- a/db/seeds.rb[m
+[1m+++ b/db/seeds.rb[m
+[36m@@ -59,6 +59,36 @@[m
+             fullname: 'Danny Fenton', username: 'Danny Fenton', email: 'test_s3@x.x', auth_level: 'student',[m
+             login_token: 'test_s3', token_generated_at: Time.now.utc.to_s[m
+         })[m
+[32m+[m[32m    User.create([m
+[32m+[m[32m        {[m
+[32m+[m[32m            fullname: 'Alfreds Futterkiste', username: 'Alfreds Futterkiste', email: 'test_s4@x.x', auth_level: 'student',[m
+[32m+[m[32m            login_token: 'test_s4', token_generated_at: Time.now.utc.to_s[m
+[32m+[m[32m        })[m
+[32m+[m[32m    User.create([m
+[32m+[m[32m        {[m
+[32m+[m[32m            fullname: 'Ernst Handel', username: 'Ernst Handel', email: 'test_s5@x.x', auth_level: 'student',[m
+[32m+[m[32m            login_token: 'test_s5', token_generated_at: Time.now.utc.to_s[m
+[32m+[m[32m        })[m
+[32m+[m[32m    User.create([m
+[32m+[m[32m        {[m
+[32m+[m[32m            fullname: 'Edmund Kee', username: 'Edmund Kee', email: 'test_se@x.x', auth_level: 'student',[m
+[32m+[m[32m            login_token: 'bige', token_generated_at: Time.now.utc.to_s[m
+[32m+[m[32m        })[m
+[32m+[m[32m    User.create([m
+[32m+[m[32m        {[m
+[32m+[m[32m            fullname: 'Mackenzie Ford', username: 'Mackenzie Ford', email: 'test_sm@x.x', auth_level: 'student',[m
+[32m+[m[32m            login_token: 'mackenzie', token_generated_at: Time.now.utc.to_s[m
+[32m+[m[32m        })[m
+[32m+[m[32m    User.create([m
+[32m+[m[32m        {[m
+[32m+[m[32m            fullname: 'Ivan Delgado', username: 'Ivan Delgado', email: 'test_si@x.x', auth_level: 'student',[m
+[32m+[m[32m            login_token: 'ivan', token_generated_at: Time.now.utc.to_s[m
+[32m+[m[32m        })[m
+[32m+[m[32m    User.create([m
+[32m+[m[32m        {[m
+[32m+[m[32m            fullname: 'Benjamin Wong', username: 'Benjamin Wong', email: 'test_sb@x.x', auth_level: 'student',[m
+[32m+[m[32m            login_token: 'ben', token_generated_at: Time.now.utc.to_s[m
+[32m+[m[32m        })[m
+ # end[m
+ require 'csv'  [m
+ [m

@@ -3,7 +3,7 @@ require 'time'
 class User < ApplicationRecord
   validates_presence_of :username, :email, :auth_level
   validates_uniqueness_of :username, :email
-
+  has_one :instructor_preference
 
   def send_login_link(user)
     generate_login_token
