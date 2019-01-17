@@ -51,14 +51,15 @@ class User < ApplicationRecord
   #STATIC
 
   def self.from_omniauth(auth_hash)
-    user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
-    user.fullname = auth_hash['info']['name']
-    user.username = auth_hash['info']['email']
-    user.email = auth_hash['info']['email']
+    user = find_or_create_by(email: auth_hash['info']['email'])
+    user.uid ||= auth_hash['uid']
+    user.provider ||= auth_hash['provider']
+    user.fullname ||= auth_hash['info']['name']
+    user.username ||= auth_hash['info']['email']
     #user.location = auth_hash['info']['location']
-    user.image_url = auth_hash['info']['image']
-    user.url = auth_hash['info']['urls']
-    user.auth_level = 'student'
+    user.image_url ||= auth_hash['info']['image']
+    user.url ||= auth_hash['info']['urls']
+    user.auth_level ||= 'student'
     user.save!
     return user
   end
