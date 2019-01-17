@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TA APP</title>
+
+  <style>
+  #sortable1, #sortable2, #sortable3 {
+    border: 1px solid #eee;
+    width: 450px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li, #sortable3 li{
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.0em;
+    width: 450px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable1, #sortable2, #sortable3" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  } );
+  </script>
+</head>
+<body>
+
+
+<h1>TA Application</h1>
+<br>
+
+
+<form action="/action_page.php">
+  First name: <input type="text" name="fname" id = "fname"><br>
+  <p> </p>
+  Last name: <input type="text" name="lname" id = "lname"><br>
+  <p> </p>
+  Email: <input type="text" name="email" id = "email"><br>
+  <!--<input type="submit" value="Submit">-->
+</form>
+
+  <p>
+    
+  </p>
+  Degree Program:
+  <select id = "degreeProgram">
+  <option value="msThesis">MS Thesis</option>
+  <option value="msNon-Thesis">MS Non-Thesis</option>
+  <option value="phd">PhD</option>
+</select>
+  <!--<input type="submit" value="Submit">-->
+
+
+<p>
+
+</p>
+
+<div>
+Applying as:
+<p></p>
+   <input type="checkbox" id="taCheck"> TA
+  <p></p>
+   <input type="checkbox" id="gCheck"> Grader
+  <p></p>
+   <input type="checkbox" id="sgCheck"> Senior Grader
+</div>
+
+
+<br><br>
+<h2 > My Class Preferences </h2>
+ <div id = "sortable1div">
+<ul id="sortable1" class="connectedSortable">
+ <h3> Classes I CAN teach </h3>
+ <li id = "CSCE655" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 655 Human-Centered Computing</li>
+  <li id = "CSCE315" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 315 Programming Studio</li>
+  <li id = "CSCE670" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 670/470 Info Storage and Retrieval</li>
+  <li id = "CSCE633" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 633 Machine Learning</li>
+  <li id = "CSCE625" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 625/420 Artificial Intelligence</li>
+  <li id = "CSCE436" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 436 Computer Human Interaction</li>
+  <li id = "CSCE445" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 445 Computers and New Media</li>
+  <li id = "CSCE482" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 482 Capstone Design</li>
+  <li id = "CSCE431" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 431 Software Engineering</li>
+   <li id = "CSCE441" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 441 Computer Graphics </li>
+  <li id = "CSCE629" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 629/411 Analysis of Algorithms </li>
+  <li id = "CSCE310" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 310 Database Systems</li>
+  <li id = "CSCE121" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 121 Intro Programming Design </li>
+  <li id = "CSCE206" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 206 Structured Programming in C </li>
+
+</ul>
+ </div>
+
+<div id = "sortable2div">
+<ul id="sortable2" class="connectedSortable" >
+  <h3> Class I CAN && REALLY WANT to teach </h3>
+   <li id = "CSCE222" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 222 Discrete Structure Computing</li>
+     <li id = "CSCE313" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 313 Intro to Computer System </li>
+  <li id = "CSCE221" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 221 Data Structures and Algorithms </li>
+  <li id = "CSCE222" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 222 Discrete Structure Computing</li>
+  <li id = "CSCE312" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 312 Computer Organization </li>
+  <li id = "CSCE181" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 181 Intro to Computing</li>
+  <li id = "CSCE111" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 111 CPSC Concepts and Program </li>
+  <li id = "CSCE110" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE 110 Programming I </li>
+</ul>
+</div>
+
+<div id = "sortable3div">
+<ul id="sortable3" class="connectedSortable" style = "color:red" title = "hello">
+  <h3> Class I CANNOT teach </h3>
+  <li id = "CSCE314" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE 314 Programming Languages </li>
+</ul>
+</div>
+
+    <button id="submit" onclick = "convertToJSON()"> SUBMIT</button>
+    <%= form_for :application, url: taapps_path, :html => {:id => "payload-form"} do |form| %>
+      <%= form.text_field :payload %>
+      <%= form.submit "submit-payload", :id=>"payload-button" %>
+    <% end %>
+    
+ <p></p>
+ <div>
+
+ </div>
+
+
+ <script>
+
+  var s = document.getElementById("degreeProgram");
+  s.addEventListener("change", changeSelectedDP);
+
+  function changeSelectedDP(){
+    var value = s.options[s.selectedIndex].value;
+  }
+  changeSelectedDP();
+
+
+
+
+function convertToJSON(){
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var email = document.getElementById('email').value;
+    var degreeProg = document.getElementById("degreeProgram").options[document.getElementById("degreeProgram").selectedIndex].value;
+    var listIndifferent = document.getElementById("sortable1div").getElementsByTagName("li");
+    var listPref = document.getElementById("sortable2div").getElementsByTagName("li");
+    var listAntipref = document.getElementById("sortable3div").getElementsByTagName("li");
+
+
+    var isTA = document.getElementById('taCheck').checked;
+    var isGrader = document.getElementById('gCheck').checked;
+    var isSG = document.getElementById('sgCheck').checked;
+
+    var i;
+    var preferences = [];
+    var antipreferences = [];
+    var indifferent = [];
+    i = 0;
+  
+    while(i < listIndifferent.length){
+      indifferent.push(listIndifferent[i].id);
+      i++;
+    }
+    i = 0;
+    while(i < listPref.length){
+      preferences.push(listPref[i].id);
+      i++;
+    }
+    i = 0;
+    while(i < listAntipref.length){
+      antipreferences.push(listAntipref[i].id);
+      i++;
+    }
+
+    console.log(JSON.stringify({"fname":fname, "lname":lname, "email":email, "degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences}));
+
+      let payload ={"degreeProgram":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences};
+        document.getElementById("application_payload").value = JSON.stringify(payload);
+        $("#payload-form").trigger('submit.rails');
+        console.log(JSON.stringify(payload));
+
+  }
+</script>
+
+ 
+</body>
+</html>
