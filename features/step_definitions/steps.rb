@@ -35,7 +35,7 @@ When(/^I am on the "(.*?)" page$/) do |targ_page|
     when 'Register'
         visit register_path
     when 'TA Application'
-        visit ta_application_index_path
+        visit new_applicant_path
     when 'Instructor Preferences'
         visit prof_ranking_index_path
     when 'Instructor Listing'
