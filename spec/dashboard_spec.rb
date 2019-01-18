@@ -22,8 +22,7 @@ RSpec.describe "Dashboard", :type => :feature do
     token = @user.generate_login_token
     visit '/auth?' + token
     expect(page).to have_content("Student")
-    expect(page).to have_content("Accepted Applications")
-    expect(page).to have_content("Pending Applications")
+    expect(page).to have_content("Submitted Applications")
     expect(page).to have_content("Create Application")
   end
   it 'directs to correct dashbaord page (instructor)' do 
@@ -50,8 +49,8 @@ RSpec.describe "Dashboard", :type => :feature do
     token = @user.generate_login_token
     visit '/auth?' + token
     expect(page).to have_content("Create Application")
-    find('a[href$="/ta_application/index"]').click
-    expect(current_path).to eq('/ta_application/index')
+    find('a[href$="/applicants/new"]').click
+    expect(current_path).to eq('/applicants/new')
   end
   it 'Rank Applications button test' do 
     email = "test_i@x.x"
@@ -74,7 +73,16 @@ RSpec.describe "Dashboard", :type => :feature do
     visit '/dashboard'
     expect(page).to have_content("Please login")
   end  
-
+=begin  
+  it 'block access for invalid auth level' do
+    email = "test_i@x.x"
+    @user = User.find_by(email: email)
+    token = @user.generate_login_token
+    visit '/auth?' + token 
+    visit '/applicants/new'
+    expect(page).to have_content("Inaccessible Page! (student)")
+  end  
+=end
 
 
 end

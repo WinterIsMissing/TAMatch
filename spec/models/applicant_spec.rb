@@ -1,5 +1,8 @@
 require 'rails_helper'
+require 'spec_helper'
+require 'capybara/rspec'
 
-RSpec.describe Applicant, type: :model do
+RSpec.describe ApplicantsController, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
+
 end

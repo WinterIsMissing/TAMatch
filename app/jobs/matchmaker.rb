@@ -148,7 +148,7 @@ class Matchmaker
       
       my_string.chomp(", ")
       
-      applicants.each {|y| y.preference_list.gsub!(x.name, my_string) }
+      applicants.each {|y| y.preference_list.to_s.gsub!(x.name, my_string) }
     end
     
     applicants.each do |x|
