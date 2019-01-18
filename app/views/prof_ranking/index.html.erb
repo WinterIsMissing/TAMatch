@@ -30,11 +30,11 @@
         <tr>
           <th>TA/Grader's Name</th>
           <th>Status</th>
-          <th>Your rank</th>
+          <th> Please no &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp Neutral   &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  Please yes  </th>
         </tr>
         <% @applicants.each do |applicant| %>
           <% rating = @preferences[applicant.email].to_i %>
-          <% rating = 3 if rating == 0 %>
+          <% rating = 5 if rating == 0 %>
           <tr>
             <td><%= applicant.name %></td>
             <td><%= applicant.degree_program %></td>
@@ -100,6 +100,93 @@
                   <span class="icon">★</span>
                   <span class="icon">★</span>
                 </label>
+                <label>
+                  <% if rating == 6 %>
+                    <input type="radio" name="stars" value="6"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="6"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+                <label>
+                  <% if rating == 7 %>
+                    <input type="radio" name="stars" value="7"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="7"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+                <label>
+                  <% if rating == 8 %>
+                    <input type="radio" name="stars" value="8"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="8"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+                <label>
+                  <% if rating == 9 %>
+                    <input type="radio" name="stars" value="9"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="9"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+               <label>
+                  <% if rating == 10 %>
+                    <input type="radio" name="stars" value="10"
+                      email="<%= applicant.email %>" checked/>
+                  <% else %>
+                    <input type="radio" name="stars" value="10"
+                      email="<%= applicant.email %>"/>
+                  <% end %>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                  <span class="icon">★</span>
+                </label>
+
+
               </form>
             </td>
           </tr>
