@@ -12,11 +12,21 @@ class ApplicantsController < ApplicationController
     
     def create
         
-        puts params["application"]["payload"]
+        
+        @email = User.find_by(login_token: session[:user_token]).email
+        @name = User.find_by(login_token: session[:user_token]).fullname
+        puts @email
+        puts @name
+        
+       # puts params["application"]["payload"]
+        
+        
         data = JSON.parse(params["application"]["payload"])
         
         @applicant = Applicant.new
         
+        @applicant.name = @name
+        @applicant.email = @email
         @applicant.degree_program = data["degree_program"]
         @applicant.isGrader = data["isGrader"]
         @applicant.isSG = data["isSg"]
