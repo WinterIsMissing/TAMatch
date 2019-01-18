@@ -4,21 +4,19 @@ class ProfRankingController < ApplicationController
     ip = User.find_by(login_token: session[:user_token]).instructor_preference
     preferences = ip.nil? ? {} : ip.preferences
     preferences ||= {}
-    puts preferences
+    # puts preferences
     @preferences = preferences
   end
   def update
-    puts params
+    # puts params
     rating = params[:preference][:rating]
     email = params[:preference][:email]
-    puts rating
-    puts email
     user = User.find_by(login_token: session[:user_token])
     if user.instructor_preference.nil?
       ip = InstructorPreference.create(user: user)
       ip.preferences = {}
       ip.save!
-      puts ip
+      # puts ip
     end
     if ip.nil?
       ip = user.instructor_preference

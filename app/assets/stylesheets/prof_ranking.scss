@@ -20,24 +20,39 @@
 .rating label:last-child {
   position: static;
 }
-
 .rating label:nth-child(1) {
-  z-index: 5;
+  z-index: 10;
 }
 
 .rating label:nth-child(2) {
-  z-index: 4;
+  z-index: 9;
 }
 
 .rating label:nth-child(3) {
-  z-index: 3;
+  z-index: 8;
 }
 
 .rating label:nth-child(4) {
-  z-index: 2;
+  z-index: 7;
 }
 
 .rating label:nth-child(5) {
+  z-index: 6;
+}
+
+.rating label:nth-child(6) {
+  z-index: 5;
+}
+.rating label:nth-child(7) {
+  z-index: 4;
+}
+.rating label:nth-child(8) {
+  z-index: 3;
+}
+.rating label:nth-child(9) {
+  z-index: 2;
+}
+.rating label:nth-child(10) {
   z-index: 1;
 }
 
