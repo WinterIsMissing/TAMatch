@@ -71,17 +71,17 @@
         })
     User.create(
         {
-            fullname: 'Edmund Kee', username: 'Edmund Kee', email: 'test_se@x.x', auth_level: 'student',
+            fullname: 'Edmund Kee', username: 'Edmund Kee', email: 'ksj.edmund@gmail.com', auth_level: 'admin',
             login_token: 'bige', token_generated_at: Time.now.utc.to_s
         })
     User.create(
         {
-            fullname: 'Mackenzie Ford', username: 'Mackenzie Ford', email: 'test_sm@x.x', auth_level: 'student',
+            fullname: 'Mackenzie Ford', username: 'Mackenzie Ford', email: 'kenzford8@gmail.com', auth_level: 'admin',
             login_token: 'mackenzie', token_generated_at: Time.now.utc.to_s
         })
     User.create(
         {
-            fullname: 'Ivan Delgado', username: 'Ivan Delgado', email: 'test_si@x.x', auth_level: 'student',
+            fullname: 'Ivan Delgado', username: 'Ivan Delgado', email: 'htxdelgado1@tamu.edu', auth_level: 'admin',
             login_token: 'ivan', token_generated_at: Time.now.utc.to_s
         })
     User.create(
@@ -89,6 +89,7 @@
             fullname: 'Benjamin Wong', username: 'Benjamin Wong', email: 'test_sb@x.x', auth_level: 'student',
             login_token: 'ben', token_generated_at: Time.now.utc.to_s
         })
+    
 # end
 require 'csv'  
 
