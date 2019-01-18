@@ -197,6 +197,7 @@
     <%= form_for :preference, url: prof_ranking_update_path, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :rating %>
       <%= form.text_field :email %>
+      <%= form.submit "Submit" %>
     <% end %>
   </body>
 </html>
