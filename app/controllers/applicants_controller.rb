@@ -3,11 +3,13 @@ class ApplicantsController < ApplicationController
     
     def index
 
+        # Will render a page thanking you for submitting your application
         #render plain: params[:article].inspect
     end
     
     
     def new 
+        # Will render the form to apply
     end
     
     def create
@@ -53,7 +55,13 @@ class ApplicantsController < ApplicationController
     
     
     
-    
+    def submitted
+        @email = User.find_by(login_token: session[:user_token]).email
+        
+        # get all the applications this user has
+        @applications = Applicant.where(:email => @email)
+  
+    end
     
     
     

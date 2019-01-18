@@ -27,4 +27,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:create]
   get '/dashboard', to: 'dashboard#index'
   
+  get '/view_applications', to: 'applicants#submitted'
+  
+  
 end

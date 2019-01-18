@@ -1,0 +1,18 @@
+<h1>You have the following applications:</h1>
+ 
+<table>
+  <tr>
+    <th>Your Preferences</th>
+    <th>Your Anti-Preferences</th>
+    <th></th>
+  </tr>
+ 
+  <% @applications.each do |app| %>
+    <tr>
+      <td><%= app.preferences %></td>
+      <td><%= app.antipref  %></td>
+    </tr>
+  <% end %>
+</table>
+
+<td><%= link_to 'Back', dashboard_index_path %></td>
