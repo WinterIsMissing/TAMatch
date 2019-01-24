@@ -22,3 +22,16 @@ Scenario: Navigate to Instructor Preferences page as an Admin
     When I login as "test_a@x.x"
     When I am on the "Dashboard" page 
     Then I should not see "Rank Applications"
+
+Scenario: Navigate to Instructor Preferences page as an Instructor
+    Given that I am an instructor
+    When I login as "test_i@x.x"
+    When I am on the "Instructor Preferences" page
+    And I see a student email
+    And I input "2" to "preference_rating"
+    And I input "@email" to "preference_email"
+    And I click "Submit"
+    When I am on the "Instructor Preferences" page
+    And I look for the "@email" element
+    Then "@element" should be checked
+    

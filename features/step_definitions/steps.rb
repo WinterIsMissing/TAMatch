@@ -24,6 +24,11 @@ Then(/^I should( not)? see "(.*?)"$/) do |not_visible, text|
     end
 end
 
+And(/^I see a student email$/) do
+    button = find('tr:nth-child(2) input[value="2"]')
+    @email = button[:email]
+end
+
 When(/^I login through google$/) do
     visit '/auth/google'
 end
@@ -52,6 +57,9 @@ And(/^I check "(.*?)"$/) do |item|
 end
 
 When(/^I input "(.*?)" to "(.*?)"$/) do |text, field|
+    if text == '@email'
+        text = @email
+    end
     fill_in(field, :with => text)
 end
 
@@ -88,4 +96,18 @@ And(/^I make sure "(.*?)" is a "(.*?)"$/) do |email, auth_level|
         user.auth_level = auth_level
         user.save!
     end
+end
+
+And(/^I look for the "(.*?)" element$/) do |text|
+    if text == '@email'
+        text = @email
+    end
+    @element = find('tr:nth-child(2) input[value="2"]')
+end
+
+Then(/^"(.*?)" should be checked$/) do |element|
+    if element == "@element"
+        element = @element
+    end
+    expect(element.checked?).to eq true
 end
