@@ -91,6 +91,30 @@ class Matchmaker
     return !thing.nil? && thing.respond_to?(:merge)
   end
   
+  def self.personify(men_prefs, women_prefs)
+    prefs = men_prefs.merge(women_prefs)
+    men = Hash[
+        men_prefs.keys.collect { |name| [name, Person.new(name)]}
+        ]
+    women = Hash[
+        women_prefs.keys.collect { |name| [name, Person.new(name)]}
+        ]
+    men.each {|name, man| man.preferences = women.values_at(*prefs[name])}
+    women.each {|name, woman| woman.preferences = men.values_at(*prefs[name])}
+    reversed = false
+    if men.keys.length > women.keys.length
+      men, women = women, men 
+      reversed = true
+    end
+    
+    ret_hash = Hash.new
+    ret_hash[:men] = men
+    ret_hash[:women] = women
+    ret_hash[:reversed] = reversed
+    return ret_hash
+  end
+    
+  
   def initialize(men_prefs, women_prefs, debug = false)
     $DEBUG = debug
     unless valid_arg(men_prefs) && valid_arg(women_prefs)
@@ -98,16 +122,9 @@ class Matchmaker
       @women = nil
       return
     end
-    prefs = men_prefs.merge(women_prefs)
-    @men = Hash[
-        men_prefs.keys.collect { |name| [name, Person.new(name)]}
-        ]
-    @women = Hash[
-        women_prefs.keys.collect { |name| [name, Person.new(name)]}
-        ]
-    @men.each {|name, man| man.preferences = @women.values_at(*prefs[name])}
-    @women.each {|name, woman| woman.preferences = @men.values_at(*prefs[name])}
-    @men, @women = @women, @men if @men.keys.length > @women.keys.length
+    persons = Matchmaker.personify(men_prefs, women_prefs)
+    @men = persons[:men]
+    @women = persons[:women]
   end
   
   def match_couples
@@ -125,8 +142,7 @@ class Matchmaker
     return ret_hash
   end
   
-  def self.course_match(courses, applicants, opts={:ta=>true, :grader=>false})
-    # matches, score = Matchmaker.course_match(Course.all, Applicant.all)
+  def self.course_match_initialize(courses, applicants, opts)
     course_prefs = []
     applicants.each { |x| course_prefs.push(x.email) }
     course_hash = Hash.new([])
@@ -157,9 +173,87 @@ class Matchmaker
       app_hash[x.email] = arry
     end
     
-    matchmaker = Matchmaker.new(course_hash, app_hash)
+    return_hash = Hash.new
+    return_hash[:course_hash] = course_hash
+    return_hash[:app_hash] = app_hash
+    return return_hash
+  end
+  
+  def self.course_match(courses, applicants, opts={:ta=>true, :grader=>false})
+    # matches, score = Matchmaker.course_match(Course.all, Applicant.all)
+    args = Matchmaker.course_match_initialize(courses, applicants, opts)
+    
+    matchmaker = Matchmaker.new(args[:course_hash], args[:app_hash])
     matches = matchmaker.match_couples
     return matches
+  end
+  
+  def self.stability(men)
+    unstable = Set.new
+    unmatched = 0
+    men.each_value do |man|
+      woman = man.fiance
+      if woman.null?
+        unmatched += 1
+        next
+      end
+   
+      man.more_preferable_people.each do |other_woman|
+        if other_woman.more_preferable_people.include?(man)
+          unstable << [man, other_woman]
+        end
+      end
+      woman.more_preferable_people.each do |other_man|
+        if other_man.more_preferable_people.include?(woman)
+          unstable << [other_man, woman]
+        end
+      end
+    end
+   
+    return (1.0 - unstable.length.to_f / men.keys.length.to_f), unmatched, unstable
+  end
+  
+  def self.course_match_score(xargs, opts={:ta=>true, :grader=>false})
+    warnings = []
+    course_list = xargs[:courses]
+    applicants = xargs[:applicants]
+    matches = xargs[:matches]
+    if course_list.nil? || applicants.nil? || matches.nil?
+      # xargs should be a hash with :courses, :applicants, and :matches fields
+      return -1
+    end
+    score = 100
+    opening_pts = score / course_list.length
+    #prof_pts = fill_pts = applicant_pts = opening_pts / 3
+    args = Matchmaker.course_match_initialize(course_list, applicants, opts)
+    
+    persons = Matchmaker.personify(args[:course_hash], args[:app_hash])
+    courses = persons[:men]
+    apps = persons[:women]
+    if persons[:reversed]
+      warnings.push("There are less applicants than openings!")
+      courses, apps = apps, courses
+    end 
+    
+    courses.each do |k, v|
+      v.engage(apps[matches[k]])
+    end
+    
+    stability, unmatched, unstable = Matchmaker.stability(courses)
+    score -= unmatched * opening_pts
+    if unmatched > 0
+      warnings.push("There are unmatched courses!")
+    end
+    score *= stability
+    if stability <= 0.99
+      warnings.push("Stability is not 100%")
+      unstable.each do |a,b|
+        warnings.push("#{a} & #{b}: applicants should be swapped for optimal stability.")
+      end
+    end
+    
+    warnings.push("There are no warnings!") if warnings.length < 1
+    return score, warnings
   end
   
   def stability
