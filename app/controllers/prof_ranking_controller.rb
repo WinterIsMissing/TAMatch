@@ -21,19 +21,35 @@ class ProfRankingController < ApplicationController
       if query.nil? then query = "default" end
       if course.nil? then course = DEF_COURSE end
       redirect_to prof_ranking_index_path(:search => query, :course => course, 
-        :name => session[:ip_name], :advisor => session[:ip_advisor])
+        :name => session[:ip_name], :advisor => session[:ip_advisor],
+        :years => session[:ip_years], :yr_cmp => session[:ip_yr_cmp])
     end
     
-    #Name
-    if @applicants and params[:name]
-      @applicants = @applicants.find_all{|x| x.name.include? params[:name]}
-    end
+    if @applicants
+      #Name
+      if params[:name]
+        @applicants = @applicants.find_all{|x| x.name.include? params[:name]}
+      end
     
-    #Advisor
-    if @applicants and params[:advisor]
-      @applicants = @applicants.find_all{|x| x.advisor.include? params[:advisor]}
-    end
+      #Advisor
+      if params[:advisor]
+        @applicants = @applicants.find_all{|x| x.advisor.include? params[:advisor]}
+      end
     
+      #Years
+      years = params[:years]
+      yr_cmp = params[:yr_cmp]
+      if years and !years.empty? and years.to_i
+        yr_cmp and !yr_cmp.empty?
+        if yr_cmp == ">"
+          @applicants = @applicants.find_all{|x| x.years > years.to_i}
+        elsif yr_cmp == "<"
+          @applicants = @applicants.find_all{|x| x.years < years.to_i}
+        else
+          @applicants = @applicants.find_all{|x| x.years == years.to_i}
+        end
+      end
+    end
     #Preferences
     ip = User.find_by(login_token: session[:user_token]).instructor_preference
     preferences = ip.nil? ? {} : ip.preferences
@@ -50,6 +66,9 @@ class ProfRankingController < ApplicationController
       course = params[:query][:course]
       name = params[:query][:name]
       advisor = params[:query][:advisor]
+      years = params[:query][:years]
+      yr_cmp = params[:query][:yr_cmp]
+      
       if course and !course.empty?
         session[:ip_course] = course
       end
@@ -62,6 +81,16 @@ class ProfRankingController < ApplicationController
         session[:ip_advisor] = advisor
       else
         session.delete(:ip_advisor)
+      end
+      if years
+        session[:ip_years] = years
+      else
+        session.delete(:ip_years)
+      end
+      if yr_cmp
+        session[:ip_yr_cmp] = yr_cmp
+      else
+        session.delete(:ip_yr_cmp)
       end
     end
     redirect_to prof_ranking_index_path

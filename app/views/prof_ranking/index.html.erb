@@ -35,6 +35,9 @@
               <span><%= k+" | "+v %></span>
             <% end %>
           <% end %>
+          <% if k == "years" %>
+            <span><%= "#{k} #{params[:yr_cmp]} #{v}" %></span>
+          <% end %>
         <% end %>
       </div>
       <p>Select a CSCE course: </p>
@@ -51,6 +54,10 @@
             <%= form.text_field :name, placeholder: "Name" %>
             <%= form.text_field :course, placeholder: "Course" %>
             <%= form.text_field :advisor, placeholder: "Advisor" %>
+            <div>
+              <%= form.number_field :years, placeholder: "Years" %>
+              <%= form.select :yr_cmp, [">", "<", "="] %>
+            </div>
             <div style="display: flex; justify-content: space-evenly;">
               <%= form.submit "Search", :name => "adv_search" %>
               <button id="close-form-modal">x</button>
