@@ -35,7 +35,7 @@
               <span><%= k+" | "+v %></span>
             <% end %>
           <% end %>
-          <% if k == "years" %>
+          <% if k == "years" and v and !v.empty? %>
             <span><%= "#{k} #{params[:yr_cmp]} #{v}" %></span>
           <% end %>
         <% end %>
@@ -52,7 +52,7 @@
           <h3>Advanced Search</h3>
           <%= form_for :query, url: prof_ranking_search_path do |form| %>
             <%= form.text_field :name, placeholder: "Name" %>
-            <%= form.text_field :course, placeholder: "Course" %>
+            <%= form.text_field :course2, placeholder: "Course" %>
             <%= form.text_field :advisor, placeholder: "Advisor" %>
             <div>
               <%= form.number_field :years, placeholder: "Years" %>
