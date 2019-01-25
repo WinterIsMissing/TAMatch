@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(version: 20190116201007) do
     t.boolean  "isTA"
     t.boolean  "isGrader"
     t.boolean  "isSG"
-    t.text     "preference_list", default: [],              array: true
-    t.text     "preferences",     default: [],              array: true
-    t.text     "antipref",        default: [],              array: true
-    t.text     "indifferent",     default: [],              array: true
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.text     "preference_list", default: [],                  array: true
+    t.text     "preferences",     default: [],                  array: true
+    t.text     "antipref",        default: [],                  array: true
+    t.text     "indifferent",     default: [],                  array: true
+    t.text     "advisor",         default: "none"
+    t.integer  "years",           default: 0
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "courses", force: :cascade do |t|

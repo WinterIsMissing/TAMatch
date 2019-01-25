@@ -166,9 +166,9 @@ csv.each do |line|
   indif.gsub!(/[^1-4][0-9][0-9], /, "")
   indif.gsub!(/, [^1-4][0-9][0-9]/, "")
   
-  antis = antis.split(/, /)
-  prefs = prefs.split(/, /)
-  indif = indif.split(/, /)
+  antis = antis.split(/, /).map(&:strip)
+  prefs = prefs.split(/, /).map(&:strip)
+  indif = indif.split(/, /).map(&:strip)
   
   antis = antis - prefs
   indif = indif - prefs - antis
@@ -184,7 +184,7 @@ csv.each do |line|
       :isGrader=> line["isGrader?"],
       :isSG=> line["isSG?"],
       :preference_list=> pref_list.to_s,
-      :preferences=> prefs.to_s,
+      :preferences=> prefs,
       :antipref=> antis.to_s,
       :indifferent=> indif.to_s 
       }))

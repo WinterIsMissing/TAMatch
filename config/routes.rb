@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   get 'prof_ranking/index'
   post 'prof_ranking/update'
-
+  post 'prof_ranking/search'
+  
   get 'ta_application/index'
 
   get '/auth', to: 'session#auth'

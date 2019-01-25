@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <script>
-      $(':radio').change(function() {
-          console.log('New star rating: ' + this.value);
+      document.addEventListener("turbolinks:load", function() {
+        $('input[type="radio"]').change(function() {
           console.log(this);
           let email = $(this).attr('email');
           let payload = {
@@ -13,23 +13,58 @@
           document.getElementById("preference_rating").value = this.value;
           
           $("#payload-form").trigger('submit.rails');
+        });
+        $('#close-form-modal').click(function(e){
+          $('.modal-container').css('display', 'none');
+          e.preventDefault();
+        });
+        $('#open-form-modal').click(function(e){
+          $('.modal-container').css('display', 'flex');
+          e.preventDefault();
+        })
       });
     </script>
   </head>
   <body>
     <div class="main-content">
       <h1> Instructor Preferences </h1>
-      Choose which class to display:
-      <select id="degreeProgram">
-        <option value="msThesis">CSCE 121</option>
-        <option value="msNon-Thesis">CSCE 221</option>
-        <option value="phd">CSCE 313</option>
-      </select>
-      <p></p>
+      <div class="filter-list">
+        <% params.each do |k, v| %>
+          <% if k.in? ["course", "name", "advisor"] %>
+            <% if v and !v.empty? %>
+              <span><%= k+" | "+v %></span>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <p>Select a CSCE course: </p>
+      <%= form_for :query, url: prof_ranking_search_path do |form| %>
+        <%= form.text_field :course, placeholder: session[:ip_course] %>
+        <%= form.submit "Search", :name => "search" %>
+      <% end %>
+      
+      <button id="open-form-modal">Advanced</button>
+      <div class="modal-container">
+        <div class="form-modal">
+          <h3>Advanced Search</h3>
+          <%= form_for :query, url: prof_ranking_search_path do |form| %>
+            <%= form.text_field :name, placeholder: "Name" %>
+            <%= form.text_field :course, placeholder: "Course" %>
+            <%= form.text_field :advisor, placeholder: "Advisor" %>
+            <div style="display: flex; justify-content: space-evenly;">
+              <%= form.submit "Search", :name => "adv_search" %>
+              <button id="close-form-modal">x</button>
+            </div>
+          <% end %>
+        </div>
+      </div>
       <table>
         <tr>
           <th>TA/Grader's Name</th>
-          <th>Status</th>
+          <th>Degree Seeking</th>
+          <th>Advisor</th>
+          <th>Years of Exp</th>
+          <th>Top Preferences</th>
           <th> Please no &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp Neutral   &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  Please yes  </th>
         </tr>
         <% @applicants.each do |applicant| %>
@@ -38,6 +73,9 @@
           <tr>
             <td><%= applicant.name %></td>
             <td><%= applicant.degree_program %></td>
+            <td><%= applicant.advisor %></td>
+            <td><%= applicant.years %></td>
+            <td><%= applicant.preferences.first(5).join(", ") %></td>
             <td>
               <form class="rating">
                 <label>

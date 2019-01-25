@@ -12,6 +12,8 @@ class CreateApplicants < ActiveRecord::Migration[5.0]
       t.text :antipref, array: true, default: []
       t.text :indifferent, array: true, default: []
       
+      t.text :advisor, default: "none"
+      t.integer :years, default: 0
       t.timestamps
     end
   end
