@@ -54,7 +54,7 @@
   </p>
 
   Years as a graduate student:
-  <select id = "yearsGraduate">
+  <select id = "years">
   <option value="0">0</option>
   <option value="1">1</option>
   <option value="2">2</option>
@@ -161,7 +161,7 @@ Applying as:
 
 function convertToJSON(){
     var advisor = document.getElementById('advisor').value;
-    var yearsGraduate = document.getElementById("yearsGraduate").options[document.getElementById("yearsGraduate").selectedIndex].value;
+    var years = document.getElementById("years").options[document.getElementById("years").selectedIndex].value;
     var degreeProg = document.getElementById("degreeProgram").options[document.getElementById("degreeProgram").selectedIndex].value;
     var listIndifferent = document.getElementById("sortable1div").getElementsByTagName("li");
     var listPref = document.getElementById("sortable2div").getElementsByTagName("li");
@@ -193,7 +193,7 @@ function convertToJSON(){
 
     
 
-      let payload ={"advisor":advisor, "yearsGraduate": yearsGraduate,"degree_program":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences};
+      let payload ={"advisor":advisor, "years": years,"degree_program":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences};
         document.getElementById("application_payload").value = JSON.stringify(payload);
         $("#payload-form").trigger('submit.rails');
         console.log(JSON.stringify(payload));

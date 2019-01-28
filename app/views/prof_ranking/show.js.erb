@@ -1,4 +1,4 @@
 $("#modal-window").find(".modal-content").html("<%= j render partial: "show", locals: {applicant_name: @applicant_name ,
 email: @email, degree_program: @degree_program, isTA: @isTA, isGrader: @isGrader, isSG: @isSG, preferences: @preferences,
-antipref: @antipref, indifferent: @indifferent, advisor: @advisor, created_at: @created_at } %>");
+antipref: @antipref, indifferent: @indifferent, advisor: @advisor, years: @years, created_at: @created_at } %>");
 $("#modal-window").modal();

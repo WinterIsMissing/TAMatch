@@ -2,8 +2,12 @@ DEF_COURSE = "121"
 class ProfRankingController < ApplicationController
   def index
     @applicants = nil
+    #  we have it stored as CSCE313, not just 313, we can change the design
+    
     course = params[:course]
     course ||= session[:ip_course]
+    
+    @courseConcat = "CSCE" + course
     
     if params[:name] then session[:ip_name] = params[:name] end
     if params[:advisor] then session[:ip_advisor] = params[:advisor] end
@@ -11,7 +15,7 @@ class ProfRankingController < ApplicationController
     if params[:yr_cmp] then session[:ip_yr_cmp] = params[:yr_cmp] end
     
     if !(params[:course].nil?)
-      @applicants = Applicant.where("'#{course}' = ANY(preferences)")
+      @applicants = Applicant.where("'#{@courseConcat}' = ANY(preferences)").or Applicant.where("'#{course}' = ANY(preferences)")
       @applicants = @applicants.sort_by { |applicant|
         applicant.preferences.index(course) or (1.0/0.0)
       }
@@ -25,6 +29,8 @@ class ProfRankingController < ApplicationController
     if @applicants
       #Name
       if params[:name]
+        puts "In the name index"
+        
         @applicants = @applicants.find_all{|x| x.name.include? params[:name]}
       end
     
@@ -107,15 +113,16 @@ class ProfRankingController < ApplicationController
   
   
   def show
-    
-    
-    puts "here"
+
+
     puts params
     
     @applicant_name = params[:applicant_name]
     
     @applicant_object = Applicant.find_by(name: @applicant_name)
+  
     @email = @applicant_object.email
+    
     @degree_program =  @applicant_object.degree_program
     @isTA = @applicant_object.isTA
     @isGrader = @applicant_object.isGrader
@@ -124,6 +131,7 @@ class ProfRankingController < ApplicationController
     @antipref = @applicant_object.antipref
     @indifferent = @applicant_object.indifferent
     @advisor = @applicant_object.advisor
+    @years = @applicant_object.years
     @created_at = @applicant_object.created_at
 
     @applicant_ = "passed data from controller only"

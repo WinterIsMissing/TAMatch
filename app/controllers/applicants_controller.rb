@@ -24,7 +24,7 @@ class ApplicantsController < ApplicationController
         @applicant.name = @name
         @applicant.email = @email
         @applicant.advisor =  data["advisor"]
-        @applicant.yearsGraduate = data["yearsGraduate"].to_i
+        @applicant.years = data["years"].to_i
         @applicant.degree_program = data["degree_program"]
         @applicant.isGrader = data["isGrader"]
         @applicant.isSG = data["isSg"]
