@@ -102,4 +102,21 @@ class ProfRankingController < ApplicationController
     ip.preferences[email] = rating
     ip.save!
   end
+  
+  
+  
+  
+  def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    
+  end
+  
+  
+  
+  
+  
+  
 end

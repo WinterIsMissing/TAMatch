@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20190116201007) do
     t.text     "antipref",        default: [],                  array: true
     t.text     "indifferent",     default: [],                  array: true
     t.text     "advisor",         default: "none"
-    t.integer  "years",           default: 0
+    t.integer  "yearsGraduate",           default: 0
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end

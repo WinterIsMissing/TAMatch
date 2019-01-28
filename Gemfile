@@ -68,3 +68,7 @@ end
 group :test do
   gem 'simplecov', require: false
 end
+
+# for the applicant modal
+gem 'bootstrap', '~> 4.2.1'
+gem 'popper_js', '~> 1.14.5'

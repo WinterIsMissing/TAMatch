@@ -9,6 +9,7 @@
 # case Rails.env
 # when 'test'
 
+    # Admin levels have been mixed up and changes, do not rely and sections headers
     #Admin
     User.create(
         {
@@ -37,6 +38,8 @@
             fullname: 'Oreia Oritin', username: 'Oreia Oritin', email: 'test_i4@x.x', auth_level: 'instructor',
             login_token: 'test_i4', token_generated_at: Time.now.utc.to_s
         })
+        
+        
     
     #Student
     User.create(
@@ -81,7 +84,7 @@
         })
     User.create(
         {
-            fullname: 'Ivan Delgado', username: 'Ivan Delgado', email: 'htxdelgado1@tamu.edu', auth_level: 'admin',
+            fullname: 'Ivan Delgado', username: 'Ivan Delgado', email: 'htxdelgado1@tamu.edu', auth_level: 'instructor',
             login_token: 'ivan', token_generated_at: Time.now.utc.to_s
         })
     User.create(

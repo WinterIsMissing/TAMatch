@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   post 'course_overview/index'
 
+  get "prof_ranking/show" => 'prof_ranking#show', :as => :prof_ranking_show
+  
   get 'prof_ranking/index'
   post 'prof_ranking/update'
   post 'prof_ranking/search'

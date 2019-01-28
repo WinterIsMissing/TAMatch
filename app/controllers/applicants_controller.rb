@@ -17,18 +17,14 @@ class ApplicantsController < ApplicationController
         
         @email = User.find_by(login_token: session[:user_token]).email
         @name = User.find_by(login_token: session[:user_token]).fullname
-        puts @email
-        puts @name
-        
-       # puts params["application"]["payload"]
-        
-        
+
         data = JSON.parse(params["application"]["payload"])
-        
         @applicant = Applicant.new
         
         @applicant.name = @name
         @applicant.email = @email
+        @applicant.advisor =  data["advisor"]
+        @applicant.yearsGraduate = data["yearsGraduate"].to_i
         @applicant.degree_program = data["degree_program"]
         @applicant.isGrader = data["isGrader"]
         @applicant.isSG = data["isSg"]
@@ -40,14 +36,6 @@ class ApplicantsController < ApplicationController
         @applicant.save!
         
         puts 'Testing the array mechanisms'
-        
-        
-        
-        puts @applicant.isGrader
-        puts @applicant.indifferent[0]
-
-
-        
         
         redirect_to applicants_path
         

@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang="en">
+  
+  <%= link_to 'Student', prof_ranking_show_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}  %>
+  <div id="modal-window" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+  
   <head>
     <script>
       document.addEventListener("turbolinks:load", function() {
@@ -81,7 +89,7 @@
             <td><%= applicant.name %></td>
             <td><%= applicant.degree_program %></td>
             <td><%= applicant.advisor %></td>
-            <td><%= applicant.years %></td>
+            <td><%= applicant.yearsGraduate %></td>
             <td><%= applicant.preferences.first(5).join(", ") %></td>
             <td>
               <form class="rating">
@@ -245,4 +253,4 @@
       <%= form.submit "Submit" %>
     <% end %>
   </body>
-</html>
+  
