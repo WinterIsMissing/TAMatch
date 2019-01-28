@@ -7,7 +7,7 @@ class ProfRankingController < ApplicationController
     course = params[:course]
     course ||= session[:ip_course]
     
-    @courseConcat = "CSCE" + course
+    @courseConcat = "CSCE" + course.to_s
     
     if params[:name] then session[:ip_name] = params[:name] end
     if params[:advisor] then session[:ip_advisor] = params[:advisor] end

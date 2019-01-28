@@ -64,15 +64,15 @@ RSpec.describe "course_overview", :type => :feature do
     token = @user.generate_login_token
     visit '/auth?' + token
     expect(page).to have_content("Rank Applications")
-    visit prof_ranking_index_path(:yearsGraduate => 0, :yr_cmp => ">")
-    expect(page).to have_content("yearsGraduate >")
-    visit prof_ranking_index_path(:yearsGraduate => 0, :yr_cmp => "<")
-    expect(page).to have_content("yearsGraduate <")
-    visit prof_ranking_index_path(:yearsGraduate => 0, :yr_cmp => "=")
-    expect(page).to have_content("yearsGraduate =")
+    visit prof_ranking_index_path(:years => 0, :yr_cmp => ">")
+    expect(page).to have_content("years >")
+    visit prof_ranking_index_path(:years => 0, :yr_cmp => "<")
+    expect(page).to have_content("years <")
+    visit prof_ranking_index_path(:years => 0, :yr_cmp => "=")
+    expect(page).to have_content("years =")
     visit prof_ranking_index_path(:advisor => "random")
     expect(page).to have_content("random")
-    visit prof_ranking_index_path(:advisor => "random", :yearsGraduate => 0, 
+    visit prof_ranking_index_path(:advisor => "random", :years => 0, 
       :yr_cmp => "=", :name => "Student", :course => "121")
     expect(page).to have_content("121")
   end
@@ -85,12 +85,12 @@ RSpec.describe "course_overview", :type => :feature do
     visit prof_ranking_index_path
     fill_in 'query_name', with: 'Student'
     fill_in 'query_advisor', with: 'none'
-    fill_in 'query_yearsGraduate', with: '3'
+    fill_in 'query_years', with: '3'
     fill_in 'query_course2', with: '462'
     select('<', :from => 'query_yr_cmp')
     find('input[name="adv_search"]').click
-    expect(page).to have_content("yearsGraduate < 3")
+    expect(page).to have_content("years < 3")
     find('input[name="adv_search"]').click
-    expect(page).not_to have_content("yearsGraduate < 3")
+    expect(page).not_to have_content("years < 3")
   end
 end
