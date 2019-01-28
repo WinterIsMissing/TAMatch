@@ -1,12 +1,15 @@
+
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+
 <!doctype html>
 <html lang="en">
   
-  <%= link_to 'Student', prof_ranking_show_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}  %>
-  <div id="modal-window" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content"></div>
-    </div>
-  </div>
+
   
   <head>
     <script>
@@ -86,7 +89,7 @@
           <% rating = @preferences[applicant.email].to_i %>
           <% rating = 5 if rating == 0 %>
           <tr>
-            <td><%= applicant.name %></td>
+            <td><%= link_to applicant.name, prof_ranking_show_path(:applicant_name =>applicant.name ),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'text-primary'}%></td>
             <td><%= applicant.degree_program %></td>
             <td><%= applicant.advisor %></td>
             <td><%= applicant.yearsGraduate %></td>

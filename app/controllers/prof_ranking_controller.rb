@@ -107,10 +107,33 @@ class ProfRankingController < ApplicationController
   
   
   def show
+    
+    
+    puts "here"
+    puts params
+    
+    @applicant_name = params[:applicant_name]
+    
+    @applicant_object = Applicant.find_by(name: @applicant_name)
+    @email = @applicant_object.email
+    @degree_program =  @applicant_object.degree_program
+    @isTA = @applicant_object.isTA
+    @isGrader = @applicant_object.isGrader
+    @isSG = @applicant_object.isSG
+    @preferences = @applicant_object.preferences
+    @antipref = @applicant_object.antipref
+    @indifferent = @applicant_object.indifferent
+    @advisor = @applicant_object.advisor
+    @created_at = @applicant_object.created_at
+
+    @applicant_ = "passed data from controller only"
+    
     respond_to do |format|
       format.html
       format.js
     end
+    
+    
     
   end
   

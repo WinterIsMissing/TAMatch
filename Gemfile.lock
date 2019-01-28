@@ -308,6 +308,7 @@ DEPENDENCIES
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-rails
   strong_password
   turbolinks (~> 5)
   tzinfo-data

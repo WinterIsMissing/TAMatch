@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'ta_application/index'
 
   get '/auth', to: 'session#auth'
-
+ # resources :prof_ranking
   resources :applicants
   resources :session, only: [:new, :create]
   root 'static#home'
