@@ -181,10 +181,24 @@ RSpec.describe Matchmaker do
       courses = Course.all
       applicants = Applicant.all
       matches = Matchmaker.course_match(courses, applicants)
+      score, warnings = Matchmaker.course_match_score(
+        {
+          :courses=> courses,
+          :applicants=> applicants,
+          :matches=> matches
+        })
       
       it "returns a good match" do
         expect !(matches.values).include?(nil)
         expect !(matches.values).include?("")
+      end
+      
+      it "is scorable" do
+        expect(score).to be_between(0, 100).inclusive
+      end
+      
+      it "has warnings" do
+        expect(warnings.length).to be > 0
       end
     end
     
