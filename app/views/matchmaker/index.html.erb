@@ -1,8 +1,79 @@
 <div class="main-content">
-    <h1>Matchmaker</h1>
+    <h1>Matchmaker </h1>
     <%= form_for :run, url: matchmaker_index_path do |form| %>
         <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border" %>
     <% end %>
+    <%= @entries.length %>
+    
+      <style>
+  #sortable1, #sortable2, #sortable3 {
+    border: 1px solid #eee;
+    width: 450px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li, #sortable3 li{
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.0em;
+    width: 450px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable1, #sortable2, #sortable3" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  } );
+  </script>
+  
+
+  <div id = "sortable1div">
+      <% if @entries %>
+        <table class="borderless">
+            <tr>
+                <th>Course</th>
+                <th>Status</th>
+                <th>Applicant</th>
+            </tr>
+            <% @entries.each do |course, emails| %>
+                <% @cur_status = emails.length %>
+                <% @capacity = @courses[course].ta_count %>
+                <% if @cur_status < (@capacity/3) %>
+                    <% @status = 'red' %>
+                <% elsif @cur_status < (@capacity*2/3) %>
+                    <% @status = 'yellow' %>
+                <% else %>
+                    <% @status = 'green' %>
+                <% end %>
+                <tr>
+                    <td style="text-align:center;"><%= course %></td>
+                    <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
+                    <td>
+                        <ul id="sortable1" class="connectedSortable">
+                         <li id = "emails_" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[0] %></li>
+                         <% (1..emails.length-1).each do |i| %>
+                             <li id = "emails_" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[i] %></li>
+                         <% end %>
+                        </ul>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+    <% else %>
+        <p class="faint">No entries</p>
+    <% end %>
+  
+  
+  <h1> This is the OG table.. </h1>
+  
+    
     <% if @entries %>
         <table class="borderless">
             <tr>
@@ -37,3 +108,8 @@
         <p class="faint">No entries</p>
     <% end %>
 </div>
+
+
+<script>
+    $("matchesSortable").sortable();
+</script>
