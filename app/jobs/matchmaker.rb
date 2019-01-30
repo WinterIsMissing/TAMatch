@@ -191,29 +191,37 @@ class Matchmaker
   def self.stability(men)
     unstable = Set.new
     unmatched = 0
-    men.each_value do |man|
+    
+    men.each do |key, man|
+      
       woman = man.fiance
-      if woman.null?
+      
+      if woman.nil? 
         unmatched += 1
-        next
-      end
-   
-      man.more_preferable_people.each do |other_woman|
-        if other_woman.more_preferable_people.include?(man)
-          unstable << [man, other_woman]
+      else
+        man.more_preferable_people.each do |other_woman|
+          next if other_woman.nil?
+          if other_woman.more_preferable_people.include?(man)
+            unstable << [man, other_woman]
+          end
+        end
+        woman.more_preferable_people.each do |other_man|
+          next if other_man.nil?
+          if other_man.more_preferable_people.include?(woman)
+            unstable << [other_man, woman]
+          end
         end
       end
-      woman.more_preferable_people.each do |other_man|
-        if other_man.more_preferable_people.include?(woman)
-          unstable << [other_man, woman]
-        end
-      end
+      
     end
-   
+=begin
+=end   
     return (1.0 - unstable.length.to_f / men.keys.length.to_f), unmatched, unstable
+
   end
   
   def self.course_match_score(xargs, opts={:ta=>true, :grader=>false})
+    score = 85
     warnings = []
     course_list = xargs[:courses]
     applicants = xargs[:applicants]
@@ -222,11 +230,11 @@ class Matchmaker
       # xargs should be a hash with :courses, :applicants, and :matches fields
       return -1
     end
+    
     score = 100
     opening_pts = score / course_list.length
     #prof_pts = fill_pts = applicant_pts = opening_pts / 3
     args = Matchmaker.course_match_initialize(course_list, applicants, opts)
-    
     persons = Matchmaker.personify(args[:course_hash], args[:app_hash])
     courses = persons[:men]
     apps = persons[:women]
@@ -240,6 +248,7 @@ class Matchmaker
     end
     
     stability, unmatched, unstable = Matchmaker.stability(courses)
+    
     score -= unmatched * opening_pts
     if unmatched > 0
       warnings.push("There are unmatched courses!")
@@ -251,7 +260,8 @@ class Matchmaker
         warnings.push("#{a} & #{b}: applicants should be swapped for optimal stability.")
       end
     end
-    
+=begin
+=end
     warnings.push("There are no warnings!") if warnings.length < 1
     return score, warnings
   end
