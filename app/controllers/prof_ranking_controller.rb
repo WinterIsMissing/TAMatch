@@ -4,24 +4,32 @@ class ProfRankingController < ApplicationController
     @applicants = nil
     #  we have it stored as CSCE313, not just 313, we can change the design
     
-    course = params[:course]
-    course ||= session[:ip_course]
+    if params[:remove] and session["ip_#{params[:remove]}"]
+      puts "REMOVING-----"
+      puts "ip_#{params[:remove]}"
+      params[params[:remove]] = ''
+      session["ip_#{params[:remove]}"] = ""
+    end
     
-    @courseConcat = "CSCE" + course.to_s
+    if params[:course] && !params[:course].empty? then session[:ip_course] = params[:course] end
+    if params[:name] && !params[:name].empty? then session[:ip_name] = params[:name] end
+    if params[:advisor] && !params[:advisor].empty? then session[:ip_advisor] = params[:advisor] end
+    if params[:years] && !params[:years].empty? then session[:ip_years] = params[:years] end
+    if params[:yr_cmp] && !params[:yr_cmp].empty? then session[:ip_yr_cmp] = params[:yr_cmp] end
     
-    if params[:name] then session[:ip_name] = params[:name] end
-    if params[:advisor] then session[:ip_advisor] = params[:advisor] end
-    if params[:years] then session[:ip_years] = params[:years] end
-    if params[:yr_cmp] then session[:ip_yr_cmp] = params[:yr_cmp] end
-    
-    if !(params[:course].nil?)
-      @applicants = Applicant.where("'#{@courseConcat}' = ANY(preferences)").or Applicant.where("'#{course}' = ANY(preferences)")
-      @applicants = @applicants.sort_by { |applicant|
-        applicant.preferences.index(course) or (1.0/0.0)
-      }
+    if (params[:course] && params[:name] && params[:advisor] &&
+        params[:years] && params[:yr_cmp])
+      if params[:course].empty?
+        @applicants = Applicant.order(:name)
+      else
+        @courseConcat = "CSCE" + params[:course].to_s
+        @applicants = Applicant.where("'#{@courseConcat}' = ANY(preferences)").or Applicant.where("'#{params[:course]}' = ANY(preferences)")
+        @applicants = @applicants.sort_by { |applicant|
+          applicant.preferences.index(params[:course]) or (1.0/0.0)
+        }
+      end
     else
-      course ||= DEF_COURSE
-      redirect_to prof_ranking_index_path(:course => course, 
+      redirect_to prof_ranking_index_path(:course => session[:ip_course], 
         :name => session[:ip_name], :advisor => session[:ip_advisor],
         :years => session[:ip_years], :yr_cmp => session[:ip_yr_cmp])
     end
@@ -59,11 +67,11 @@ class ProfRankingController < ApplicationController
     preferences ||= {}
     
     @preferences = preferences
-    
-    session[:ip_course] = course
   end
   
   def search
+    puts "SEARCH-----------------------"
+    puts params[:query]
     if params[:query]
       course = params[:query][:course]
       course ||= params[:query][:course2]
@@ -75,16 +83,16 @@ class ProfRankingController < ApplicationController
       if course and !course.empty?
         session[:ip_course] = course
       end
-      if name
+      if name and !name.empty?
         session[:ip_name] = name
       end
-      if advisor
+      if advisor and !advisor.empty?
         session[:ip_advisor] = advisor
       end
-      if years
+      if years and !years.empty?
         session[:ip_years] = years
       end
-      if yr_cmp
+      if yr_cmp and !yr_cmp.empty?
         session[:ip_yr_cmp] = yr_cmp
       end
     end

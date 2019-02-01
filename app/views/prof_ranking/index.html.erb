@@ -43,21 +43,27 @@
         <% params.each do |k, v| %>
           <% if k.in? ["course", "name", "advisor"] %>
             <% if v and !v.empty? %>
-              <span><%= k+" | "+v %></span>
+              <a class="bubble-click" href="<%= 'index?remove=' + k %>">
+                <span><%= k+" | "+v %></span>
+              </a>
             <% end %>
           <% end %>
           <% if k == "years" and v and !v.empty? %>
-            <span><%= "#{k} #{params[:yr_cmp]} #{v}" %></span>
+            <a class="bubble-click" href="<%= 'index?remove=' + k %>">
+              <span><%= "#{k} #{params[:yr_cmp]} #{v}" %></span>
+            </a>
           <% end %>
         <% end %>
       </div>
-      <p>Select a CSCE course: </p>
-      <%= form_for :query, url: prof_ranking_search_path do |form| %>
-        <%= form.text_field :course, placeholder: session[:ip_course] %>
-        <%= form.submit "Search", :name => "search" %>
-      <% end %>
       
-      <button id="open-form-modal">Advanced</button>
+      <div class="search-bar">
+        <%= form_for :query, url: prof_ranking_search_path do |form| %>
+          <%= form.text_field :course, placeholder: "Course ###" %>
+          <%= form.submit "Search", :name => "search" %>
+          <button id="open-form-modal">...</button>
+        <% end %>
+      </div>
+      
       <div class="modal-container">
         <div class="form-modal">
           <h3>Advanced Search</h3>
@@ -77,17 +83,17 @@
         </div>
       </div>
       <table>
-        <tr>
+        <thead>
           <th>TA/Grader's Name</th>
           <th>Degree Seeking</th>
           <th>Advisor</th>
           <th>Years of Exp</th>
           <th>Top Preferences</th>
           <th> Please no &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp Neutral   &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  Please yes  </th>
-        </tr>
+        </thead>
         <% @applicants.each do |applicant| %>
           <% rating = @preferences[applicant.email].to_i %>
-          <% rating = 5 if rating == 0 %>
+          <% rating = 0 if rating == 0 %>
           <tr>
             <td><%= link_to applicant.name, prof_ranking_show_path(:applicant_name =>applicant.name ),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'text-primary'}%></td>
             <td><%= applicant.degree_program %></td>
