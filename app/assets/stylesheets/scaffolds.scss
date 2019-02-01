@@ -366,3 +366,28 @@ a.bubble-click:active span:before{
   left: 0%;
   transition: 0s all ease-in-out;
 }
+
+th[id^="sort"]{
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+th[id^="sort"]:hover{
+  background: rgb(80, 0, 0);
+  color: white;
+}
+th.sort-header{
+  position: relative;
+}
+th.sort-acc:before, th.sort-dec:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: right;
+}
+th.sort-acc:before{
+  content: "\25B2";
+}
+th.sort-dec:before{
+  content: "\25BC";
+}

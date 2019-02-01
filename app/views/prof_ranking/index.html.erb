@@ -16,6 +16,7 @@
       document.addEventListener("turbolinks:load", function() {
         $('input[type="radio"]').change(function() {
           console.log(this);
+          $(this).parent().parent()[0].setAttribute("stars", this.value);
           let email = $(this).attr('email');
           let payload = {
               email: this.value
@@ -82,26 +83,26 @@
           <% end %>
         </div>
       </div>
-      <table>
+      <table id="applicant-list">
         <thead>
-          <th>TA/Grader's Name</th>
-          <th>Degree Seeking</th>
-          <th>Advisor</th>
-          <th>Years of Exp</th>
-          <th>Top Preferences</th>
-          <th> Please no &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp Neutral   &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  Please yes  </th>
+          <th class="sort-header" id="sort-name">TA/Grader's Name</th>
+          <th class="sort-header" id="sort-degree">Degree Seeking</th>
+          <th class="sort-header" id="sort-advisor">Advisor</th>
+          <th class="sort-header" id="sort-years">Years of Exp</th>
+          <th class="sort-header" id="sort-pref">Top Preferences</th>
+          <th class="sort-header" id="sort-stars"> Please no &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp Neutral   &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  Please yes  </th>
         </thead>
         <% @applicants.each do |applicant| %>
           <% rating = @preferences[applicant.email].to_i %>
           <% rating = 0 if rating == 0 %>
-          <tr>
-            <td><%= link_to applicant.name, prof_ranking_show_path(:applicant_name =>applicant.name ),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'text-primary'}%></td>
-            <td><%= applicant.degree_program %></td>
-            <td><%= applicant.advisor %></td>
-            <td><%= applicant.years %></td>
-            <td><%= applicant.preferences.first(5).join(", ") %></td>
-            <td>
-              <form class="rating">
+          <tr class="applicant">
+            <td type="name"><%= link_to applicant.name, prof_ranking_show_path(:applicant_name =>applicant.name ),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'text-primary'}%></td>
+            <td type="degree"><%= applicant.degree_program %></td>
+            <td type="advisor"><%= applicant.advisor %></td>
+            <td type="years"><%= applicant.years %></td>
+            <td type="pref"><%= applicant.preferences.first(5).join(", ") %></td>
+            <td type="stars">
+              <form class="rating" stars="<%= rating%>">
                 <label>
                   <% if rating == 1 %>
                     <input type="radio" name="stars" value="1"
@@ -261,5 +262,6 @@
       <%= form.text_field :email %>
       <%= form.submit "Submit" %>
     <% end %>
+    <script src="/js/sort_helper.js"></script>
   </body>
   
