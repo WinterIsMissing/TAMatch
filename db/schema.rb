@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190116201007) do
+ActiveRecord::Schema.define(version: 20190201173112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20190116201007) do
     t.boolean  "isGrader"
     t.boolean  "isSG"
     t.text     "advisor",         default: "none"
-    t.integer  "years",   default: 0
+    t.integer  "years",           default: 0
     t.text     "preference_list", default: [],                  array: true
     t.text     "preferences",     default: [],                  array: true
     t.text     "antipref",        default: [],                  array: true
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 20190116201007) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_instructor_preferences_on_user_id", using: :btree
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.string   "course"
+    t.string   "label"
+    t.integer  "applicant_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["applicant_id"], name: "index_matches_on_applicant_id", using: :btree
   end
 
   create_table "taapps", force: :cascade do |t|
@@ -80,4 +89,5 @@ ActiveRecord::Schema.define(version: 20190116201007) do
   end
 
   add_foreign_key "instructor_preferences", "users"
+  add_foreign_key "matches", "applicants"
 end

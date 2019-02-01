@@ -1,6 +1,6 @@
 <div class="main-content">
     <h1>Matchmaker </h1>
-    <%= form_for :run, url: matchmaker_index_path do |form| %>
+    <%= form_for :run, url: matchmaker_refresh_match_path do |form| %>
         <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border" %>
     <% end %>
     <%= @entries.length %>
@@ -56,13 +56,17 @@
                     <% @status = 'green' %>
                 <% end %>
                 <tr>
-                    <td style="text-align:center;"><%= course %></td>
+                    <td type="course" style="text-align:center;"><%= course %></td>
                     <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
                     <td>
                         <ul id="sortable1" class="connectedSortable">
-                         <li id = "emails_" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[0] %></li>
+                         <li course="<%= course%>" id = "emails_<%= emails[0]%>" class="ui-state-default">
+                             <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[0] %>
+                         </li>
                          <% (1..emails.length-1).each do |i| %>
-                             <li id = "emails_" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[i] %></li>
+                             <li course="<%= course%>" id = "emails_<%= emails[i]%>" class="ui-state-default">
+                                 <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[i] %>
+                             </li>
                          <% end %>
                         </ul>
                     </td>
@@ -110,5 +114,11 @@
     <% else %>
         <p class="faint">No entries</p>
     <% end %>
+    <%= form_for :preference, url: matchmaker_change_match_path, :html => {:id => "payload-form"} do |form| %>
+      <%= form.text_field :course %>
+      <%= form.text_field :email %>
+      <%= form.submit "Submit" %>
+    <% end %>
+    <script src="/js/matchmaker_updater.js"></script>
 </div>
 

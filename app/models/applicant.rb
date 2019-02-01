@@ -21,5 +21,5 @@ class Applicant < ApplicationRecord
     
     #applicant.preference_list = applicant.preferences
   #end
-  
+  has_one :match
 end

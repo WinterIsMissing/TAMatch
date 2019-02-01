@@ -5,8 +5,8 @@ class ProfRankingController < ApplicationController
     #  we have it stored as CSCE313, not just 313, we can change the design
     
     if params[:remove] and session["ip_#{params[:remove]}"]
-      puts "REMOVING-----"
-      puts "ip_#{params[:remove]}"
+      #puts "REMOVING-----"
+      #puts "ip_#{params[:remove]}"
       params[params[:remove]] = ''
       session["ip_#{params[:remove]}"] = ""
     end
@@ -37,7 +37,7 @@ class ProfRankingController < ApplicationController
     if @applicants
       #Name
       if params[:name]
-        puts "In the name index"
+        #puts "In the name index"
         
         @applicants = @applicants.find_all{|x| x.name.include? params[:name]}
       end
@@ -70,8 +70,6 @@ class ProfRankingController < ApplicationController
   end
   
   def search
-    puts "SEARCH-----------------------"
-    puts params[:query]
     if params[:query]
       course = params[:query][:course]
       course ||= params[:query][:course2]
@@ -121,9 +119,6 @@ class ProfRankingController < ApplicationController
   
   
   def show
-
-
-    puts params
     
     @applicant_name = params[:applicant_name]
     
@@ -148,14 +143,5 @@ class ProfRankingController < ApplicationController
       format.html
       format.js
     end
-    
-    
-    
   end
-  
-  
-  
-  
-  
-  
 end

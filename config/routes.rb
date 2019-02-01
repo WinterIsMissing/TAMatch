@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'matchmaker/index'
   post 'matchmaker/index'
+  post 'matchmaker/refresh_match'
+  post 'matchmaker/change_match'
   
   get 'instructors/index'
   post 'instructors/add'
