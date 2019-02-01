@@ -29,9 +29,9 @@ class ProfRankingController < ApplicationController
         }
       end
     else
-      redirect_to prof_ranking_index_path(:course => session[:ip_course], 
-        :name => session[:ip_name], :advisor => session[:ip_advisor],
-        :years => session[:ip_years], :yr_cmp => session[:ip_yr_cmp])
+      redirect_to prof_ranking_index_path(:course => session[:ip_course] || "", 
+        :name => session[:ip_name] || "", :advisor => session[:ip_advisor] || "",
+        :years => session[:ip_years] || "", :yr_cmp => session[:ip_yr_cmp] || "")
     end
     
     if @applicants
