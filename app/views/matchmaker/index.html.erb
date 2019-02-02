@@ -1,30 +1,8 @@
 <div class="main-content">
-    <h1>Matchmaker </h1>
+    <h1>Matchmaker <span class="badge green" title="Matchmaking Score"><%= @score %></span></h1>
     <%= form_for :run, url: matchmaker_refresh_match_path do |form| %>
         <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border" %>
     <% end %>
-    <%= @entries.length %>
-    
-      <style>
-  #sortable1, #sortable2, #sortable3 {
-    border: 1px solid #eee;
-    width: 450px;
-    min-height: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 5px 0 0 0;
-    float: left;
-    margin-right: 10px;
-  }
-  #sortable1 li, #sortable2 li, #sortable3 li{
-    margin: 0 5px 5px 5px;
-    padding: 5px;
-    font-size: 1.0em;
-    width: 450px;
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   document.addEventListener("turbolinks:load", function() {
       $( function() {
@@ -35,7 +13,6 @@
       $("matchesSortable").sortable();
   });
   </script>
-  
 
   <div id = "sortable1div">
       <% if @entries %>
@@ -45,8 +22,8 @@
                 <th>Status</th>
                 <th>Applicant</th>
             </tr>
-            <% @entries.each do |course, emails| %>
-                <% @cur_status = emails.length %>
+            <% @entries.each do |course, applicants| %>
+                <% @cur_status = applicants.length %>
                 <% @capacity = @courses[course].ta_count %>
                 <% if @cur_status < (@capacity/3) %>
                     <% @status = 'red' %>
@@ -57,15 +34,12 @@
                 <% end %>
                 <tr>
                     <td type="course" style="text-align:center;"><%= course %></td>
-                    <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
+                    <td style="text-align:center;" class="<%= @status %>"><%= applicants.length %> / <%= @capacity %></td>
                     <td>
                         <ul id="sortable1" class="connectedSortable">
-                         <li course="<%= course%>" id = "emails_<%= emails[0]%>" class="ui-state-default">
-                             <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[0] %>
-                         </li>
-                         <% (1..emails.length-1).each do |i| %>
-                             <li course="<%= course%>" id = "emails_<%= emails[i]%>" class="ui-state-default">
-                                 <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= emails[i] %>
+                         <% (0..applicants.length-1).each do |i| %>
+                             <li course="<%= course%>" id = "emails_<%= applicants[i].email%>" class="ui-state-default">
+                                 <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicants[i].name %>
                              </li>
                          <% end %>
                         </ul>
@@ -101,11 +75,11 @@
                 <tr>
                     <td style="text-align:center;"><%= course %></td>
                     <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
-                    <td><%= emails[0] %></td>
+                    <td><%= emails[0].email %></td>
                     <% (1..emails.length-1).each do |i| %>
                         <tr>
                             <td></td><td></td>
-                            <td><%= emails[i] %></td>
+                            <td><%= emails[i].email %></td>
                         </tr>
                     <% end %>
                 </tr>

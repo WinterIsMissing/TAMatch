@@ -27,12 +27,12 @@ class MatchmakerController < ApplicationController
       if !@courses.key?(match.course)
         @courses[match.course] = Course.find_by(name: match.course) 
       end
-      @entries[match.course] << match.applicant.email
+      @entries[match.course] << Applicant.find_by(email: match.applicant.email)
     end
     
-    score = Matchmaker.course_match_score({:courses => Course.all,
+    @score = Matchmaker.course_match_score({:courses => Course.all,
       :applicants => Applicant.all, :matches => @data
-    })
+    })[0]
     
 =begin
     @data.each do |k, email|

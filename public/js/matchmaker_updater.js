@@ -17,7 +17,8 @@ function updateCourse(el){
     //Update!
     if(newCourse !== oldCourse){
         el.attr("course", newCourse);
-        document.getElementById("preference_email").value = el.text().trim();
+        let email = el.attr("id").match(/emails_(.*)/)[1];
+        document.getElementById("preference_email").value = email;
         document.getElementById("preference_course").value = newCourse;
         
         $("#payload-form").trigger('submit.rails');

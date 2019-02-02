@@ -4,264 +4,257 @@
     <div class="modal-content"></div>
   </div>
 </div>
-
-
-<!doctype html>
-<html lang="en">
   
-
-  
-  <head>
-    <script>
-      document.addEventListener("turbolinks:load", function() {
-        $('input[type="radio"]').change(function() {
-          console.log(this);
-          $(this).parent().parent()[0].setAttribute("stars", this.value);
-          let email = $(this).attr('email');
-          let payload = {
-              email: this.value
-          };
-          document.getElementById("preference_email").value = email;
-          document.getElementById("preference_rating").value = this.value;
-          
-          $("#payload-form").trigger('submit.rails');
-        });
-        $('#close-form-modal').click(function(e){
-          $('.modal-container').css('display', 'none');
-          e.preventDefault();
-        });
-        $('#open-form-modal').click(function(e){
-          $('.modal-container').css('display', 'flex');
-          e.preventDefault();
-        })
+<head>
+  <script>
+    document.addEventListener("turbolinks:load", function() {
+      $('input[type="radio"]').change(function() {
+        console.log(this);
+        $(this).parent().parent()[0].setAttribute("stars", this.value);
+        let email = $(this).attr('email');
+        let payload = {
+            email: this.value
+        };
+        document.getElementById("preference_email").value = email;
+        document.getElementById("preference_rating").value = this.value;
+        
+        $("#payload-form").trigger('submit.rails');
       });
-    </script>
-  </head>
-  <body>
-    <div class="main-content">
-      <h1> Instructor Preferences </h1>
-      <div class="filter-list">
-        <% params.each do |k, v| %>
-          <% if k.in? ["course", "name", "advisor"] %>
-            <% if v and !v.empty? %>
-              <a class="bubble-click" href="<%= 'index?remove=' + k %>">
-                <span><%= k+" | "+v %></span>
-              </a>
-            <% end %>
-          <% end %>
-          <% if k == "years" and v and !v.empty? %>
+      $('#close-form-modal').click(function(e){
+        $('.modal-container').css('display', 'none');
+        e.preventDefault();
+      });
+      $('#open-form-modal').click(function(e){
+        $('.modal-container').css('display', 'flex');
+        e.preventDefault();
+      })
+    });
+  </script>
+</head>
+<body>
+  <div class="main-content">
+    <h1> Instructor Preferences </h1>
+    <div class="filter-list">
+      <% params.each do |k, v| %>
+        <% if k.in? ["course", "name", "advisor"] %>
+          <% if v and !v.empty? %>
             <a class="bubble-click" href="<%= 'index?remove=' + k %>">
-              <span><%= "#{k} #{params[:yr_cmp]} #{v}" %></span>
+              <span><%= k+" | "+v %></span>
             </a>
           <% end %>
         <% end %>
-      </div>
-      
-      <div class="search-bar">
-        <%= form_for :query, url: prof_ranking_search_path do |form| %>
-          <%= form.text_field :course, placeholder: "Course ###" %>
-          <%= form.submit "Search", :name => "search" %>
-          <button id="open-form-modal">...</button>
+        <% if k == "years" and v and !v.empty? %>
+          <a class="bubble-click" href="<%= 'index?remove=' + k %>">
+            <span><%= "#{k} #{params[:yr_cmp]} #{v}" %></span>
+          </a>
         <% end %>
-      </div>
-      
-      <div class="modal-container">
-        <div class="form-modal">
-          <h3>Advanced Search</h3>
-          <%= form_for :query, url: prof_ranking_search_path do |form| %>
-            <%= form.text_field :name, placeholder: "Name" %>
-            <%= form.text_field :course2, placeholder: "Course" %>
-            <%= form.text_field :advisor, placeholder: "Advisor" %>
-            <div>
-              <%= form.number_field :years, placeholder: "Years" %>
-              <%= form.select :yr_cmp, [">", "<", "="] %>
-            </div>
-            <div style="display: flex; justify-content: space-evenly;">
-              <%= form.submit "Search", :name => "adv_search" %>
-              <button id="close-form-modal">x</button>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <table id="applicant-list">
-        <thead>
-          <th class="sort-header" id="sort-name">TA/Grader's Name</th>
-          <th class="sort-header" id="sort-degree">Degree Seeking</th>
-          <th class="sort-header" id="sort-advisor">Advisor</th>
-          <th class="sort-header" id="sort-years">Years of Exp</th>
-          <th class="sort-header" id="sort-pref">Top Preferences</th>
-          <th class="sort-header" id="sort-stars"> Please no &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp Neutral   &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  Please yes  </th>
-        </thead>
-        <% @applicants.each do |applicant| %>
-          <% rating = @preferences[applicant.email].to_i %>
-          <% rating = 0 if rating == 0 %>
-          <tr class="applicant">
-            <td type="name"><%= link_to applicant.name, prof_ranking_show_path(:applicant_name =>applicant.name ),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'text-primary'}%></td>
-            <td type="degree"><%= applicant.degree_program %></td>
-            <td type="advisor"><%= applicant.advisor %></td>
-            <td type="years"><%= applicant.years %></td>
-            <td type="pref"><%= applicant.preferences.first(5).join(", ") %></td>
-            <td type="stars">
-              <form class="rating" stars="<%= rating%>">
-                <label>
-                  <% if rating == 1 %>
-                    <input type="radio" name="stars" value="1"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="1"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 2 %>
-                    <input type="radio" name="stars" value="2"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="2"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 3 %>
-                    <input type="radio" name="stars" value="3"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="3"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 4 %>
-                    <input type="radio" name="stars" value="4"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="4"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 5 %>
-                    <input type="radio" name="stars" value="5"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="5"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 6 %>
-                    <input type="radio" name="stars" value="6"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="6"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 7 %>
-                    <input type="radio" name="stars" value="7"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="7"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 8 %>
-                    <input type="radio" name="stars" value="8"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="8"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-                <label>
-                  <% if rating == 9 %>
-                    <input type="radio" name="stars" value="9"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="9"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-               <label>
-                  <% if rating == 10 %>
-                    <input type="radio" name="stars" value="10"
-                      email="<%= applicant.email %>" checked/>
-                  <% else %>
-                    <input type="radio" name="stars" value="10"
-                      email="<%= applicant.email %>"/>
-                  <% end %>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                  <span class="icon">★</span>
-                </label>
-
-
-              </form>
-            </td>
-          </tr>
-        <% end %>
-        
-      </table>
+      <% end %>
     </div>
-    <%= form_for :preference, url: prof_ranking_update_path, :html => {:id => "payload-form"} do |form| %>
-      <%= form.text_field :rating %>
-      <%= form.text_field :email %>
-      <%= form.submit "Submit" %>
-    <% end %>
-    <script src="/js/sort_helper.js"></script>
-  </body>
-  
+    
+    <div class="search-bar">
+      <%= form_for :query, url: prof_ranking_search_path do |form| %>
+        <%= form.text_field :course, placeholder: "Course ###" %>
+        <%= form.submit "Search", :name => "search" %>
+        <button id="open-form-modal">...</button>
+      <% end %>
+    </div>
+    
+    <div class="modal-container">
+      <div class="form-modal">
+        <h3>Advanced Search</h3>
+        <%= form_for :query, url: prof_ranking_search_path do |form| %>
+          <%= form.text_field :name, placeholder: "Name" %>
+          <%= form.text_field :course2, placeholder: "Course" %>
+          <%= form.text_field :advisor, placeholder: "Advisor" %>
+          <div>
+            <%= form.number_field :years, placeholder: "Years" %>
+            <%= form.select :yr_cmp, [">", "<", "="] %>
+          </div>
+          <div style="display: flex; justify-content: space-evenly;">
+            <%= form.submit "Search", :name => "adv_search" %>
+            <button id="close-form-modal">x</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <table id="applicant-list">
+      <thead>
+        <th class="sort-header" id="sort-name">TA/Grader's Name</th>
+        <th class="sort-header" id="sort-degree">Degree Seeking</th>
+        <th class="sort-header" id="sort-advisor">Advisor</th>
+        <th class="sort-header" id="sort-years">Years of Exp</th>
+        <th class="sort-header" id="sort-pref">Top Preferences</th>
+        <th class="sort-header" id="sort-stars"> Please no &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp Neutral   &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp  Please yes  </th>
+      </thead>
+      <% @applicants.each do |applicant| %>
+        <% rating = @preferences[applicant.email].to_i %>
+        <% rating = 0 if rating == 0 %>
+        <tr class="applicant">
+          <td type="name"><%= link_to applicant.name, prof_ranking_show_path(:applicant_name =>applicant.name ),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'text-primary'}%></td>
+          <td type="degree"><%= applicant.degree_program %></td>
+          <td type="advisor"><%= applicant.advisor %></td>
+          <td type="years"><%= applicant.years %></td>
+          <td type="pref"><%= applicant.preferences.first(5).join(", ") %></td>
+          <td type="stars">
+            <form class="rating" stars="<%= rating%>">
+              <label>
+                <% if rating == 1 %>
+                  <input type="radio" name="stars" value="1"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="1"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 2 %>
+                  <input type="radio" name="stars" value="2"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="2"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 3 %>
+                  <input type="radio" name="stars" value="3"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="3"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 4 %>
+                  <input type="radio" name="stars" value="4"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="4"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 5 %>
+                  <input type="radio" name="stars" value="5"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="5"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 6 %>
+                  <input type="radio" name="stars" value="6"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="6"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 7 %>
+                  <input type="radio" name="stars" value="7"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="7"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 8 %>
+                  <input type="radio" name="stars" value="8"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="8"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <% if rating == 9 %>
+                  <input type="radio" name="stars" value="9"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="9"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+             <label>
+                <% if rating == 10 %>
+                  <input type="radio" name="stars" value="10"
+                    email="<%= applicant.email %>" checked/>
+                <% else %>
+                  <input type="radio" name="stars" value="10"
+                    email="<%= applicant.email %>"/>
+                <% end %>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+
+
+            </form>
+          </td>
+        </tr>
+      <% end %>
+      
+    </table>
+  </div>
+  <%= form_for :preference, url: prof_ranking_update_path, :html => {:id => "payload-form"} do |form| %>
+    <%= form.text_field :rating %>
+    <%= form.text_field :email %>
+    <%= form.submit "Submit" %>
+  <% end %>
+  <script src="/js/sort_helper.js"></script>
+</body>
