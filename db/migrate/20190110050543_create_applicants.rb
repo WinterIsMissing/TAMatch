@@ -4,9 +4,9 @@ class CreateApplicants < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.string :degree_program
-      t.boolean :isTA
-      t.boolean :isGrader
-      t.boolean :isSG
+      t.boolean :isTA,  default: false
+      t.boolean :isGrader,  default: false
+      t.boolean :isSG, default: false
       t.text :advisor, default: "none"
       t.integer :years, default: 0
       t.text :preference_list, array: true, default: []

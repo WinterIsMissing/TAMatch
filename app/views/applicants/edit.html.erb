@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TA APP</title>
+  <title>Edit TA APP</title>
 
   <style>
   #sortable1, #sortable2, #sortable3 {
@@ -36,16 +36,19 @@
 <body>
 
 
-<h1>TA Application</h1>
+<h1>Edit Application</h1>
 <br>
   <p>
-    
   </p>
   Degree Program:
   <select id = "degreeProgram">
+      
   <option value="msThesis">MS Thesis</option>
+  
   <option value="msNon-Thesis">MS Non-Thesis</option>
+  
   <option value="phd">PhD</option>
+  
 </select>
   <!--<input type="submit" value="Submit">-->
 
@@ -89,7 +92,19 @@ Applying as:
    <input type="checkbox" id="sgCheck"> Senior Grader
 </div>
 
+<script>
+    
+    document.getElementById('advisor').value= "<%= @object.advisor %>";
+    document.getElementById("degreeProgram").value =  "<%= @object.degree_program %>";
+    document.getElementById("years").value= "<%= @object.years %>";
+    
+    document.getElementById('taCheck').checked = <%= @object.isTA %>; 
+    document.getElementById('gCheck').checked = <%= @object.isGrader %> ; 
+    document.getElementById('sgCheck').checked = <%= @object.isSG %>;
 
+</script>
+  
+  
 <br><br>
 <h2 > My Class Preferences </h2>
  <div id = "sortable1div">
@@ -120,7 +135,7 @@ Applying as:
 </div>
 
     <button id="submit" onclick = "convertToJSON()"> SUBMIT</button>
-    <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
+    <%= form_for :application, url: {action: "update"}, :method => :PATCH, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :payload %>
       <%= form.submit "submit-payload", :id=>"payload-button" %>
     <% end %>

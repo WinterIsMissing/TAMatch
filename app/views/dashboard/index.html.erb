@@ -44,10 +44,20 @@
             <table>
                 <tr>
                     <td>
+                        <% if defined? @applicationFound %>
+                        <%= link_to "Edit Application", edit_applicant_path(@application) %>
+                            
+                        <% else %>
                         <%= link_to "Create Application", new_applicant_path %>
+                        
+                        <% end %>
+
                     </td>
                     <td>
-                        <%= link_to "Submitted Applications", view_applications_path %>
+                        <% if defined? @applicationFound %>
+                        <%= link_to "Submitted Application", view_applications_path %>
+                        <% end %>
+                
                     </td>
                 </tr>
             </table>

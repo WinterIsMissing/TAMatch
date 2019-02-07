@@ -1,18 +1,27 @@
-<h1>You have the following applications:</h1>
+<h1>Your Application:</h1>
  
+<br>
+<td><%= link_to 'Delete Application', applicant_path(@application.first),
+              method: :delete, class: 'text-danger',
+              data: { confirm: 'Are you sure?' } %></td>
+ 
+<br>
 <table>
   <tr>
+     <th>Your Advisor</th>
     <th>Your Preferences</th>
     <th>Your Anti-Preferences</th>
     <th></th>
   </tr>
  
-  <% @applications.each do |app| %>
+  <% @application.each do |app| %>
     <tr>
+      <td><%= app.advisor %></td>
       <td><%= app.preferences %></td>
       <td><%= app.antipref  %></td>
     </tr>
   <% end %>
 </table>
 
+<br>
 <td><%= link_to 'Back', dashboard_index_path %></td>
