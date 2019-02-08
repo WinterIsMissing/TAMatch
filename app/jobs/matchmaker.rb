@@ -244,6 +244,7 @@ class Matchmaker
     end 
     
     courses.each do |k, v|
+      next if apps[matches[k]].nil?
       v.engage(apps[matches[k]])
     end
     
