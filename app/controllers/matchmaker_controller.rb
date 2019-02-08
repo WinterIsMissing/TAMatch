@@ -30,12 +30,10 @@ class MatchmakerController < ApplicationController
       @entries[match.course] << Applicant.find_by(email: match.applicant.email)
     end
     
-    @score = 100.0
-=begin
+    #@score = 100.0
     @score = Matchmaker.course_match_score({:courses => Course.all,
       :applicants => Applicant.all, :matches => @data
     })[0]
-=end
 
 =begin
     @data.each do |k, email|

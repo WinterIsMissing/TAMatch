@@ -1,5 +1,15 @@
 <div class="main-content">
-    <h1>Matchmaker <span class="badge green" title="Matchmaking Score"><%= @score %></span></h1>
+    <h1>
+        Matchmaker <span class="badge
+        <% if @score <= 50 %>
+            <%= 'red' %>
+        <% elsif @score <= 75 %>
+            <%= 'yellow' %>
+        <% else %>
+            <%= 'green' %>
+        <% end %>"
+        title="Matchmaking Score"><%= @score %></span>
+    </h1>
     <%= form_for :run, url: matchmaker_refresh_match_path do |form| %>
         <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border" %>
     <% end %>
