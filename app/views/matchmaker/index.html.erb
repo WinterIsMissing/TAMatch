@@ -16,6 +16,7 @@
 
   <div id = "sortable1div">
       <% if @entries %>
+        <div class="flex-row">
         <table class="borderless">
             <tr>
                 <th>Course</th>
@@ -38,8 +39,9 @@
                     <td>
                         <ul id="sortable1" class="connectedSortable">
                          <% (0..applicants.length-1).each do |i| %>
-                             <li course="<%= course%>" id = "emails_<%= applicants[i].email%>" class="ui-state-default">
+                             <li course="<%= course%>" id = "emails_<%= applicants[i].email%>" class="ui-state-default mm-delete-btn">
                                  <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicants[i].name %>
+                                 <span class="mm-delete-btn">x</span>
                              </li>
                          <% end %>
                         </ul>
@@ -47,6 +49,24 @@
                 </tr>
             <% end %>
         </table>
+        <div class="class-search" style="width: 50%;">
+            <h4>Student Search</h4>
+            <%= form_for :query, url: matchmaker_search_path do |form| %> 
+              <%= form.text_field :text %>
+              <%= form.submit "Search", :class => "fade-btn right-border" %>
+            <% end %>
+            <div>
+                <ul id="sortable1" class="connectedSortable">
+                    <% (@query_items).each do |applicant| %>
+                        <li course="<%= "" %>" id = "emails_<%= applicant.email %>" class="ui-state-default mm-delete-btn">
+                            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicant.name %>
+                            <span class="mm-delete-btn">x</span>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        </div>
     <% else %>
         <p class="faint">No entries</p>
     <% end %>

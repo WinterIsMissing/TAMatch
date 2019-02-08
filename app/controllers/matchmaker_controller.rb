@@ -30,10 +30,13 @@ class MatchmakerController < ApplicationController
       @entries[match.course] << Applicant.find_by(email: match.applicant.email)
     end
     
+    @score = 100.0
+=begin
     @score = Matchmaker.course_match_score({:courses => Course.all,
       :applicants => Applicant.all, :matches => @data
     })[0]
-    
+=end
+
 =begin
     @data.each do |k, email|
       # last "-"" is delimiter: [COURSE]-[SLOT#]
@@ -48,6 +51,12 @@ class MatchmakerController < ApplicationController
     end
     # @entries = User.all
 =end
+
+    @query_items = []
+    if params[:query] and !params[:query].empty?
+      @query_items = Applicant.all.find_all{|x| x.name.include? params[:query]}
+      puts @query_items
+    end
   end
   
   def refresh_match
@@ -59,10 +68,25 @@ class MatchmakerController < ApplicationController
     course = params[:preference][:course]
     email = params[:preference][:email]
     match = Match.find{|m| m.applicant.email == email}
-    if match
-      #Wait for fix to score function to not break for imperfection case
-      #match.course = course
-      #match.save
+    if !course or course.empty?
+      if match
+        match.destroy
+      end
+      return
     end
+    if !match
+      applicant = Applicant.find_by(email: email)
+      if applicant
+        match = Match.create(:course => course, :label => "_", :applicant => applicant)
+      end
+    end
+    #Wait for fix to score function to not break for imperfection case
+    match.course = course
+    match.save
+  end
+  
+  def search
+    query = params[:query][:text]
+    redirect_to matchmaker_index_path(:query => query)
   end
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post 'matchmaker/index'
   post 'matchmaker/refresh_match'
   post 'matchmaker/change_match'
+  post 'matchmaker/search'
   
   get 'instructors/index'
   post 'instructors/add'
