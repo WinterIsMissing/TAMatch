@@ -6,7 +6,7 @@ require 'capybara/rspec'
 RSpec.describe "Register page", :type => :feature do
   it 'displays the register page' do
     visit('https://young-lowlands-69353.herokuapp.com/register')
-    expect(page.title).to have_content("Welcome to TAnder!")
+    expect(page.title).to have_content("TAnder")
     expect(page).to have_content("Register")
   end
   it 'contains "full name" field' do

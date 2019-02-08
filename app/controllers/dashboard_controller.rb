@@ -17,7 +17,7 @@ class DashboardController < ApplicationController
         
             @application = Applicant.find_by(email: @email)
         
-            puts "In create"
+            #puts "In create"
             if @application
                 @applicationFound = true
                 

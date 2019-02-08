@@ -6,7 +6,7 @@ require 'time'
 RSpec.describe "Authentication layer", :type => :feature do
   it 'authenticates at the right root path' do
     visit('https://young-lowlands-69353.herokuapp.com/')
-    expect(page.title).to have_content("Welcome to TAnder!")
+    expect(page.title).to have_content("TAnder")
   end
   it 'survives brute force attack for login token (100 attempts)' do
     fuzz_list =[]

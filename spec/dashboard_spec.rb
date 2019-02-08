@@ -12,9 +12,7 @@ RSpec.describe "Dashboard", :type => :feature do
     token = @user.generate_login_token
     visit '/auth?' + token
     expect(page).to have_content("Dashboard")
-    expect(page).to have_content("Messages")
     expect(page).to have_content("Logout")
-    expect(page).to have_content("Account")
   end
   it 'directs to correct dashbaord page (student)' do 
     email = "test_s@x.x"

@@ -21,15 +21,14 @@ class CoursesController < ApplicationController
     
     
     def show
-        puts params
+        #puts params
         @course = Course.find(params[:id])
-        puts "in show"
+        #puts "in show"
     end
     
     
     def sort
-        puts "IN SORT"
-        puts "IN SORT"
+        #puts "IN SORT"
         params[:course].each_with_index do |id, index|
             Course.where(id: id).update_all(position: index + 1)
         end

@@ -5,11 +5,11 @@
     <% if defined? @admin%>
         <h5>Admin</h5>
         <div class="container flex-row">
-            <div class="col-12 flex-col fs">
+            <div class="flex-col fs">
                 <%= link_to "Instructor Listing", instructors_index_path %>
                 <%= link_to "Matchmaker", matchmaker_index_path %>
             </div>
-            <div class="col-12">
+            <div>
                 <p>Course Overview</p>
                 <%= form_for :search, url: course_overview_index_path do |form| %>
                     <%= form.text_field :query, placeholder: "CLAS ###" %>
