@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to TAnder!</title>
+    <title>TAnder</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
 
   <body>
     <% if !(['static', 'session', 'users'].include? params[:controller]) && (session[:user_token] && User.find_by(login_token: session[:user_token])) %>
     <div class="nav">
         <nav>
-            <%= link_to "TAnder", dashboard_path, :class=>"logo fade-btn"%>
+            
+            <%= link_to(image_tag("TanderLogo.png"), dashboard_path) %>
+            <!--<%= link_to "TAnder", dashboard_path, :class=>"logo fade-btn"%> -->
             <span class="filler"></span>
-            <%= link_to "Messages" %> |
-            <%= link_to "Account" %> |
+           
             <%= link_to "Logout", root_path %>
         </nav>
     </div>
