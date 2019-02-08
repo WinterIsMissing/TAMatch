@@ -55,7 +55,6 @@ class MatchmakerController < ApplicationController
     @query_items = []
     if params[:query] and !params[:query].empty?
       @query_items = Applicant.all.find_all{|x| x.name.include? params[:query]}
-      puts @query_items
     end
   end
   

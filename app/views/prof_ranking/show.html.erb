@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <br>
+  <h3 id="myModalLabel"><%=applicant_name %></h3>
+ </div>
+ <div class="modal-body">
+   <br><br>
+    Email: <%= email %>
+    <br><br>
+    Degree Program: <%= degree_program %>
+    <br><br>
+    Selected TA Role: <%= isTA %>
+    <br><br>
+    Selected Grader Role: <%= isGrader%>
+    <br><br>
+    Selected Senior Grader Role: <%= isSG%>
+    <br><br>
+    Preferences: <%= preferences %>
+    <br><br>
+    Anti-Preferences: <%= antipref%>
+    <br><br>
+    Indifferent: <%= indifferent%>
+    <br><br>
+    Advisor: <%= advisor%>
+    <br><br>
+    Years Graduate: <%= years %>
+    <br><br>
+    Application Created At: <%= created_at%>
+    <br><br>
+ 
+ </div>
+ <div class="modal-footer">
+   <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+   
+ </div>
