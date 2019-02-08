@@ -65,8 +65,7 @@ RSpec.describe "Authentication layer", :type => :feature do
     })
     visit '/auth/google'
     expect(page).to have_content("Student")
-    expect(page).to have_content("Submitted Applications")
-    expect(page).to have_content("Create Application")
+    expect(page).to have_content("Application")
     OmniAuth.config.test_mode = false
   end  
 end
