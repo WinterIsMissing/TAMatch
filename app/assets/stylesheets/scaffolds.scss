@@ -420,3 +420,39 @@ th.sort-dec:before{
   font-size: 1.0em;
   width: 450px;
 }
+
+//Pretty Container
+.pretty-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 15pt;
+}
+.pretty-container div{
+  position: relative;
+  background: white;
+  min-width: 300px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 20px;
+  margin: 30px;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.1s all ease-in-out;
+}
+.pretty-container img{
+  display: block;
+  margin: auto;
+  height: 150px;
+  margin-top: 10px;
+}
+.pretty-container div:hover{
+  background: rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0);
+}
+.pretty-container a, .pretty-container a:hover, .pretty-container a:visited{
+  background: none;
+  color: #606060;
+  text-decoration: none;
+}

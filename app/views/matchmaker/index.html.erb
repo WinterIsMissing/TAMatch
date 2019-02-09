@@ -81,7 +81,7 @@
         <p class="faint">No entries</p>
     <% end %>
   
-  
+<% if false %>
   <h1> This is the OG table.. </h1>
   
     
@@ -118,6 +118,8 @@
     <% else %>
         <p class="faint">No entries</p>
     <% end %>
+    
+<% end %>
     <%= form_for :preference, url: matchmaker_change_match_path, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :course %>
       <%= form.text_field :email %>

@@ -4,63 +4,70 @@
     
     <% if defined? @admin%>
         <h5>Admin</h5>
-        <div class="container flex-row">
-            <div class="flex-col fs">
-                <%= link_to "Instructor Listing", instructors_index_path %>
-                <%= link_to "Matchmaker", matchmaker_index_path %>
-            </div>
-            <div>
-                <p>Course Overview</p>
-                <%= form_for :search, url: course_overview_index_path do |form| %>
-                    <%= form.text_field :query, placeholder: "CLAS ###" %>
-                    <%= form.submit "Search", :class=>"right-border fade-btn" %>
-                <% end %>
-            </div>
+        <div class="pretty-container">
+            
+            <a href="<%= instructors_index_path %>">
+                <div>
+                    Instructor Listing
+                    <img src="/assets/instructor.svg"/>
+                </div>
+            </a>
+            
+            <a href="<%= matchmaker_index_path %>">
+                <div>
+                    Matchmaker
+                    <img src="/assets/matchmaker.svg"/>
+                </div>
+            </a>
+            
+        </div>
+        <div style="display: none;">
+            <p>Course Overview</p>
+            <%= form_for :search, url: course_overview_index_path do |form| %>
+                <%= form.text_field :query, placeholder: "CLAS ###" %>
+                <%= form.submit "Search", :class=>"right-border fade-btn" %>
+            <% end %>
         </div>
     <% end %>
     
     <% if defined? @instructor%>
         <h5>Instructor</h5>
-        <div>
-            <table>
-                <tr>
-                    <td>
-                        <%= link_to "Rank Applications", prof_ranking_index_path %>
-                    </td>
-                    <td>
-                        <%= link_to "Add Posting" %>
-                    </td>
-                    <td>
-                        <%= link_to "View Postings" %>
-                    </td>
-                </tr>
-            </table>
+        <div class="pretty-container">
+            <a href="<%= prof_ranking_index_path %>">
+                <div>
+                    Rank Applications
+                    <img src="/assets/rank.svg"/>
+                </div>
+            </a>
         </div>
     <% end %>
     
     <% if defined? @student%>
         <h5>Student</h5>
-        <div>
-            <table>
-                <tr>
-                    <td>
-                        <% if defined? @applicationFound %>
-                        <%= link_to "Edit Application", edit_applicant_path(@application) %>
-                            
-                        <% else %>
-                        <%= link_to "Create Application", new_applicant_path %>
-                        
-                        <% end %>
-
-                    </td>
-                    <td>
-                        <% if defined? @applicationFound %>
-                        <%= link_to "Submitted Application", view_applications_path %>
-                        <% end %>
-                
-                    </td>
-                </tr>
-            </table>
+        <div class="pretty-container">
+            <% if defined? @applicationFound %>
+                <a href="<%= edit_applicant_path(@application) %>">
+                    <div>
+                        Edit Application
+                        <img src="/assets/edit_app.svg"/>
+                    </div>
+                </a>
+            <% else %>
+                <a href="<%= new_applicant_path %>">
+                    <div>
+                        Create Application
+                        <img src="/assets/new_app.svg"/>
+                    </div>
+                </a>
+            <% end %>
+            <% if defined? @applicationFound %>
+                <a href="<%= view_applications_path %>">
+                    <div>
+                        Submitted Applications
+                        <img src="/assets/view_app.svg"/>
+                    </div>
+                </a>
+            <% end %>
         </div>
     <% end %>
 </div>
