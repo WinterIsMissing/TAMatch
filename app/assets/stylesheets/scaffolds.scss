@@ -178,10 +178,6 @@ td{
   border: none;
   border-radius: 5px 5px 0 0;
 }
-.right-border{
-  border: none;
-  border-radius: 0 5px 5px 0;
-}
 .fade-btn{
   background-color: #000;
   color: #DDD;
@@ -189,11 +185,18 @@ td{
   cursor: pointer;
   transition: all ease-in-out 0.2s;
   border: 2px solid rgba(0,0,0,0);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
 .fade-btn:hover{
   background-color: #FFF;
   color: #333;
   border: 2px solid rgba(0,0,0,255);
+  text-decoration: none;
+}
+
+.right-border{
+  border-radius: 0 5px 5px 0;
 }
 
 input[type="text"]{
@@ -455,4 +458,14 @@ th.sort-dec:before{
   background: none;
   color: #606060;
   text-decoration: none;
+}
+
+.login-container{
+  background: #800000;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.login-container a{
+  color: white;
 }

@@ -1,25 +1,19 @@
-<div class="main-content pad-top" style="margin:auto; width: 300px">
-    
-    <style>
-body {
-  background-color: #2c3b68;
-}
-</style>
-     <!-- <%= link_to(image_tag("TanderLogo.png"), root_path) %> -->
-     <%= image_tag("TanderLogo.png", :alt => "rss feed") -%>
-     <br></br>
-     <h5 style = "color:white">Welcome!</h5>
+<div class="main-content pad-top login-container" style="margin:auto; width: 350px">
+    <!-- <%= link_to(image_tag("TanderLogo.png"), root_path) %> -->
+    <%= image_tag("TanderLogo.png", :alt => "rss feed") -%>
+    <br></br>
+    <h5 style = "color:white">Welcome!</h5>
     <p>Please login to use TAnder:</p>
     <%= form_for :login, url: login_path do |form| %>
-    <p></p>
-      <%= form.text_field :email %>
-      <%= form.submit "Email login link", :class=>"right-border fade-btn" %>
+        <p></p>
+        <%= form.text_field :email %>
+        <%= form.submit "Email login link", :class=>"fade-btn right-border" %>
     <% end %>
-    <ul>
-      <li><%= link_to 'Sign in via Google', '/auth/google' %></li>
-      <li>New User? <%= link_to 'Register!', register_path %></li>
-    </ul>
-    
-   
+    <div style="margin: 30px 0;">
+        <%= link_to 'Sign in via Google', '/auth/google', :class=>"fade-btn" %>
+    </div>
+    <div style="margin: 30px 0;">
+        New User? <%= link_to 'Register!', register_path, :class=>"fade-btn" %>
+    </div>
 </div>
 
