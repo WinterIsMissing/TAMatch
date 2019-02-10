@@ -1,3 +1,5 @@
+=begin no longer support course_overview page
+
 require 'rails_helper'
 require 'spec_helper'
 require 'capybara/rspec'
@@ -32,3 +34,5 @@ RSpec.describe "course_overview", :type => :feature do
   end
 
 end
+
+=end

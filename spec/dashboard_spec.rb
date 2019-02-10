@@ -28,8 +28,6 @@ RSpec.describe "Dashboard", :type => :feature do
     token = @user.generate_login_token
     visit '/auth?' + token
     expect(page).to have_content("Instructor")
-    expect(page).to have_content("Add Posting")
-    expect(page).to have_content("View Postings")
     expect(page).to have_content("Rank Applications")
   end
   it 'directs to correct dashbaord page (admin)' do 
@@ -38,7 +36,6 @@ RSpec.describe "Dashboard", :type => :feature do
     token = @user.generate_login_token
     visit '/auth?' + token
     expect(page).to have_content("Admin")
-    expect(page).to have_field("search_query")
   end
   it 'Create Application button test' do 
     email = "test_s@x.x"
@@ -58,6 +55,7 @@ RSpec.describe "Dashboard", :type => :feature do
     find('a[href$="/prof_ranking/index"]').click
     expect(current_path).to eq('/prof_ranking/index')
   end
+=begin no longer support
   it 'Admin page form functions' do
     email = "test_a@x.x"
     @user = User.find_by(email: email)
@@ -66,6 +64,7 @@ RSpec.describe "Dashboard", :type => :feature do
     fill_in 'search_query', with: 'CSCE110'
     expect(page).to have_field("search_query", with: 'CSCE110')
   end  
+=end
   it 'block access without token' do
     visit '/dashboard'
     expect(page).to have_content("Please login")

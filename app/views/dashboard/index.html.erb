@@ -21,13 +21,6 @@
             </a>
             
         </div>
-        <div style="display: none;">
-            <p>Course Overview</p>
-            <%= form_for :search, url: course_overview_index_path do |form| %>
-                <%= form.text_field :query, placeholder: "CLAS ###" %>
-                <%= form.submit "Search", :class=>"right-border fade-btn" %>
-            <% end %>
-        </div>
     <% end %>
     
     <% if defined? @instructor%>
