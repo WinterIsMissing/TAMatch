@@ -7,14 +7,14 @@
         <div class="pretty-container">
             
             <a href="<%= instructors_index_path %>">
-                <div>
+                <div class="fancy-hover">
                     Instructor Listing
                     <img src="/assets/instructor.svg"/>
                 </div>
             </a>
             
             <a href="<%= matchmaker_index_path %>">
-                <div>
+                <div class="fancy-hover">
                     Matchmaker
                     <img src="/assets/matchmaker.svg"/>
                 </div>
@@ -27,7 +27,7 @@
         <h5>Instructor</h5>
         <div class="pretty-container">
             <a href="<%= prof_ranking_index_path %>">
-                <div>
+                <div class="fancy-hover">
                     Rank Applications
                     <img src="/assets/rank.svg"/>
                 </div>
@@ -40,14 +40,14 @@
         <div class="pretty-container">
             <% if defined? @applicationFound %>
                 <a href="<%= edit_applicant_path(@application) %>">
-                    <div>
+                    <div class="fancy-hover">
                         Edit Application
                         <img src="/assets/edit_app.svg"/>
                     </div>
                 </a>
             <% else %>
                 <a href="<%= new_applicant_path %>">
-                    <div>
+                    <div class="fancy-hover">
                         Create Application
                         <img src="/assets/new_app.svg"/>
                     </div>
@@ -55,7 +55,7 @@
             <% end %>
             <% if defined? @applicationFound %>
                 <a href="<%= view_applications_path %>">
-                    <div>
+                    <div class="fancy-hover">
                         Submitted Applications
                         <img src="/assets/view_app.svg"/>
                     </div>

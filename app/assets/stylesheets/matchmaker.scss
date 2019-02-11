@@ -7,22 +7,47 @@
 li.mm-delete-btn{
    position: relative;
 }
-span.mm-delete-btn{
+.cute-btn a, .cute-btn a:hover, .cute-btn a:visited{
+    text-decoration: none;
+    color: white;
+    background: none;
+}
+span.cute-btn{
+    font-family: arial, sans-serif;
     position: absolute;
-    left: 100%;
-    top: -10px;
-    background: rgba(60, 0, 0, 0.1);
+    opacity: 0;
     color: white;
     border-radius: 2px;
     width: 20px;
     height: 20px;
     text-align: center;
     transition: 0.2s all ease-in-out;
+    pointer-events: none;
 }
-.mm-delete-btn:hover span.mm-delete-btn{
-    opacity: 0;
-}
-span.mm-delete-btn:hover{
+span.mm-delete-btn{
+    left: 100%;
+    top: 0;
     background: rgba(80, 0, 0, 1);
+}
+.mm-delete-btn:hover span.cute-btn{
+    opacity: 0.5;
+    pointer-events: auto;
+}
+span.cute-btn:hover{
     opacity: 1 !important;
+}
+.matchmaker-table{
+    width: 30%;
+}
+
+span.mm-info-btn{
+    left: -20px;
+    top: 0;
+    background: rgba(52, 152, 219, 1);
+}
+
+span.mm-destroy-btn{
+    left: 100%;
+    top: 20px;
+    background: rgba(231, 76, 60, 1);
 }

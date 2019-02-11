@@ -9,10 +9,18 @@
             <%= 'green' %>
         <% end %>"
         title="Matchmaking Score"><%= @score %></span>
+        
     </h1>
+    <div style="display: flex; flex-direction: row;">
     <%= form_for :run, url: matchmaker_refresh_match_path do |form| %>
-        <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border" %>
+        <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border",
+            :style=>"margin-bottom: 20px; margin-right: 20px;" %>
     <% end %>
+    <%= form_for :export, url: matchmaker_export_path do |form| %>
+        <%= form.submit "Export", :class=>"fade-btn top-border",
+            :style=>"margin-bottom: 20px;" %>
+    <% end %>
+    </div>
   <script>
   document.addEventListener("turbolinks:load", function() {
       $( function() {
@@ -27,7 +35,7 @@
   <div id = "sortable1div">
       <% if @entries %>
         <div class="flex-row">
-        <table class="borderless">
+        <table class="borderless matchmaker-table">
             <tr>
                 <th>Course</th>
                 <th>Status</th>
@@ -49,32 +57,74 @@
                     <td>
                         <ul id="sortable1" class="connectedSortable">
                          <% (0..applicants.length-1).each do |i| %>
-                             <li course="<%= course%>" id = "emails_<%= applicants[i].email%>" class="ui-state-default mm-delete-btn">
-                                 <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicants[i].name %>
-                                 <span class="mm-delete-btn">x</span>
-                             </li>
+                            <li course="<%= course%>" id = "emails_<%= applicants[i].email%>" class="ui-state-default mm-delete-btn">
+                                <span class="mm-info-btn cute-btn" title="Info">
+                                    <a href="<%= applicant_path(applicants[i].id) %>">i</a>
+                                </span>
+                                <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicants[i].name %>
+                                <span class="mm-delete-btn cute-btn" title="Remove">x</span>
+                                <span class="mm-destroy-btn cute-btn" title="Destroy">
+                                    <%= link_to "[||]", applicant_path(applicants[i].id), 
+                                        method: :delete, 
+                                        data: { confirm: 'Are you sure you want to delete this applicant?' } 
+                                    %>
+                                </span>
+                            </li>
                          <% end %>
                         </ul>
                     </td>
                 </tr>
             <% end %>
         </table>
-        <div class="class-search" style="width: 50%;">
+        <div>
+            <h4 class="pad-top">Non-matched applicants</h4>
+            <div>
+                <ul id="sortable1" class="connectedSortable">
+    
+                <% (@non_matched).each do |applicant| %>
+                    <li course="<%= "" %>" id = "emails_<%= applicant.email %>" class="ui-state-default mm-delete-btn">
+                        <span class="mm-info-btn cute-btn" title="Info">
+                            <a href="<%= applicant_path(applicant.id) %>">i</a>
+                        </span>
+                        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicant.name %>
+                        <span class="mm-delete-btn cute-btn" title="Remove">x</span>
+                        <span class="mm-destroy-btn cute-btn" title="Destroy">
+                            <%= link_to "[||]", applicant_path(applicant.id), 
+                                method: :delete, 
+                                data: { confirm: 'Are you sure you want to delete this applicant?' } 
+                            %>
+                        </span>
+                    </li>
+                <% end %>
+                </ul>
+            </div>
+        </div>
+        <div class="class-search" style="width: 30%;">
             <h4>Student Search</h4>
             <%= form_for :query, url: matchmaker_search_path do |form| %> 
               <%= form.text_field :text %>
               <%= form.submit "Search", :class => "fade-btn right-border" %>
             <% end %>
-            <div>
+            <div style="min-height: 20px;">
                 <ul id="sortable1" class="connectedSortable">
                     <% (@query_items).each do |applicant| %>
                         <li course="<%= "" %>" id = "emails_<%= applicant.email %>" class="ui-state-default mm-delete-btn">
-                            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicant.name %>
-                            <span class="mm-delete-btn">x</span>
-                        </li>
+                        <span class="mm-info-btn cute-btn" title="Info">
+                            <a href="<%= applicant_path(applicant.id) %>">i</a>
+                        </span>
+                        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicant.name %>
+                        <span class="mm-delete-btn cute-btn" title="Remove">x</span>
+                        <span class="mm-destroy-btn cute-btn" title="Destroy">
+                            <%= link_to "[||]", applicant_path(applicant.id), 
+                                method: :delete, 
+                                data: { confirm: 'Are you sure you want to delete this applicant?' } 
+                            %>
+                        </span>
+                    </li>
                     <% end %>
                 </ul>
             </div>
+            
         </div>
         </div>
     <% else %>

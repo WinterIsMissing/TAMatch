@@ -5,16 +5,18 @@ $(function(){
        //in order to let the course update so we can compare later
        setTimeout(updateCourse, 0, $(this));
    });
-   $('span.mm-delete-btn').mousedown(function(e){
-        let container = $(this).parent().parent().parent().parent();
-        if (!container.hasClass("class-search")){
-            let email = $(this).parent().attr("id").match(/emails_(.*)/)[1];
-            updateCourse(null, "", email);
-        }
-        //setTimeout(()=>$(this).parent().remove(), 0);
-        $(this).parent().remove();
-   });
+   $('span.mm-delete-btn').mousedown(deleteBtn);
 });
+
+function deleteBtn(e){
+    let container = $(this).parent().parent().parent().parent();
+    if (!container.hasClass("class-search")){
+        let email = $(this).parent().attr("id").match(/emails_(.*)/)[1];
+        updateCourse(null, "", email);
+    }
+    //setTimeout(()=>$(this).parent().remove(), 0);
+    $(this).parent().remove();
+}
 
 function updateCourse(el, newCourse=null, email=null){
     console.log(el);

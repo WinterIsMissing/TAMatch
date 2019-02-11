@@ -107,13 +107,17 @@ class ApplicantsController < ApplicationController
     end
     
     def destroy
-        
+        m = Match.find_by(applicant: params[:id])
+        if m
+            m.destroy()
+        end
         Applicant.destroy(params[:id])
-       
+        redirect_to matchmaker_index_path, notice: "Successfully deleted."
     end
     
     
-    
-    
+    def show
+        @applicant = Applicant.find_by(:id => params[:id])
+    end
     
 end

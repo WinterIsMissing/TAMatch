@@ -27,11 +27,15 @@ a {
   &:visited {
     color: #666;
   }
-
+/*
   &:hover {
     color: #fff;
     background-color: #000;
   }
+*/
+  border-radius: 5px;
+  transition: 0.2s all ease-in-out;
+  padding: 5px;
 }
 
 th {
@@ -102,6 +106,7 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .flex-col{
     display: flex;
@@ -421,7 +426,7 @@ th.sort-dec:before{
   margin: 0 5px 5px 5px;
   padding: 5px;
   font-size: 1.0em;
-  width: 450px;
+  width: 200px;
 }
 
 //Pretty Container
@@ -431,17 +436,15 @@ th.sort-dec:before{
   flex-direction: row;
   justify-content: center;
   font-size: 15pt;
+  flex-wrap: wrap;
 }
 .pretty-container div{
-  position: relative;
-  background: white;
   min-width: 300px;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 20px;
   margin: 30px;
   padding: 20px;
   text-align: center;
-  overflow: hidden;
   transition: 0.1s all ease-in-out;
 }
 .pretty-container img{
@@ -451,13 +454,50 @@ th.sort-dec:before{
   margin-top: 10px;
 }
 .pretty-container div:hover{
-  background: rgba(0,0,0,0.1);
   border-color: rgba(0,0,0,0);
 }
 .pretty-container a, .pretty-container a:hover, .pretty-container a:visited{
   background: none;
   color: #606060;
   text-decoration: none;
+}
+//fancy hover
+.fancy-hover{
+  position: relative;
+  overflow: hidden;
+}
+.fancy-hover:before, .fancy-hover:after{
+  content: "";
+  position: absolute;
+  opacity: 0.7;
+  transition: 0s all;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(240, 240, 240, 1);
+  z-index: -1;
+}
+.fancy-hover:hover:before, .fancy-hover:hover:after{
+  width: 150%;
+  height: 150%;
+  opacity: 1;
+  transition: 0.2s all ease-in-out;
+}
+.fancy-hover:before{
+  top: 10%;
+  left: 10%;
+}
+.fancy-hover:hover:before{
+  top: -40%;
+  left: -40%;
+}
+.fancy-hover:after{
+  top: 100%;
+  left: 100%;
+}
+.fancy-hover:hover:after{
+  top: 25%;
+  left: 25%;
 }
 
 .login-container{
@@ -468,4 +508,11 @@ th.sort-dec:before{
 }
 .login-container a{
   color: white;
+}
+
+.pretty-scroll{
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow: scroll;
 }

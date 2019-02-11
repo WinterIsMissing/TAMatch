@@ -41,9 +41,4 @@ $(function(){
            $("#applicant-list").append(item); 
         });
     });
-    console.log("Loaded!");
 });
-
-function sorter(id){
-    
-}

@@ -20,14 +20,6 @@
         
         $("#payload-form").trigger('submit.rails');
       });
-      $('#close-form-modal').click(function(e){
-        $('.modal-container').css('display', 'none');
-        e.preventDefault();
-      });
-      $('#open-form-modal').click(function(e){
-        $('.modal-container').css('display', 'flex');
-        e.preventDefault();
-      })
     });
   </script>
 </head>
@@ -257,4 +249,5 @@
     <%= form.submit "Submit" %>
   <% end %>
   <script src="/js/sort_helper.js"></script>
+  <script src="/js/modal_helper.js"></script>
 </body>

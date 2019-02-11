@@ -5,7 +5,7 @@
         <tr>
             <th>Name</th>
             <th>Email</th>
-            <th></th>
+            <th>Remove</th>
         </tr>
         <% @instructors.each do |instructor| %>
             <tr>
@@ -25,6 +25,26 @@
         <%= form_for :search, url: instructors_add_path do |form| %>
             <%= form.text_field :query, placeholder: "Email" %>
             <%= form.submit "Add" %>
+        <% end %>
+        <h2 class="pad-top">Non-Instructors</h2>
+        <table class="borderless">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Add</th>
+        </tr>
+        <% @non_instructors.each do |person| %>
+            <tr>
+                <td>
+                    <%= person.username %>
+                </td>
+                <td>
+                    <%= person.email %>
+                </td>
+                <td id="<%= person.email %>">
+                    <%= link_to "+", instructors__add_path(:email => person.email), :id=>"person_#{person.email}" %>
+                </td>
+            </tr>
         <% end %>
     </div>
 </div>

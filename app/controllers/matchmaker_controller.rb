@@ -4,9 +4,9 @@ class MatchmakerController < ApplicationController
     @entries = Hash.new
     @data = Hash.new
     @courses = Hash.new
-    
+    applicants = Applicant.all
     if !Match.first
-      @data = Matchmaker.course_match(Course.all, Applicant.all)
+      @data = Matchmaker.course_match(Course.all, applicants)
       @data.each do |key, email|
         delim = key.rindex(/\-/)
         course_label = key[0,delim]
@@ -29,10 +29,9 @@ class MatchmakerController < ApplicationController
       end
       @entries[match.course] << Applicant.find_by(email: match.applicant.email)
     end
-    
-    #@score = 100.0
+
     @score = Matchmaker.course_match_score({:courses => Course.all,
-      :applicants => Applicant.all, :matches => @data
+      :applicants => applicants, :matches => @data
     })[0]
 
 =begin
@@ -52,8 +51,10 @@ class MatchmakerController < ApplicationController
 
     @query_items = []
     if params[:query] and !params[:query].empty?
-      @query_items = Applicant.all.find_all{|x| x.name.include? params[:query]}
+      @query_items = applicants.find_all{|x| x.name.include? params[:query]}
     end
+    
+    @non_matched = applicants.find_all{|x| x.match.nil?}
   end
   
   def refresh_match
@@ -85,5 +86,9 @@ class MatchmakerController < ApplicationController
   def search
     query = params[:query][:text]
     redirect_to matchmaker_index_path(:query => query)
+  end
+  
+  def export
+    #TODO: Export Courses into a .csv or something
   end
 end

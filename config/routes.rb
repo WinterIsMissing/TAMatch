@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   post 'matchmaker/refresh_match'
   post 'matchmaker/change_match'
   post 'matchmaker/search'
+  post 'matchmaker/export'
   
   get 'instructors/index'
   post 'instructors/add'
   get 'instructors/remove'
+  get 'instructors/_add'
   
   post 'course_overview/index'
 

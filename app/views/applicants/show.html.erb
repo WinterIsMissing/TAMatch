@@ -1,0 +1,43 @@
+<div class="main-content">
+    <h1> <%= @applicant.name %></h1>
+    <h3>Email</h3>
+    <%= @applicant.email %>
+    <h3>Degree Program</h3>
+    <%= @applicant.degree_program %>
+    <h3>Years</h3>
+    <%= @applicant.years %>
+    <h3>Advisor</h3>
+    <%= @applicant.advisor %>
+    <h3>Preferences</h3>
+    <ul class="pretty-scroll">
+        <% if @applicant.preferences.length > 0 %>
+            <% @applicant.preferences.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <h3>Anti-Preferences</h3>
+    <ul class="pretty-scroll">
+        <% if @applicant.antipref.length > 0 %>
+            <% @applicant.antipref.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <h3>Indifferents</h3>
+    <ul class="pretty-scroll">
+        <% if @applicant.indifferent.length > 0 %>
+            <% @applicant.indifferent.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <p>Created <%= @applicant.created_at %></p>
+    <p>Updated <%= @applicant.updated_at %></p>
+</div>
