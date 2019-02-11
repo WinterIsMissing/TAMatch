@@ -24,9 +24,6 @@ class ApplicationController < ActionController::Base
       elsif ['prof_ranking','courses'].include? params[:controller] and user.auth_level != 'instructor'
         redirect_to dashboard_path, notice: 'Inaccessible Page! (instructor)'
         return
-      elsif ['applicants'].include? params[:controller] and user.auth_level != 'student'
-        redirect_to dashboard_path, notice: 'Inaccessible Page! (student)'
-        return
       else
         return
       end
