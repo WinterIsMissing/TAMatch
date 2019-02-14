@@ -1,6 +1,6 @@
 <div class="main-content">
     <h1>
-        MMatchmakerr 1 <span class="badge
+        MMatchmakerr 2 <span class="badge
         <% if @score <= 50 %>
             <%= 'red' %>
         <% elsif @score <= 75 %>
@@ -154,7 +154,7 @@
                 <% end %>
                 <tr>
                     <td style="text-align:center;"><%= course %></td>
-                    <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
+                    <td draggable = "true"; style="text-align:center;" class="<%= @status %>"><%= emails.length 11 %> / <%= @capacity %></td>
                     <td><%= emails[0].email %></td>
                     <% (1..emails.length-1).each do |i| %>
                         <tr>
