@@ -1,6 +1,17 @@
 <div class="main-content">
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Events</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <!-- <p onclick = "refreshPage()">refresh</p> -->
+            
+   <!-- <td><%= link_to 'Matchmaker', dashboard_index_path %></td> -->
+    
     <h1>
-        MMatchmakerr 2 <span class="badge
+        Match Score: &nbsp&nbsp <span class="badge
         <% if @score <= 50 %>
             <%= 'red' %>
         <% elsif @score <= 75 %>
@@ -11,9 +22,14 @@
         title="Matchmaking Score"><%= @score %></span>
         
     </h1>
+        
     <div style="display: flex; flex-direction: row;">
+    <%= form_for :run, url: matchmaker_index_path do |form| %>
+        <%= form.submit "Refresh Score", :class=>"fade-btn top-border",
+            :style=>"margin-bottom: 20px; margin-right: 20px;" %>
+    <% end %>
     <%= form_for :run, url: matchmaker_refresh_match_path do |form| %>
-        <%= form.submit "Run Matchmaker", :class=>"fade-btn top-border",
+        <%= form.submit "Run Auto-Match", :class=>"fade-btn top-border",
             :style=>"margin-bottom: 20px; margin-right: 20px;" %>
     <% end %>
     <%= form_for :export, url: matchmaker_export_path do |form| %>
@@ -30,9 +46,14 @@
       } );
       $("matchesSortable").sortable();
   });
+  
+  function refreshPage(){
+      location.reload();
+  }
+  
   </script>
 
-  <div id = "sortable1div" ondrop = "window.location.reload();">
+  <div id = "sortable1div">
       <% if @entries %>
         <div class="flex-row">
         <table class="borderless matchmaker-table">
@@ -55,13 +76,16 @@
                     <td type="course" style="text-align:center;"><%= course %></td>
                     <td style="text-align:center;" class="<%= @status %>"><%= applicants.length %> / <%= @capacity %></td>
                     <td>
-                        <ul id="sortable1" class="connectedSortable">
+                        
+                        
+                        <ul id="sortable1" class="connectedSortable" class = "ui-helper-reset" ">
                          <% (0..applicants.length-1).each do |i| %>
-                            <li course="<%= course%>" id = "emails_<%= applicants[i].email%>" class="ui-state-default mm-delete-btn">
+                            <li course="<%= course%>" id = "emails_<%= applicants[i].email%>" class="ui-state-default mm-delete-btn" >
                                 <span class="mm-info-btn cute-btn" title="Info">
                                     <a href="<%= applicant_path(applicants[i].id) %>">i</a>
                                 </span>
-                                <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= applicants[i].name %>
+
+                             <span class="ui-icon ui-icon-arrowthick-2-n-s" ></span><%= applicants[i].name  %>   
                                 <span class="mm-delete-btn cute-btn" title="Remove">x</span>
                                 <span class="mm-destroy-btn cute-btn" title="Destroy">
                                     <%= link_to "[||]", applicant_path(applicants[i].id), 
@@ -154,7 +178,7 @@
                 <% end %>
                 <tr>
                     <td style="text-align:center;"><%= course %></td>
-                    <td draggable = "true"; style="text-align:center;" class="<%= @status %>"><%= emails.length 11 %> / <%= @capacity %></td>
+                    <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
                     <td><%= emails[0].email %></td>
                     <% (1..emails.length-1).each do |i| %>
                         <tr>
