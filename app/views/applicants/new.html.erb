@@ -119,7 +119,7 @@ Applying as:
 </ul>
 </div>
 
-    <button id="submit" onclick = "convertToJSON()"> SUBMIT</button>
+    <button id="submit" onclick = "convertToJSON()" class="fade-btn"> SUBMIT</button>
     <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :payload %>
       <%= form.submit "submit-payload", :id=>"payload-button" %>

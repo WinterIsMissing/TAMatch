@@ -35,7 +35,7 @@
 </head>
 <body>
 
-
+<div style = "padding-left: 50px">
 <h1>Edit Application</h1>
 <br>
   <p>
@@ -134,7 +134,7 @@ Applying as:
 </ul>
 </div>
 
-    <button id="submit" onclick = "convertToJSON()"> SUBMIT</button>
+    <button id="submit" onclick = "convertToJSON()" class="fade-btn"> SUBMIT</button>
     <%= form_for :application, url: {action: "update"}, :method => :PATCH, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :payload %>
       <%= form.submit "submit-payload", :id=>"payload-button" %>
@@ -201,6 +201,6 @@ function convertToJSON(){
   }
 </script>
 
- 
+</div> 
 </body>
 </html>
