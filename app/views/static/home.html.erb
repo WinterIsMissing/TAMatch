@@ -4,7 +4,12 @@
     <br></br>
     <h5 style = "color:white">Welcome!</h5>
     <p>Please sign in with your TAMU Google.  </p>
-    <div style = "display:none">
+    <!--
+        Set off screen to allow tester to go through login process.
+        - TODO: remove "position:absolute; left: -500px; top: -500px;"(2) if you
+            are able to enable email services (Heroku requires payment)
+    -->
+    <div style = "position:absolute; left: -500px; top: -500px;">
     <%= form_for :login, url: login_path do |form| %>
         <p></p>
         <%= form.text_field :email %>
@@ -14,7 +19,7 @@
     <div style="margin: 30px 0;">
         <%= link_to 'Sign in via Google', '/auth/google', :class=>"fade-btn" %>
     </div>
-    <div style="margin: 30px 0; display:none ">
+    <div style="margin: 30px 0; position:absolute; left: -500px; top: -500px;">
         New User? <%= link_to 'Register!', register_path, :class=>"fade-btn" %>
     </div>
 </div>

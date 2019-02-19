@@ -50,7 +50,6 @@ RSpec.describe "Authentication layer", :type => :feature do
     })
     visit '/auth/google'
     expect(page).to have_content("Login via google failed, please try again")
-    expect(page).to have_content("Please login to use TAnder:")
     OmniAuth.config.test_mode = false
   end  
   it 'Oauth login (pass)' do
