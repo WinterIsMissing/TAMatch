@@ -111,7 +111,7 @@ Applying as:
 <ul id="sortable1" class="connectedSortable">
  <h3> Classes I CAN teach </h3>
  <% @coursesIndif.each do |course| %>
-   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= course.course_info %></li>
+   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE <%= course.name %> <%= course.course_info %></li>
   <% end %>
 </ul>
  </div>
@@ -120,7 +120,7 @@ Applying as:
 <ul id="sortable2" class="connectedSortable" >
   <h3> Class I CAN && REALLY WANT to teach </h3>
   <% @coursesPref.each do |course| %>
-   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= course.course_info %></li>
+   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE <%= course.name %> <%= course.course_info %></li>
   <% end %>  
 </ul>
 </div>
@@ -129,7 +129,7 @@ Applying as:
 <ul id="sortable3" class="connectedSortable" style = "color:red" title = "hello">
   <h3> Class I CANNOT teach </h3>
   <% @coursesAntiPref.each do |course| %>
-   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= course.course_info %></li>
+   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE <%= course.name %> <%= course.course_info %></li>
   <% end %>  
 </ul>
 </div>

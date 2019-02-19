@@ -1,27 +1,60 @@
-<h1>Your Application:</h1>
- 
+
+<td><%= link_to 'Home', dashboard_index_path %></td>
+
 <br>
+
+ <% @application.each do |app| %>
+
+
+
+<div class="main-content">
+    <h2 align= "center"> <%= app.name %>'s Application</h2>
+    <h4>Email</h4>
+    <%= app.email %>
+    <h4>Degree Program</h4>
+    <%= app.degree_program %>
+    <h4>Years</h4>
+    <%= app.years %>
+    <h4>Advisor</h4>
+    <%= app.advisor %>
+    <h4>Preferences</h4>
+    <ul class="pretty-scroll">
+        <% if app.preferences.length > 0 %>
+            <% app.preferences.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <h4>Anti-Preferences</h4>
+    <ul class="pretty-scroll">
+        <% if app.antipref.length > 0 %>
+            <% app.antipref.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <h4>Indifferents</h4>
+    <ul class="pretty-scroll">
+        <% if app.indifferent.length > 0 %>
+            <% app.indifferent.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <p>Created <%= app.created_at %></p>
+    <p>Updated <%= app.updated_at %></p>
+</div>
+<% end %>
+
 <td><%= link_to 'Delete Application', applicant_path(@application.first),
               method: :delete, class: 'text-danger',
               data: { confirm: 'Are you sure?' } %></td>
- 
 <br>
-<table>
-  <tr>
-     <th>Your Advisor</th>
-    <th>Your Preferences</th>
-    <th>Your Anti-Preferences</th>
-    <th></th>
-  </tr>
- 
-  <% @application.each do |app| %>
-    <tr>
-      <td><%= app.advisor %></td>
-      <td><%= app.preferences %></td>
-      <td><%= app.antipref  %></td>
-    </tr>
-  <% end %>
-</table>
-
 <br>
-<td><%= link_to 'Back', dashboard_index_path %></td>
+<br>
