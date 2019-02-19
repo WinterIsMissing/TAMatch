@@ -1,42 +1,48 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TA APP</title>
+  
 
-  <style>
-  #sortable1, #sortable2, #sortable3 {
-    border: 1px solid #eee;
-    width: 450px;
-    min-height: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 5px 0 0 0;
-    float: left;
-    margin-right: 10px;
+
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
   }
-  #sortable1 li, #sortable2 li, #sortable3 li{
-    margin: 0 5px 5px 5px;
-    padding: 5px;
-    font-size: 1.0em;
-    width: 450px;
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#sortable1, #sortable2, #sortable3" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
-  } );
-  </script>
+}
+</style>
 </head>
-<body>
-<div style = "padding-left: 50px">
+
+
 
 <h1>TA Application</h1>
+    <button id="submit" onclick = "convertToJSON()" class="fade-btn"> SUBMIT</button>
+    <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
+      <%= form.text_field :payload %>
+      <%= form.submit "submit-payload", :id=>"payload-button" %>
+    <% end %>
 <br>
   <p>
     
@@ -90,45 +96,112 @@ Applying as:
 </div>
 
 
-<br><br>
-<h2 > My Class Preferences </h2>
- <div id = "sortable1div">
+
+
+
+
+
+
+<h2>Responsive Three Column Layout</h2>
+<p>Resize the browser window to see the responsive effect (the columns will stack on top of each other instead of floating next to each other, when the screen is less than 600px wide).</p>
+
+<div class="row">
+
+  <div class="column" style="background-color:#aaa;" id = "sortable1div">
+    <h2>Classes I CAN teach</h2>
 <ul id="sortable1" class="connectedSortable">
- <h3> Classes I CAN teach </h3>
  <% @coursesIndif.each do |course| %>
-   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%=course.course_info %></li>
+   <li id = "<%= course.name %>" style = "word-wrap: break-word" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%=course.course_info %></li>
   <% end %>
 </ul>
- </div>
 
-<div id = "sortable2div">
+    
+    
+  </div>
+  <div class="column" style="background-color:#bbb;" id = "sortable2div">
+    
+    <h2>Classes I CAN and WANT to teach</h2>
+  
 <ul id="sortable2" class="connectedSortable" >
-  <h3> Class I CAN && REALLY WANT to teach </h3>
+  
   <% @coursesPref.each do |course| %>
    <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%= course.course_info %></li>
   <% end %>  
 </ul>
-</div>
 
-<div id = "sortable3div">
+    
+    
+    
+  </div>
+  <div class="column" style="background-color:#ccc;" id = "sortable3div">
+    <h2>Classes I CANNOT teach</h2>
 <ul id="sortable3" class="connectedSortable" style = "color:red" title = "hello">
-  <h3> Class I CANNOT teach </h3>
+  
   <% @coursesAntiPref.each do |course| %>
    <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%= course.course_info %></li>
   <% end %>  
 </ul>
+
+    
+    
+    
+  </div>
 </div>
 
-    <button id="submit" onclick = "convertToJSON()" class="fade-btn"> SUBMIT</button>
-    <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
-      <%= form.text_field :payload %>
-      <%= form.submit "submit-payload", :id=>"payload-button" %>
-    <% end %>
-    
- <p></p>
- <div>
 
- </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TA APP</title>
+
+  <style>
+  #sortable1, #sortable2, #sortable3 {
+    border: 1px solid #eee;
+    width: 450px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li, #sortable3 li{
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.0em;
+    width: 450px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable1, #sortable2, #sortable3" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  } );
+  </script>
+</head>
+<body>
+<div style = "padding-left: 50px">
+
+
+
+<br><br>
+
+
+
+
+
   </div>
 
  <script>
