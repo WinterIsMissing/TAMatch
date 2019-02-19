@@ -3,16 +3,18 @@
     <%= image_tag("TanderLogo.png", :alt => "rss feed") -%>
     <br></br>
     <h5 style = "color:white">Welcome!</h5>
-    <p>Please login to use TAnder:</p>
+    <p>Please sign in with your TAMU Google.  </p>
+    <div style = "display:none">
     <%= form_for :login, url: login_path do |form| %>
         <p></p>
         <%= form.text_field :email %>
         <%= form.submit "Email login link", :class=>"fade-btn right-border" %>
     <% end %>
+    </div>
     <div style="margin: 30px 0;">
         <%= link_to 'Sign in via Google', '/auth/google', :class=>"fade-btn" %>
     </div>
-    <div style="margin: 30px 0;">
+    <div style="margin: 30px 0; display:none ">
         New User? <%= link_to 'Register!', register_path, :class=>"fade-btn" %>
     </div>
 </div>
