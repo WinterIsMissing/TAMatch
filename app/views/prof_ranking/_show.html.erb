@@ -1,32 +1,49 @@
-<div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-  <br>
-  <h3 id="myModalLabel"><%=applicant_name %></h3>
- </div>
+<br>
+  <h3 id="myModalLabel" align = "center"><%=applicant_name %>'s App</h3>
+
  <div class="modal-body">
-   <br><br>
-    Email: <%= email %>
-    <br><br>
-    Degree Program: <%= degree_program %>
-    <br><br>
-    Selected TA Role: <%= isTA %>
-    <br><br>
-    Selected Grader Role: <%= isGrader%>
-    <br><br>
-    Selected Senior Grader Role: <%= isSG%>
-    <br><br>
-    Preferences: <%= preferences %>
-    <br><br>
-    Anti-Preferences: <%= antipref%>
-    <br><br>
-    Indifferent: <%= indifferent%>
-    <br><br>
-    Advisor: <%= advisor%>
-    <br><br>
-    Years Graduate: <%= years %>
-    <br><br>
-    Application Created At: <%= created_at%>
-    <br><br>
+<div class="main-content">
+    <h4>Email</h4>
+    <%= email %>
+    <h4>Degree Program</h4>
+    <%= degree_program %>
+    <h4>Years</h4>
+    <%= years %>
+    <h4>Advisor</h4>
+    <%= advisor %>
+    <h4>Preferences</h4>
+    <ul class="pretty-scroll">
+        <% if preferences.length > 0 %>
+            <% preferences.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <h4>Anti-Preferences</h4>
+    <ul class="pretty-scroll">
+        <% if antipref.length > 0 %>
+            <% antipref.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+    <h4>Indifferents</h4>
+    <ul class="pretty-scroll">
+        <% if indifferent.length > 0 %>
+            <% indifferent.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        <% else %>
+            <span>None</span>
+        <% end %>
+    </ul>
+
+</div>
+
  
  </div>
  <div class="modal-footer">
