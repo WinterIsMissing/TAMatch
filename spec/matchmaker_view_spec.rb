@@ -27,7 +27,7 @@ RSpec.describe "course_overview", :type => :feature do
     visit '/auth?' + token
     expect(page).to have_content("Matchmaker")
     visit matchmaker_index_path
-    expect(page).to have_content("Matchmaker")
+    expect(page).to have_content("Match Score")
   end
   it 'updates results' do 
     email = "test_a@x.x"
@@ -35,7 +35,7 @@ RSpec.describe "course_overview", :type => :feature do
     token = @user.generate_login_token
     visit '/auth?' + token
     visit matchmaker_index_path
-    find('input[value="Run Matchmaker"]').click
+    find('input[value="Run Auto-Match"]').click
     expect(page).to have_content("100")
   end
   it 'changes results' do
@@ -57,7 +57,7 @@ RSpec.describe "course_overview", :type => :feature do
     find('input[value="Submit"]').click
     visit matchmaker_index_path
     visit matchmaker_index_path
-    find('input[value="Run Matchmaker"]').click
+    find('input[value="Run Auto-Match"]').click
     visit matchmaker_index_path
     fill_in 'query_text', with: '11'
     find('input[value="Search"]').click
