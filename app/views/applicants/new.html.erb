@@ -2,7 +2,8 @@
 <html lang="en">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 
 
 
@@ -49,7 +50,7 @@
 
 <div style = "padding-left: 20px"> 
 <h1>TA Application</h1>
-    <button id="submit" onclick = "convertToJSON()" class="fade-btn"> SUBMIT</button>
+    <button id="submit" onclick = "convertToJSON()" class="fade-btn" style="position: absolute; right: 0;"> SUBMIT APPLICATION</button>
     <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :payload %>
       <%= form.submit "submit-payload", :id=>"payload-button" %>
@@ -120,10 +121,10 @@ Applying as:
 
 <div class="row">
 
-  <div class="column" style="background-color:#fcfaef;" id = "sortable1div"> 
+  <div class="column" style="background-color:white; border-color:white" id = "sortable1div"> 
    <i  title = "These are classes you can TA, but not your ideal classes." class="fa fa-hand-peace-o" style="font-size:20px;color:black;"> Indifferent Classes </i>
     
-<ul id="sortable1" class="connectedSortable">
+<ul id="sortable1" class="connectedSortable" style ="border-color:black">
  <% @coursesIndif.each do |course| %>
    <li id = "<%= course.name %>" style = "word-wrap: break-word" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%=course.course_info %></li>
   <% end %>
@@ -132,10 +133,10 @@ Applying as:
     
     
   </div>
-  <div class="column" style="background-color:#e3f7f7;" id = "sortable2div">
+  <div class="column" style="background-color:white; border-color:white" id = "sortable2div">
     <i  title = "These are classes you can and would really prefer to TA. Put these in order of your preferences, the top being the number 1 preference." class="fa fa-heart" style="font-size:20px;color:black;"> My Top Preferences </i>
   
-<ul id="sortable2" class="connectedSortable" >
+<ul id="sortable2" class="connectedSortable" style ="border-color:black">
   
   <% @coursesPref.each do |course| %>
    <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%= course.course_info %></li>
@@ -146,10 +147,10 @@ Applying as:
     
     
   </div>
-  <div class="column" style="background-color:#ccc;" id = "sortable3div">
+  <div class="column" style="background-color:white; border-color:white" id = "sortable3div" style ="border-color:black">
     
-    <i  title = "These are classes you absolutely cannot or do not want to TA for." class="fa fa-thumbs-down" style="font-size:20px;color:black;"> Classes I cannot TA/Grade </i>
-<ul id="sortable3" class="connectedSortable" style = "color:red" title = "hello">
+    <i  title = "These are classes you do not want to be considered for." class="fa fa-thumbs-down" style="font-size:20px;color:black;"> Classes I cannot TA/Grade </i>
+<ul id="sortable3" class="connectedSortable" style = "border-color:red" title = "place classes here">
   
   <% @coursesAntiPref.each do |course| %>
    <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%= course.course_info %></li>
@@ -160,10 +161,16 @@ Applying as:
     
     
   </div>
+  
+  
 </div>
 
 
-
+    <button id="submit" onclick = "convertToJSON()" class="fade-btn" style="position: absolute; right: 0;"> SUBMIT APPLICATION</button>
+    <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
+      <%= form.text_field :payload %>
+      <%= form.submit "submit-payload", :id=>"payload-button" %>
+    <% end %>
   
   
   </div>
