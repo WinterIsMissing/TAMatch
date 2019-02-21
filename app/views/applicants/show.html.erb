@@ -28,8 +28,8 @@
             <span>None</span>
         <% end %>
     </ul>
-    <h3>Indifferents</h3>
-    <ul class="pretty-scroll">
+    <h3>Indifferents <span id="indiff-btn"></span></h3>
+    <ul class="pretty-scroll inactive" id="indiff-list">
         <% if @applicant.indifferent.length > 0 %>
             <% @applicant.indifferent.each do |item| %>
                 <li><%= item %></li>
@@ -41,3 +41,4 @@
     <p>Created <%= @applicant.created_at %></p>
     <p>Updated <%= @applicant.updated_at %></p>
 </div>
+<script src="/js/hide_list_helper.js"></script>

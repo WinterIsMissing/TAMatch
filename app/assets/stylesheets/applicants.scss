@@ -1,3 +1,24 @@
 // Place all the styles related to the applicants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#indiff-btn{
+    cursor: pointer;
+    position: relative;
+    color: black;
+}
+#indiff-btn:after{
+    content: "+";
+    position: absolute;
+    text-align: center;
+    color: black;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    transition: 0.2s all ease-in-out;
+}
+#indiff-btn:hover:after{
+    color: white;
+    background: #500000;
+}

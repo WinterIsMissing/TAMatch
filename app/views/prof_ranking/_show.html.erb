@@ -31,8 +31,8 @@
             <span>None</span>
         <% end %>
     </ul>
-    <h4>Indifferents</h4>
-    <ul class="pretty-scroll">
+    <h4>Indifferents <span id="indiff-btn"></span></h4>
+    <ul class="pretty-scroll inactive" id="indiff-list">
         <% if indifferent.length > 0 %>
             <% indifferent.each do |item| %>
                 <li><%= item %></li>
