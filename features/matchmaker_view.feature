@@ -20,6 +20,3 @@ Scenario: Navigate to Matchmaker page as an Admin
     When I login as "test_a@x.x"
     When I am on the "Dashboard" page 
     Then I should see "Matchmaker"
-    And I input "CSCE 313" to "search_query"
-    And I click the link "Matchmaker"
-    Then I should see "Matchmaker"

@@ -70,17 +70,17 @@ class MatchmakerController < ApplicationController
       if match
         match.destroy
       end
-      return
-    end
-    if !match
-      applicant = Applicant.find_by(email: email)
-      if applicant
-        match = Match.create(:course => course, :label => "_", :applicant => applicant)
+    else
+      if !match
+        applicant = Applicant.find_by(email: email)
+        if applicant
+          match = Match.create(:course => course, :label => "_", :applicant => applicant)
+        end
       end
+      #Wait for fix to score function to not break for imperfection case
+      match.course = course
+      match.save
     end
-    #Wait for fix to score function to not break for imperfection case
-    match.course = course
-    match.save
   end
   
   def search

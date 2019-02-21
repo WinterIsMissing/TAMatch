@@ -8,6 +8,16 @@
 <head>
   <script>
     document.addEventListener("turbolinks:load", function() {
+      $('#payload-form').submit(function() {  
+        var payload = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: $(this).attr('action'),
+            data: payload,
+            dataType: "JSON"
+        });
+        return false;
+      });
       $('input[type="radio"]').change(function() {
         console.log(this);
         $(this).parent().parent()[0].setAttribute("stars", this.value);
@@ -18,7 +28,7 @@
         document.getElementById("preference_email").value = email;
         document.getElementById("preference_rating").value = this.value;
         
-        $("#payload-form").trigger('submit.rails');
+        $("#payload-form").submit();
       });
     });
   </script>

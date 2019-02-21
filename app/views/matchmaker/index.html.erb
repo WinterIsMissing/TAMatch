@@ -10,7 +10,7 @@
             
    <!-- <td><%= link_to 'Matchmaker', dashboard_index_path %></td> -->
     
-    <h1>
+    <h1 class="mm-score">
         Match Score: &nbsp&nbsp <span class="badge
         <% if @score <= 50 %>
             <%= 'red' %>
@@ -20,7 +20,7 @@
             <%= 'green' %>
         <% end %>"
         title="Matchmaking Score"><%= @score %></span>
-        
+        <tt title="The score is outdated. Please refresh for an updated one."></tt>
     </h1>
         
     <div style="display: flex; flex-direction: row;">
@@ -100,7 +100,7 @@
                 </tr>
             <% end %>
         </table>
-        <div>
+        <div id="non-matched">
             <h4 class="pad-top">Non-matched applicants</h4>
             <div>
                 <ul id="sortable1" class="connectedSortable">
@@ -155,46 +155,7 @@
         <p class="faint">No entries</p>
     <% end %>
   
-<% if false %>
-  <h1> This is the OG table.. </h1>
-  
-    
-    <% if @entries %>
-        <table class="borderless">
-            <tr>
-                <th>Course</th>
-                <th>Status</th>
-                <th>Applicant</th>
-            </tr>
-            <% @entries.each do |course, emails| %>
-                <% @cur_status = emails.length %>
-                <% @capacity = @courses[course].ta_count %>
-                <% if @cur_status < (@capacity/3) %>
-                    <% @status = 'red' %>
-                <% elsif @cur_status < (@capacity*2/3) %>
-                    <% @status = 'yellow' %>
-                <% else %>
-                    <% @status = 'green' %>
-                <% end %>
-                <tr>
-                    <td style="text-align:center;"><%= course %></td>
-                    <td style="text-align:center;" class="<%= @status %>"><%= emails.length %> / <%= @capacity %></td>
-                    <td><%= emails[0].email %></td>
-                    <% (1..emails.length-1).each do |i| %>
-                        <tr>
-                            <td></td><td></td>
-                            <td><%= emails[i].email %></td> 
-                        </tr>
-                    <% end %>
-                </tr>
-            <% end %>
-        </table>
-    <% else %>
-        <p class="faint">No entries</p>
-    <% end %>
-    
-<% end %>
-    <%= form_for :preference, url: matchmaker_change_match_path, :html => {:id => "payload-form"} do |form| %>
+    <%= form_for :preference, url: matchmaker_change_match_path, :html => {:id => "payload-form", :remote=>true}, :authenticity_token => true  do |form| %>
       <%= form.text_field :course %>
       <%= form.text_field :email %>
       <%= form.submit "Submit" %>
