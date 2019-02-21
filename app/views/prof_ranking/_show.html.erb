@@ -2,46 +2,59 @@
   <h3 id="myModalLabel" align = "center"><%=applicant_name %>'s App</h3>
 
  <div class="modal-body">
-<div class="main-content">
-    <h4>Email</h4>
-    <%= email %>
-    <h4>Degree Program</h4>
-    <%= degree_program %>
-    <h4>Years</h4>
-    <%= years %>
-    <h4>Advisor</h4>
-    <%= advisor %>
-    <h4>Preferences</h4>
-    <ul class="pretty-scroll">
-        <% if preferences.length > 0 %>
-            <% preferences.each do |item| %>
-                <li><%= item %></li>
+<div class="main-content space-content">
+    <div>
+        <h4>Email</h4>
+        <%= email %>
+    </div>
+    <div>
+        <h4>Degree Program</h4>
+        <%= degree_program %>
+    </div>
+    <div>
+        <h4>Years</h4>
+        <%= years %>
+    </div>
+    <div>
+        <h4>Advisor</h4>
+        <%= advisor %>
+    </div>
+    <div>
+        <h4>Preferences</h4>
+        <ul class="pretty-scroll">
+            <% if preferences.length > 0 %>
+                <% preferences.each do |item| %>
+                    <li><%= item %></li>
+                <% end %>
+            <% else %>
+                <span>None</span>
             <% end %>
-        <% else %>
-            <span>None</span>
-        <% end %>
-    </ul>
-    <h4>Anti-Preferences</h4>
-    <ul class="pretty-scroll">
-        <% if antipref.length > 0 %>
-            <% antipref.each do |item| %>
-                <li><%= item %></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Anti-Preferences</h4>
+        <ul class="pretty-scroll">
+            <% if antipref.length > 0 %>
+                <% antipref.each do |item| %>
+                    <li><%= item %></li>
+                <% end %>
+            <% else %>
+                <span>None</span>
             <% end %>
-        <% else %>
-            <span>None</span>
-        <% end %>
-    </ul>
-    <h4>Indifferents <span id="indiff-btn"></span></h4>
-    <ul class="pretty-scroll inactive" id="indiff-list">
-        <% if indifferent.length > 0 %>
-            <% indifferent.each do |item| %>
-                <li><%= item %></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Indifferents <span id="indiff-btn">+</span></h4>
+        <ul class="pretty-scroll inactive" id="indiff-list">
+            <% if indifferent.length > 0 %>
+                <% indifferent.each do |item| %>
+                    <li><%= item %></li>
+                <% end %>
+            <% else %>
+                <span>None</span>
             <% end %>
-        <% else %>
-            <span>None</span>
-        <% end %>
-    </ul>
-
+        </ul>
+    </div>
 </div>
 
  

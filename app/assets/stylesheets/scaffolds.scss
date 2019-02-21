@@ -512,11 +512,22 @@ th.sort-dec:before{
 
 .pretty-scroll{
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  // background: rgba(0, 0, 0, 0.1);
   max-height: 300px;
   overflow: scroll;
-  padding-right: 50px;
+  overflow-x: hidden;
+  padding: 0;
+  text-align: center;
+  width: 100%;
   display: inline-block;
+  list-style: none;
+}
+.pretty-scroll li{
+  padding: 5px;
+}
+ul.pretty-scroll li:nth-child(even){
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /*Custom Link Styling*/
@@ -558,4 +569,8 @@ a:hover:before, a:hover:after{
 
 .inactive{
   display: none;
+}
+
+.space-content div{
+  margin: 20px 0;
 }
