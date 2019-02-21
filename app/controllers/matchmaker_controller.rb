@@ -5,7 +5,8 @@ class MatchmakerController < ApplicationController
     @data = Hash.new
     @courses = Hash.new
     applicants = Applicant.all
-    if !Match.first
+    if params[:reset]
+      Match.destroy_all
       @data = Matchmaker.course_match(Course.all, applicants)
       @data.each do |key, email|
         delim = key.rindex(/\-/)
@@ -34,32 +35,24 @@ class MatchmakerController < ApplicationController
       :applicants => applicants, :matches => @data
     })[0]
 
-=begin
-    @data.each do |k, email|
-      # last "-"" is delimiter: [COURSE]-[SLOT#]
-      delim = k.rindex(/\-/)
-      @course_label = k[0,delim]
-      slot = k[delim+1]
-      @courses[@course_label] = Course.find_by(name: @course_label)
-      if !@entries.key?(@course_label)
-        @entries[@course_label] = []
-      end
-      @entries[@course_label] << email
-    end
-    # @entries = User.all
-=end
-
     @query_items = []
     if params[:query] and !params[:query].empty?
       @query_items = applicants.find_all{|x| x.name.include? params[:query]}
     end
     
     @non_matched = applicants.find_all{|x| x.match.nil?}
+    
+    #Fill in Courses w/ 0 applicants
+    Course.all.each do |course|
+      if !@entries.key?(course.name)
+        @entries[course.name] = []
+        @courses[course.name] = course
+      end
+    end
   end
   
   def refresh_match
-    Match.destroy_all
-    redirect_to matchmaker_index_path
+    redirect_to matchmaker_index_path(:reset => true)
   end
   
   def change_match
@@ -90,5 +83,10 @@ class MatchmakerController < ApplicationController
   
   def export
     #TODO: Export Courses into a .csv or something
+  end
+  
+  def clear
+    Match.destroy_all
+    redirect_to matchmaker_index_path
   end
 end

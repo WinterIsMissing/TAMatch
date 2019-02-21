@@ -1,8 +1,17 @@
 // Place all the styles related to the Matchmaker controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.class-search{
-    margin: 20px;
+.class-search div{
+    opacity: 0;
+    animation: 0.5s fade-in ease-in-out forwards;
+}
+@keyframes fade-in{
+    50%{
+        opactiy: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 li.mm-delete-btn{
    position: relative;

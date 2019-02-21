@@ -26,15 +26,19 @@
     <div style="display: flex; flex-direction: row;">
     <%= form_for :run, url: matchmaker_index_path do |form| %>
         <%= form.submit "Refresh Score", :class=>"fade-btn top-border",
-            :style=>"margin-bottom: 20px; margin-right: 20px;" %>
+            :style=>"margin-bottom: 20px; margin-right: 20px;", :title=>"Refresh Score" %>
     <% end %>
     <%= form_for :run, url: matchmaker_refresh_match_path do |form| %>
         <%= form.submit "Run Auto-Match", :class=>"fade-btn top-border",
-            :style=>"margin-bottom: 20px; margin-right: 20px;" %>
+            :style=>"margin-bottom: 20px; margin-right: 20px;", :title=>"Run Auto-Match" %>
     <% end %>
     <%= form_for :export, url: matchmaker_export_path do |form| %>
         <%= form.submit "Export", :class=>"fade-btn top-border",
-            :style=>"margin-bottom: 20px;" %>
+            :style=>"margin-bottom: 20px; margin-right: 20px;", :title=>"Export" %>
+    <% end %>
+    <%= form_for :clear, url: matchmaker_clear_path do |form| %>
+        <%= form.submit "Clear", :class=>"fade-btn top-border",
+            :style=>"margin-bottom: 20px;", :title=>"Clear" %>
     <% end %>
     </div>
   <script>
@@ -65,9 +69,9 @@
             <% @entries.each do |course, applicants| %>
                 <% @cur_status = applicants.length %>
                 <% @capacity = @courses[course].ta_count %>
-                <% if @cur_status < (@capacity/3) %>
+                <% if @cur_status <= (@capacity/3) and @capacity != 0 %>
                     <% @status = 'red' %>
-                <% elsif @cur_status < (@capacity*2/3) %>
+                <% elsif @cur_status <= (@capacity*2/3) and @capacity != 0 %>
                     <% @status = 'yellow' %>
                 <% else %>
                     <% @status = 'green' %>
@@ -101,7 +105,7 @@
             <% end %>
         </table>
         <div id="non-matched">
-            <h4 class="pad-top">Non-matched applicants</h4>
+            <h4>Non-matched applicants</h4>
             <div>
                 <ul id="sortable1" class="connectedSortable">
     

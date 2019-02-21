@@ -41,4 +41,9 @@ class SessionController < ApplicationController
     end
     redirect_to dashboard_path and return 
   end
+  
+  def logout
+    session[:user_token] = ""
+    redirect_to root_path, notice: 'Logged out!'
+  end
 end

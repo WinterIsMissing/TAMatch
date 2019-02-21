@@ -1,7 +1,14 @@
 <div class="main-content">
-    <h1>Dashboard</h1>
-    <h3>Welcome, <%= @user.username%></h3>
-    
+    <div class="fade-in-container">
+        <psv>
+            <h1>.</h1>
+            <h3>.</h3>
+        </psv>
+        <div>
+            <h1>Dashboard</h1>
+            <h3>Welcome, <%= @user.username%></h3>
+        </div>
+    </div>
     <% if defined? @admin%>
         <h5>Admin</h5>
         <div class="pretty-container">

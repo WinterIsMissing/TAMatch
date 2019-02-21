@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'matchmaker/index'
+  post 'matchmaker/clear'
   post 'matchmaker/index'
   post 'matchmaker/refresh_match'
   post 'matchmaker/change_match'
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   get 'ta_application/index'
 
   get '/auth', to: 'session#auth'
+  get 'session/logout'
  # resources :prof_ranking
   resources :applicants
   resources :session, only: [:new, :create]

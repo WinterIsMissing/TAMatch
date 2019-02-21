@@ -414,7 +414,7 @@ th.sort-dec:before{
 //sortable
 #sortable1, #sortable2, #sortable3 {
   border: 1px solid #eee;
-  /*width: 450px;*/
+  min-width: 100px;
   min-height: 20px;
   list-style-type: none;
   margin: 0;
@@ -515,4 +515,43 @@ th.sort-dec:before{
   border: 1px solid rgba(0, 0, 0, 0.1);
   max-height: 300px;
   overflow: scroll;
+  padding-right: 50px;
+  display: inline-block;
+}
+
+/*Custom Link Styling*/
+a{
+  position: relative;
+}
+a:hover{
+  text-decoration: none;
+}
+a:before, a:after{
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0%;
+  left: 50%;
+  top: 100%;
+  background: white;
+}
+a:after{
+  top: 101%;
+  background: black;
+}
+a:hover:before, a:hover:after{
+  animation: 0.2s bounce ease-in-out forwards;
+  // width: 100%;
+  // left: 0;
+}
+
+@keyframes bounce{
+  70%{
+    width: 110%;
+    left: -5%;
+  }
+  to{
+    width: 90%;
+    left: 5%;
+  }
 }
