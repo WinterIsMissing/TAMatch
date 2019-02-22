@@ -17,6 +17,10 @@ $(function(){
         });
         return false;
     });
+    
+    $('input[type="submit"]').click(function(){
+        $(".winter-is-missing").toggleClass("inactive");
+    })
 });
 
 function deleteBtn(e){

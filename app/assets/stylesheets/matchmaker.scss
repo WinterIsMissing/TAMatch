@@ -99,3 +99,64 @@ tt.mm-score:after{
         transform: rotate(360deg);
     }
 }
+
+//Winter-is-Missing
+.winter-is-missing{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #500000;
+  opacity: 0;
+  animation: 0.2s appear ease-in-out forwards;
+}
+.winter-is-missing img.wim-sun{
+  position: fixed;
+  top: 3%;
+  left: 90%;
+  animation: 20s rotato infinite;
+}
+.winter-is-missing img.wim-ppl{
+  position: fixed;
+  width: 50%;
+  top: 50%;
+}
+.winter-is-missing .cute-letter{
+  position: fixed;
+  top: 110%;
+  color: white;
+  font-size: 70pt;
+}
+.winter-is-missing .cute-letter span{
+  display: block;
+  animation: 0.8s rotato linear infinite;
+}
+.winter-is-missing .letter1{
+  left: 55%;
+  animation: 2s jumparoo ease-in-out infinite;
+}
+.winter-is-missing .letter2{
+  left: 70%;
+  animation: 2.5s 2s jumparoo ease-in-out infinite;
+}
+.winter-is-missing .letter3{
+  left: 85%;
+  animation: 2s 3.7s jumparoo ease-in-out infinite;
+}
+
+@keyframes appear{
+  to{
+    opacity: 1;
+  }
+}
+@keyframes jumparoo{
+  50%{
+    top: 50%;
+  }
+}
+@keyframes rotato{
+  to{
+    transform: rotate(360deg);
+  }
+}
