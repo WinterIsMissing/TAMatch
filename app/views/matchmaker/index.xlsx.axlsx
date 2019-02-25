@@ -1,0 +1,32 @@
+wb = xlsx_package.workbook
+
+
+wb.add_worksheet(name: "Matches") do |sheet|
+    sheet.add_row(["Course", "Label", "Applicant_ID", "Created_At" ])
+    @Matches.each do |match|
+        sheet.add_row([match.course, match.label, match.applicant, match.created_at])
+    end
+end
+
+wb.add_worksheet(name: "Users") do |sheet|
+    sheet.add_row(["Name", "Username", "Email", "Auth_Level", "Created_At" ])
+    @allAdmin.each do |admin|
+        sheet.add_row([admin.fullname, admin.username, admin.email, admin.auth_level, admin.created_at])
+    end
+end
+
+wb.add_worksheet(name: "Applicants") do |sheet|
+    sheet.add_row(["Name", "Email", "degree_program","advisor", "isTA", "isGrader", "isSG", "years experience","preferences","antipref","indifferent","created_at"  ])
+    @allApplicants.each do |applicant|
+        sheet.add_row([applicant.name, applicant.email, applicant.degree_program, applicant.advisor, applicant.isTA, applicant.isGrader, applicant.isSG,applicant.years, applicant.preferences, applicant.antipref,
+        applicant.indifferent, applicant.created_at])
+    end
+end
+
+wb.add_worksheet(name: "Courses") do |sheet|
+    sheet.add_row(["Name", "course_info", "ta_count", "grader_count", "student_count", "created_at"  ])
+    @allCourses.each do |course|
+        sheet.add_row([course.name, course.course_info, course.ta_count, course.grader_count, course.student_count, course.created_at])
+    end
+end
+

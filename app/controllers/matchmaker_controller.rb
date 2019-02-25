@@ -1,5 +1,23 @@
 class MatchmakerController < ApplicationController
   def index
+    
+    
+    
+    # For the export function
+    @allApplicants = Applicant.all;
+    @allCourses = Course.all;
+    @allAdmin = User.all; #FIX ME, not sure what uses are included here admin, instructers, applicants(again?), etc
+    @Matches = Match.all;
+
+    
+    respond_to do |format|
+      format.html
+      format.xlsx { response.headers['Content-Disposition'] = 'attachment; filename="MatchMakerData.xlsx"' }
+    end
+    
+    #end of export variables
+    
+    
     # @entries = User.all
     @entries = Hash.new
     @data = Hash.new
@@ -83,6 +101,15 @@ class MatchmakerController < ApplicationController
   
   def export
     #TODO: Export Courses into a .csv or something
+    # On Click Export
+    
+    
+    #implemented in the file: index.xslx.axlsx
+    
+    
+    
+    
+    
   end
   
   def clear

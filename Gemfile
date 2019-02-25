@@ -73,3 +73,6 @@ end
 gem 'bootstrap', '~> 4.2.1'
 gem 'popper_js', '~> 1.14.5'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+# For exporting as XLSX
+gem 'axlsx_rails'

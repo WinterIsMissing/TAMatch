@@ -9,7 +9,7 @@
 # case Rails.env
 # when 'test'
 
-    # Admin levels have been mixed up and changes, do not rely and sections headers
+    # Admin levels have been mixed up and changes, do not rely on sections headers
     #Admin
     User.create(
         {

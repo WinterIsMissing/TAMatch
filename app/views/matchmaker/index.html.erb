@@ -25,19 +25,19 @@
         
     <div style="display: flex; flex-direction: row;">
     <%= form_for :run, url: matchmaker_index_path do |form| %>
-        <%= form.submit "Refresh Score", :class=>"fade-btn top-border",
+        <%= form.submit "Refresh Score", :class=>"text-white fade-btn top-border",
             :style=>"margin-bottom: 20px; margin-right: 20px;", :title=>"Refresh Score" %>
     <% end %>
     <%= form_for :run, url: matchmaker_refresh_match_path do |form| %>
-        <%= form.submit "Run Auto-Match", :class=>"fade-btn top-border",
+        <%= form.submit "Run Auto-Match", :class=>"text-white fade-btn top-border",
             :style=>"margin-bottom: 20px; margin-right: 20px;", :title=>"Run Auto-Match" %>
     <% end %>
-    <%= form_for :export, url: matchmaker_export_path do |form| %>
-        <%= form.submit "Export", :class=>"fade-btn top-border",
-            :style=>"margin-bottom: 20px; margin-right: 20px;", :title=>"Export" %>
-    <% end %>
+
+    <%=link_to 'Export', matchmaker_index_path(format: :xlsx),:class=>"text-white fade-btn top-border",
+            :style=>"margin-bottom: 20px; margin-right: 20px;" %>
+    
     <%= form_for :clear, url: matchmaker_clear_path do |form| %>
-        <%= form.submit "Clear", :class=>"fade-btn top-border",
+        <%= form.submit "Clear", :class=>"text-white fade-btn top-border",
             :style=>"margin-bottom: 20px;", :title=>"Clear" %>
     <% end %>
     </div>
