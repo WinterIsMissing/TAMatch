@@ -2,9 +2,9 @@ wb = xlsx_package.workbook
 
 
 wb.add_worksheet(name: "Matches") do |sheet|
-    sheet.add_row(["Course", "Label", "Applicant_ID", "Created_At" ])
+    sheet.add_row(["Course", "Label", "Applicant_Name", "Created_At" ])
     @Matches.each do |match|
-        sheet.add_row([match.course, match.label, match.applicant, match.created_at])
+        sheet.add_row([match.course, match.label, match.applicant.name, match.created_at])
     end
 end
 
