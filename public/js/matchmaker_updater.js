@@ -30,6 +30,7 @@ function deleteBtn(e){
         let email = $(this).parent().attr("id").match(/emails_(.*)/)[1];
         $(this).parent().prependTo("#non-matched ul");
         updateCourse(null, "", email);
+        $(this).parent().attr("course", "");
         return;
     }
     
@@ -49,7 +50,6 @@ function updateCourse(el, newCourse=null, email=null){
         email = el.attr("id").match(/emails_(.*)/)[1];
     }
     //Update!
-    
     if(newCourse !== oldCourse){
         $(".mm-score tt").toggleClass("mm-score", true);
         if (el) el.attr("course", newCourse);

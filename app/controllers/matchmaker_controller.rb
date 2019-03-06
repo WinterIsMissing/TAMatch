@@ -52,6 +52,9 @@ class MatchmakerController < ApplicationController
     @score = Matchmaker.course_match_score({:courses => Course.all,
       :applicants => applicants, :matches => @data
     })[0]
+    if @score < 0
+      @score = 0.0
+    end
 
     @query_items = []
     if params[:query] and !params[:query].empty?
