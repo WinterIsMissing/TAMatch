@@ -121,13 +121,13 @@ level_3 = []
 level_4 = []
 Course.find_each do |x|
   course_list.push(x.name)
-  if x.name =~ /1[0-9][0-9]/
+  if x.name =~ /^1[0-9][0-9]/
     level_1.push(x.name)
-  elsif x.name =~ /2[0-9][0-9]/
+  elsif x.name =~ /^2[0-9][0-9]/
     level_2.push(x.name)
-  elsif x.name =~ /3[0-9][0-9]/
+  elsif x.name =~ /^3[0-9][0-9]/
     level_3.push(x.name)
-  elsif x.name =~ /4[0-9][0-9]/
+  elsif x.name =~ /^4[0-9][0-9]/
     level_4.push(x.name)
   end
 end

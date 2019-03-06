@@ -1,295 +1,213 @@
 <!doctype html>
 <html lang="en">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  
-  
-  <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-
-
-
-
-* {
-  box-sizing: border-box;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-</style>
-</head>
-  
-  
-  
-  
-  <div style = "padding-left: 50px">
-<h1>Edit Application</h1>
-<br>
-  <p>
-  </p>
-  Degree Program:
-  <select id = "degreeProgram">
-      
-  <option value="msThesis">MS Thesis</option>
-  
-  <option value="msNon-Thesis">MS Non-Thesis</option>
-  
-  <option value="phd">PhD</option>
-  
-</select>
-  <!--<input type="submit" value="Submit">-->
-
-  <p>
-    
-  </p>
-
-  Years as a graduate student:
-  <select id = "years">
-  <option value="0">0</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-</select>
-
-  <p>
-  </p>
-<form action="/action_page.php">
-  Advisor: <input type="text" name="advisor" id = "advisor"><br>
-  <p> </p>
-  <!--<input type="submit" value="Submit">-->
-</form>
-
-<p>
-
-</p>
-
-<div>
-Applying as:
-<p></p>
-   <input type="checkbox" id="taCheck"> TA
-  <p></p>
-   <input type="checkbox" id="gCheck"> Grader
-  <p></p>
-   <input type="checkbox" id="sgCheck"> Senior Grader
-  
-  
-    
-       <button id="submit" onclick = "convertToJSON()" class="fade-btn"  style="position: absolute; right: 0;"> SUBMIT</button>
-    <%= form_for :application, url: {action: "update"}, :method => :PATCH, :html => {:id => "payload-form"} do |form| %>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <link rel="stylesheet" href="/resources/demos/style.css">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         * {
+         box-sizing: border-box;
+         }
+         /* Create three equal columns that floats next to each other */
+         .column {
+         float: left;
+         width: 33.33%;
+         padding: 10px;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+         @media screen and (max-width: 600px) {
+         .column {
+         width: 100%;
+         }
+         }
+      </style>
+   </head>
+   <div style = "padding: 20px;">
+      <h1>Edit Application</h1>
+      <br>
+      <p>
+      </p>
+      Degree Program:
+      <select id = "degreeProgram">
+         <option value="msThesis">MS Thesis</option>
+         <option value="msNon-Thesis">MS Non-Thesis</option>
+         <option value="phd">PhD</option>
+      </select>
+      <!--<input type="submit" value="Submit">-->
+      <p>
+      </p>
+      Years as a graduate student:
+      <select id = "years">
+         <option value="0">0</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+      </select>
+      <p>
+      </p>
+      <form action="/action_page.php">
+         Advisor: <input type="text" name="advisor" id = "advisor"><br>
+         <p> </p>
+         <!--<input type="submit" value="Submit">-->
+      </form>
+      <p>
+      </p>
+      <div>
+         Applying as:
+         <p></p>
+         <input type="checkbox" id="taCheck"> TA
+         <p></p>
+         <input type="checkbox" id="gCheck"> Grader
+         <p></p>
+         <input type="checkbox" id="sgCheck"> Senior Grader
+         <button id="submit" onclick = "convertToJSON()" class="fade-btn"  style="position: absolute; right: 20px;"> SUBMIT</button>
+         <%= form_for :application, url: {action: "update"}, :method => :PATCH, :html => {:id => "payload-form"} do |form| %>
+         <%= form.text_field :payload %>
+         <%= form.submit "submit-payload", :id=>"payload-button" %>
+         <% end %>
+         <br></br>
+         <div class="row">
+            <div class="column" style="background-color:white; border-color:white" id = "sortable1div">
+               <i  title = "These are classes you can TA, but not your ideal classes." class="fa fa-hand-peace-o" style="font-size:20px;color:black;"> Indifferent Classes </i>
+               <ul id="sortable1" class="connectedSortable" style ="border-color:black">
+                  <% @coursesIndif.each do |course| %>
+                  <li id = "<%= course.name %>" style = "word-wrap: break-word" class="short-bar ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%=course.course_info %></li>
+                  <% end %>
+               </ul>
+            </div>
+            <div class="column" style="background-color:white; border-color:white" id = "sortable2div">
+               <i  title = "These are classes you can and would really prefer to TA. Put these in order of your preferences, the top being the number 1 preference." class="fa fa-heart" style="font-size:20px;color:black;"> My Top Preferences </i>
+               <ul id="sortable2" class="connectedSortable" style ="border-color:black">
+                  <% @coursesPref.each do |course| %>
+                  <li id = "<%= course.name %>" class="short-bar ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE <%= course.name %> <%= course.course_info %></li>
+                  <% end %>
+               </ul>
+            </div>
+            <div class="column" style="background-color:white; border-color:white" id = "sortable3div" style ="border-color:black">
+               <i  title = "These are classes you do not want to be considered for." class="fa fa-thumbs-down" style="font-size:20px;color:black;"> Classes I cannot TA/Grade </i>
+               <ul id="sortable3" class="connectedSortable" style = "border-color:red" title = "place classes here">
+                  <% @coursesAntiPref.each do |course| %>
+                  <li id = "<%= course.name %>" class="short-bar ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%= course.course_info %></li>
+                  <% end %>  
+               </ul>
+            </div>
+         </div>
+         <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Edit TA APP</title>
+            <style>
+               #sortable1, #sortable2, #sortable3 {
+               border: 1px solid #eee;
+               width: 450px;
+               min-height: 20px;
+               list-style-type: none;
+               margin: 0;
+               padding: 5px 0 0 0;
+               float: left;
+               margin-right: 10px;
+               }
+               #sortable1 li, #sortable2 li, #sortable3 li{
+               margin: 0 5px 5px 5px;
+               padding: 5px;
+               font-size: 1.0em;
+               width: 450px;
+               }
+            </style>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script>
+               $( function() {
+                 $( "#sortable1, #sortable2, #sortable3" ).sortable({
+                   connectWith: ".connectedSortable"
+                 }).disableSelection();
+               } );
+            </script>
+         </head>
+         <body>
+      </div>
+      <script>
+         document.getElementById('advisor').value= "<%= @object.advisor %>";
+         document.getElementById("degreeProgram").value =  "<%= @object.degree_program %>";
+         document.getElementById("years").value= "<%= @object.years %>";
+         
+         document.getElementById('taCheck').checked = <%= @object.isTA %>; 
+         document.getElementById('gCheck').checked = <%= @object.isGrader %> ; 
+         document.getElementById('sgCheck').checked = <%= @object.isSG %>;
+         
+      </script>
+      <button id="submit" onclick = "convertToJSON()" class="fade-btn" style="position: absolute; right: 20px;"> SUBMIT</button>
+      <%= form_for :application, url: {action: "update"}, :method => :PATCH, :html => {:id => "payload-form"} do |form| %>
       <%= form.text_field :payload %>
       <%= form.submit "submit-payload", :id=>"payload-button" %>
-    <% end %>
-  
-  <br></br>
-  
-  
-  <div class="row">
-
-  <div class="column" style="background-color:white; border-color:white" id = "sortable1div"> 
-   <i  title = "These are classes you can TA, but not your ideal classes." class="fa fa-hand-peace-o" style="font-size:20px;color:black;"> Indifferent Classes </i>
-    
-<ul id="sortable1" class="connectedSortable" style ="border-color:black">
- <% @coursesIndif.each do |course| %>
-   <li id = "<%= course.name %>" style = "word-wrap: break-word" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%=course.course_info %></li>
-  <% end %>
-</ul>
-
-    
-    
-  </div>
-  <div class="column" style="background-color:white; border-color:white" id = "sortable2div">
-    <i  title = "These are classes you can and would really prefer to TA. Put these in order of your preferences, the top being the number 1 preference." class="fa fa-heart" style="font-size:20px;color:black;"> My Top Preferences </i>
-  
-<ul id="sortable2" class="connectedSortable" style ="border-color:black">
-  
-   <% @coursesPref.each do |course| %>
-   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>CSCE <%= course.name %> <%= course.course_info %></li>
-  <% end %>
-  
-</ul>
-
-    
-    
-    
-  </div>
-  <div class="column" style="background-color:white; border-color:white" id = "sortable3div" style ="border-color:black">
-    
-    <i  title = "These are classes you do not want to be considered for." class="fa fa-thumbs-down" style="font-size:20px;color:black;"> Classes I cannot TA/Grade </i>
-<ul id="sortable3" class="connectedSortable" style = "border-color:red" title = "place classes here">
-  
-  <% @coursesAntiPref.each do |course| %>
-   <li id = "<%= course.name %>" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> CSCE <%= course.name %> <%= course.course_info %></li>
-  <% end %>  
-</ul>
-
-    
-    
-    
-  </div>
-  
-  
-</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edit TA APP</title>
-
-  <style>
-  #sortable1, #sortable2, #sortable3 {
-    border: 1px solid #eee;
-    width: 450px;
-    min-height: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 5px 0 0 0;
-    float: left;
-    margin-right: 10px;
-  }
-  #sortable1 li, #sortable2 li, #sortable3 li{
-    margin: 0 5px 5px 5px;
-    padding: 5px;
-    font-size: 1.0em;
-    width: 450px;
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#sortable1, #sortable2, #sortable3" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
-  } );
-  </script>
-</head>
-<body>
-
-
-</div>
-
-<script>
-    
-    document.getElementById('advisor').value= "<%= @object.advisor %>";
-    document.getElementById("degreeProgram").value =  "<%= @object.degree_program %>";
-    document.getElementById("years").value= "<%= @object.years %>";
-    
-    document.getElementById('taCheck').checked = <%= @object.isTA %>; 
-    document.getElementById('gCheck').checked = <%= @object.isGrader %> ; 
-    document.getElementById('sgCheck').checked = <%= @object.isSG %>;
-
-</script>
-  
-
-
-
-   <button id="submit" onclick = "convertToJSON()" class="fade-btn" style="position: absolute; right: 0;"> SUBMIT</button>
-    <%= form_for :application, url: {action: "update"}, :method => :PATCH, :html => {:id => "payload-form"} do |form| %>
-      <%= form.text_field :payload %>
-      <%= form.submit "submit-payload", :id=>"payload-button" %>
-    <% end %>
-
- <script>
-
-  var s = document.getElementById("degreeProgram");
-  s.addEventListener("change", changeSelectedDP);
-
-  function changeSelectedDP(){
-    var value = s.options[s.selectedIndex].value;
-  }
-  changeSelectedDP();
-
-
-
-
-function convertToJSON(){
-    var advisor = document.getElementById('advisor').value;
-    var years = document.getElementById("years").options[document.getElementById("years").selectedIndex].value;
-    var degreeProg = document.getElementById("degreeProgram").options[document.getElementById("degreeProgram").selectedIndex].value;
-    var listIndifferent = document.getElementById("sortable1div").getElementsByTagName("li");
-    var listPref = document.getElementById("sortable2div").getElementsByTagName("li");
-    var listAntipref = document.getElementById("sortable3div").getElementsByTagName("li");
-    var isTA = document.getElementById('taCheck').checked;
-    var isGrader = document.getElementById('gCheck').checked;
-    var isSG = document.getElementById('sgCheck').checked;
-
-    var i;
-    var preferences = [];
-    var antipreferences = [];
-    var indifferent = [];
-    i = 0;
-  
-    while(i < listIndifferent.length){
-      indifferent.push(listIndifferent[i].id);
-      i++;
-    }
-    i = 0;
-    while(i < listPref.length){
-      preferences.push(listPref[i].id);
-      i++;
-    }
-    i = 0;
-    while(i < listAntipref.length){
-      antipreferences.push(listAntipref[i].id);
-      i++;
-    }
-
-    
-
-      let payload ={"advisor":advisor, "years": years,"degree_program":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences};
-        document.getElementById("application_payload").value = JSON.stringify(payload);
-        $("#payload-form").trigger('submit.rails');
-        console.log(JSON.stringify(payload));
-
-  }
-</script>
-
-</div> 
-</body>
+      <% end %>
+      <script>
+         var s = document.getElementById("degreeProgram");
+         s.addEventListener("change", changeSelectedDP);
+         
+         function changeSelectedDP(){
+           var value = s.options[s.selectedIndex].value;
+         }
+         changeSelectedDP();
+         
+         
+         
+         
+         function convertToJSON(){
+           var advisor = document.getElementById('advisor').value;
+           var years = document.getElementById("years").options[document.getElementById("years").selectedIndex].value;
+           var degreeProg = document.getElementById("degreeProgram").options[document.getElementById("degreeProgram").selectedIndex].value;
+           var listIndifferent = document.getElementById("sortable1div").getElementsByTagName("li");
+           var listPref = document.getElementById("sortable2div").getElementsByTagName("li");
+           var listAntipref = document.getElementById("sortable3div").getElementsByTagName("li");
+           var isTA = document.getElementById('taCheck').checked;
+           var isGrader = document.getElementById('gCheck').checked;
+           var isSG = document.getElementById('sgCheck').checked;
+         
+           var i;
+           var preferences = [];
+           var antipreferences = [];
+           var indifferent = [];
+           i = 0;
+         
+           while(i < listIndifferent.length){
+             indifferent.push(listIndifferent[i].id);
+             i++;
+           }
+           i = 0;
+           while(i < listPref.length){
+             preferences.push(listPref[i].id);
+             i++;
+           }
+           i = 0;
+           while(i < listAntipref.length){
+             antipreferences.push(listAntipref[i].id);
+             i++;
+           }
+         
+           
+         
+             let payload ={"advisor":advisor, "years": years,"degree_program":degreeProg, "isTA":isTA, "isGrader":isGrader, "isSG":isSG, "preferences":preferences, "indifferent":indifferent, "antipref":antipreferences};
+               document.getElementById("application_payload").value = JSON.stringify(payload);
+               $("#payload-form").trigger('submit.rails');
+               console.log(JSON.stringify(payload));
+         
+         }
+      </script>
+   </div>
+   </body>
 </html>

@@ -33,9 +33,19 @@ class ApplicantsController < ApplicationController
         # Need them to be in three different categories. What we need to to is actully
         # link them like make the actual belongs to relationship.
         # For now, this works.
-        @coursesPref= Course.where({ name: @object.preferences})
-        @coursesIndif= Course.where({ name: @object.indifferent})
-        @coursesAntiPref = Course.where({ name: @object.antipref})
+        #@coursesPref= Course.where({ name: @object.preferences})
+        @coursesPref = []
+        @object.preferences.each do |course|
+            @coursesPref.push(Course.find_by({name: course}))
+        end
+        @coursesIndif= []
+        @object.indifferent.each do |course|
+            @coursesIndif.push(Course.find_by({name: course}))
+        end
+        @coursesAntiPref = []
+        @object.antipref.each do |course|
+            @coursesAntiPref.push(Course.find_by({name: course}))
+        end
         
     end
     

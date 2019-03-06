@@ -12,11 +12,11 @@
 }
 .fade-in-container div h1{
     opacity: 0;
-    animation: 1s 0.5s fade-in ease-in-out forwards;
+    animation: 1s 0.1s fade-in ease-in-out forwards;
 }
 .fade-in-container div h3{
     opacity: 0;
-    animation: 1s 1s fade-in ease-in-out forwards;
+    animation: 1s 0.2s fade-in ease-in-out forwards;
 }
 .fade-in-container psv, .fade-in-container psv h1, .fade-in-container psv h3{
     opacity: 0;

@@ -67,6 +67,7 @@ class MatchmakerController < ApplicationController
         @courses[course.name] = course
       end
     end
+    @entries = @entries.sort.to_h
   end
   
   def refresh_match
