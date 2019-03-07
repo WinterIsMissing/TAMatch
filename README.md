@@ -13,7 +13,7 @@ minimize human intervention in the application process for TA's.
 - Allow admin to manage instructors, matches, and applications
 
 ### Proposed Functionalities
-- Notification system
+- Notification system (maybe even via email?)
 - Overhaul of matchmaker (to allow for multiple sections of a course for example)
 - Allow for course/section creation
 - Allow TA’s to preference professors
@@ -93,5 +93,12 @@ This section assumes you have went through the previous section.
     - `heroku pg:reset DATABASE`
     - `heroku run rails db:migrate`
     - `heroku run rails db:seed`
-    
+   
+## Data
+This section covers how you work with the different kinds of data (Courses, Users, Applications)
+- The seed data for courses and applicants are located in `TAMatch/app/assets/` with their format being specified by the header in each file.
+- The actual seed file is located in `TAMatch/db/seeds.rb`
+- In case you want to change something on the fly on heroku, run `heroku run rails console`. Here, you are able to run commands such as `u = User.find_by(email: "test_s@x.x")` and modify them as you see fit before running `u.save`.
+- In order to test the different views (Admin, Instructor, Student), there are prepared test accounts to be used. Just navigate to `WEBAPPURL/auth?test_*`, where "*" is 'a', 'i', or 's', corresponding to the aforementioned roles. These can only be used once, since it resets the authentication token, but `rails db:reset` can be ran to reset them. If you want to prepare your own test accounts or seed an account with your email, `seeds.rb` should have an ample amount of examples to look at.
+
 *Brought to you by Team Winter is Missing (Ivan Delgado, Ryan Garmeson, Mackenzie Ford, Big-E Kee, and Benjamin Wong)*
