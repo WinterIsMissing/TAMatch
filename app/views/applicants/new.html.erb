@@ -33,10 +33,6 @@
    <div style = "padding: 20px;">
       <h1>TA Application</h1>
       <button id="submit2" onclick = "convertToJSON()" class="fade-btn" style="position: absolute; right: 20px;"> SUBMIT APPLICATION</button>
-      <%= form_for :application, url: applicants_path, :html => {:id => "payload-form"} do |form| %>
-      <%= form.text_field :payload %>
-      <%= form.submit "submit-payload", :id=>"payload-button" %>
-      <% end %>
       <br>
       <p>
       </p>

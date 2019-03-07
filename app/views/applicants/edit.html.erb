@@ -74,11 +74,7 @@
          <input type="checkbox" id="gCheck"> Grader
          <p></p>
          <input type="checkbox" id="sgCheck"> Senior Grader
-         <button id="submit" onclick = "convertToJSON()" class="fade-btn"  style="position: absolute; right: 20px;"> SUBMIT</button>
-         <%= form_for :application, url: {action: "update"}, :method => :PATCH, :html => {:id => "payload-form"} do |form| %>
-         <%= form.text_field :payload %>
-         <%= form.submit "submit-payload", :id=>"payload-button" %>
-         <% end %>
+         <button id="submit2" onclick = "convertToJSON()" class="fade-btn"  style="position: absolute; right: 20px;"> SUBMIT</button>
          <br></br>
          <div class="row">
             <div class="column" style="background-color:white; border-color:white" id = "sortable1div">

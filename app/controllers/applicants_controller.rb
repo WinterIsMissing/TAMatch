@@ -86,7 +86,6 @@ class ApplicantsController < ApplicationController
     end
     
     
-    
     def update
         @email = User.find_by(login_token: session[:user_token]).email
         
@@ -102,7 +101,7 @@ class ApplicantsController < ApplicationController
             render 'edit'
         end
     end
-    
+
 
     def submitted
         # Shows Them Their Submitted Application if they have one
